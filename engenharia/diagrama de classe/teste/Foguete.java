@@ -6,15 +6,11 @@ public class Foguete {
 
 	private float tamanho;
 
-	public int getId() {
-		return 0;
+	public Foguete(float peso, float tamanho) {
+
 	}
 
 	public float getPeso() {
-		return 0;
-	}
-
-	public float getTamanho() {
 		return 0;
 	}
 
@@ -22,8 +18,16 @@ public class Foguete {
 
 	}
 
+	public float getTamanho() {
+		return 0;
+	}
+
 	public void setTamanho(float tamanho) {
 
+	}
+
+	public int getId() {
+		return 0;
 	}
 
 }

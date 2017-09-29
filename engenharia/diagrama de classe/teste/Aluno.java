@@ -4,9 +4,7 @@ public class Aluno {
 
 	private char nome;
 
-	private Equipe equipe;
-
-	public Aluno(int rm, char nome, Turma turma) {
+	public Aluno(int rm, char nome, Turma turma, Equipe equipe) {
 
 	}
 
@@ -14,28 +12,28 @@ public class Aluno {
 		return 0;
 	}
 
-	public char getNome() {
-		return 0;
-	}
-
-	public Turma getTurma() {
-		return null;
-	}
-
-	public Equipe getEquipe() {
-		return null;
-	}
-
 	public void setRm(int rm) {
 
+	}
+
+	public char getNome() {
+		return 0;
 	}
 
 	public void setNome(char nome) {
 
 	}
 
+	public Turma getTurma() {
+		return null;
+	}
+
 	public void setTurma(Turma turma) {
 
+	}
+
+	public Equipe getEquipe() {
+		return null;
 	}
 
 	public void setEquipe(Equipe equipe) {

@@ -4,11 +4,13 @@ public class Competicao {
 
 	private char nome;
 
-	private Logradouro logradouro;
+	private Turma turma;
 
-	private char data;
+	private Date data;
 
-	public Competicao(char nome, Logradouro logradouro, char data) {
+	private Turma[] turma;
+
+	public Competicao(char nome, Date data) {
 
 	}
 
@@ -16,28 +18,20 @@ public class Competicao {
 		return 0;
 	}
 
-	public Logradouro getLogradouro() {
-		return null;
-	}
-
-	public char getData() {
-		return 0;
-	}
-
-	public int getId() {
-		return 0;
-	}
-
 	public void setNome(char nome) {
 
 	}
 
-	public void setLogradouro(Logradouro logradouro) {
+	public Date getData() {
+		return null;
+	}
+
+	public void setData(Date data) {
 
 	}
 
-	public void setData(char data) {
-
+	public int getId() {
+		return 0;
 	}
 
 }

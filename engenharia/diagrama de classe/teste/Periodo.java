@@ -1,23 +1,27 @@
 public class Periodo {
 
-	private char nome;
-
 	private int id;
+
+	private char nome;
 
 	public Periodo(char nome) {
 
-	}
-
-	public char getNome() {
-		return 0;
 	}
 
 	public int getId() {
 		return 0;
 	}
 
+	public char getNome() {
+		return 0;
+	}
+
 	public void setNome(char nome) {
 
+	}
+
+	public String toString() {
+		return null;
 	}
 
 }
