@@ -1,0 +1,81 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="8540EC78-1DDD-1A87-8694-61B30A3B026C" name="TURMA">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-02 10:38:27 UTC</createdTime>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="turma_id" id="834B53AB-A94D-E7FC-CC35-AC389C58E5EA">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-02 10:39:02 UTC</createdTime>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nome" id="35F94AF1-A174-D763-E65C-2090BFFB9C73">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-02 10:39:15 UTC</createdTime>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="competicao_id" id="FDEB98AF-A783-D052-FB00-873425D012B1">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-02 10:42:08 UTC</createdTime>
+<generatorID>90BAD2DE-0F71-0C22-29A4-A9D3BFF74D6C</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>7ADF4340-2A30-77E3-EBB5-86E4B856A9C6</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="periodo_id" id="52CA67D1-A474-F619-1A1F-DD6896B711A9">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-02 10:57:56 UTC</createdTime>
+<generatorID>24D46F06-38B1-4253-C30E-9B3C145A1536</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>AFEAFF5F-CD93-6D3C-C7D2-0701499362E0</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="turma_id1" id="13F2B616-8A2C-C93C-2639-302592363735">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-02 10:57:56 UTC</createdTime>
+<generatorID>24D46F06-38B1-4253-C30E-9B3C145A1536</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>00CF7770-F497-CB5D-3796-607C3C1F95D6</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="4E1B4215-BA1C-E43D-DA13-17C8A762041C" name="TURMA PK">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-02 10:39:13 UTC</createdTime>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>834B53AB-A94D-E7FC-CC35-AC389C58E5EA</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

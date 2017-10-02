@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="Modelo Lógico - Projeto AM" id="5D174CCF-D975-3D7F-854A-1679850EA240" version="3.5">
+<createdBy>bem10_000</createdBy>
+<createdTime>2017-09-05 23:07:26 UTC</createdTime>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>5D174CCF-D975-3D7F-854A-1679850EA240</designId>
+</OSDM_Design>

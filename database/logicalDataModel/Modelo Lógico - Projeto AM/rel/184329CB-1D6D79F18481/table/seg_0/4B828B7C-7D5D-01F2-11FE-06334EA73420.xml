@@ -1,0 +1,48 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="4B828B7C-7D5D-01F2-11FE-06334EA73420" name="COMPETICAO">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-02 11:36:31 UTC</createdTime>
+<generatorID>18EF0569-03DD-ED31-8D0E-61F57E00E667</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="competicao_id" id="12354107-9291-2C3B-EE3E-1F5626740EC0">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-02 11:36:31 UTC</createdTime>
+<generatorID>7ADF4340-2A30-77E3-EBB5-86E4B856A9C6</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nome" id="68DF7890-2B50-209F-33F7-AF2050E10E0F">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-02 11:36:31 UTC</createdTime>
+<generatorID>7A0F3767-4D37-6D5C-208F-1EB08C63180B</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="2E0A8839-01FE-3507-943E-31C0A163210C" name="COMPETICAO_PK">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-02 11:36:31 UTC</createdTime>
+<generatorID>D7B44E79-E3EF-A270-CEDD-3D2D6C6BFF1B</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="12354107-9291-2C3B-EE3E-1F5626740EC0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

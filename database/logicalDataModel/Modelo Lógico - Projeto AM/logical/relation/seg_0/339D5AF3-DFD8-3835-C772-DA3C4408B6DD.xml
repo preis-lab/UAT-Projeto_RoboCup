@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="FOGUETE_LANCAMENTOS" directorySegmentName="seg_0" id="339D5AF3-DFD8-3835-C772-DA3C4408B6DD">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-02 11:29:32 UTC</createdTime>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<sourcePk>5870C20D-F212-9023-281F-0EE57CC33B0D</sourcePk>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>true</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>AC3389E8-ED12-B5C1-DFC6-07427BBDA577</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>DD6DE3A5-5FFA-E060-920D-A418C2BF894E</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

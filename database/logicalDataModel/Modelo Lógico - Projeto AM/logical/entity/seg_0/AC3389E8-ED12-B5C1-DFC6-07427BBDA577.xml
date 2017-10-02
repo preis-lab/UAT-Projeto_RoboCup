@@ -1,0 +1,54 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="AC3389E8-ED12-B5C1-DFC6-07427BBDA577" name="FOGUETE">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-02 11:25:56 UTC</createdTime>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="foguete_id" id="0FF17287-4C43-0D99-2332-81F71B6D2378">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-02 11:26:04 UTC</createdTime>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="peso" id="349CA33D-FA62-BB57-5E54-3210AC601EDA">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-02 11:26:29 UTC</createdTime>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="tamanho" id="65C95534-2725-6A62-CC99-DAE42C94B58C">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-02 11:26:39 UTC</createdTime>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="5870C20D-F212-9023-281F-0EE57CC33B0D" name="FOGUETE PK">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-02 11:26:52 UTC</createdTime>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>0FF17287-4C43-0D99-2332-81F71B6D2378</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

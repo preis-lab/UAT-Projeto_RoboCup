@@ -1,0 +1,48 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="5BFD3DD8-7802-C486-7445-FD3842B02E3B" name="PERIODO">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-02 11:36:31 UTC</createdTime>
+<generatorID>ADFCDC97-9B6E-F0F1-D3C9-037E77E4E710</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="periodo_id" id="52131D06-00C8-4E64-4A4E-4E9F4BB677AB">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-02 11:36:32 UTC</createdTime>
+<generatorID>AFEAFF5F-CD93-6D3C-C7D2-0701499362E0</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="descricao" id="6866AF43-7972-CBC8-C95E-5B3E553099B0">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-02 11:36:32 UTC</createdTime>
+<generatorID>40EE0114-EF9D-2A35-AF1B-E2AC25F437D6</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="D0A8C1AD-C55A-4E8A-365A-B4A6F264AFAE" name="PERIODO_PK">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-02 11:36:32 UTC</createdTime>
+<generatorID>4705D4BD-8299-CA1A-8242-6FEBA94E3EB8</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="52131D06-00C8-4E64-4A4E-4E9F4BB677AB"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

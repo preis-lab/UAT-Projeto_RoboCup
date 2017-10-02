@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="TURMA_LANCAMENTOS" directorySegmentName="seg_0" id="C94D1CDD-967A-FD2D-2536-EA5AE4274869">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-02 11:28:43 UTC</createdTime>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<sourcePk>F733FE49-B4D9-2115-352F-328AB206D28B</sourcePk>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>true</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>28BE9E4E-8DCF-2AEB-1794-733419A8439A</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>DD6DE3A5-5FFA-E060-920D-A418C2BF894E</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

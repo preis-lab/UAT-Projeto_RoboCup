@@ -1,0 +1,96 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="26A83FEC-0E0D-EADF-4E26-6365F5CA6C97" name="ENDERECO">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-02 11:56:39 UTC</createdTime>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<engineerTo>
+<item key="184329CB-C3CD-A26F-B112-1D6D79F18481" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="endereco_id" id="DE7F7E1A-9A6D-A8CB-E25A-B9A9AE65C655">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-02 13:35:38 UTC</createdTime>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<engineerTo>
+<item key="184329CB-C3CD-A26F-B112-1D6D79F18481" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="cep" id="A42B6EC7-08FA-9835-1C00-C8E867A517D2">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-02 11:56:52 UTC</createdTime>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<engineerTo>
+<item key="184329CB-C3CD-A26F-B112-1D6D79F18481" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nome_rua" id="E68F8865-7092-2449-EC4A-6032880D3782">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-02 13:35:27 UTC</createdTime>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<engineerTo>
+<item key="184329CB-C3CD-A26F-B112-1D6D79F18481" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="numero" id="C75C8875-6CCB-57E6-988B-0D005C084540">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-02 14:05:57 UTC</createdTime>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<engineerTo>
+<item key="184329CB-C3CD-A26F-B112-1D6D79F18481" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="bairro_id" id="2454C8D5-3E18-372B-F56D-921B2C1382E6">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-02 14:06:32 UTC</createdTime>
+<generatorID>B2A881F6-74E2-1705-AD70-DBB1F74F4336</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<engineerTo>
+<item key="184329CB-C3CD-A26F-B112-1D6D79F18481" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>FA7B7536-684E-D44E-F705-1DC5C0DC8A28</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="859F3A27-F8E5-B30A-099F-AD2F222F9B26" name="ENDERECO PK">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-02 13:35:52 UTC</createdTime>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<engineerTo>
+<item key="184329CB-C3CD-A26F-B112-1D6D79F18481" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>DE7F7E1A-9A6D-A8CB-E25A-B9A9AE65C655</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

@@ -1,0 +1,83 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="ADFCDC97-9B6E-F0F1-D3C9-037E77E4E710" name="PERIODO">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-02 10:40:50 UTC</createdTime>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<engineerTo>
+<item key="184329CB-C3CD-A26F-B112-1D6D79F18481" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="periodo_id" id="AFEAFF5F-CD93-6D3C-C7D2-0701499362E0">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-02 10:40:55 UTC</createdTime>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<engineerTo>
+<item key="184329CB-C3CD-A26F-B112-1D6D79F18481" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="descricao" id="40EE0114-EF9D-2A35-AF1B-E2AC25F437D6">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-02 10:41:07 UTC</createdTime>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<engineerTo>
+<item key="184329CB-C3CD-A26F-B112-1D6D79F18481" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="horaInicial" id="3DD52C24-FB87-835D-CD2E-99B59CA8C818">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-02 12:18:14 UTC</createdTime>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<engineerTo>
+<item key="184329CB-C3CD-A26F-B112-1D6D79F18481" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT014</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="horaFinal" id="BB743073-0044-D928-BD0B-CA21AF5C85BB">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-02 12:18:22 UTC</createdTime>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<engineerTo>
+<item key="184329CB-C3CD-A26F-B112-1D6D79F18481" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT014</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="4705D4BD-8299-CA1A-8242-6FEBA94E3EB8" name="PERIODO PK">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-02 10:41:06 UTC</createdTime>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<engineerTo>
+<item key="184329CB-C3CD-A26F-B112-1D6D79F18481" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>AFEAFF5F-CD93-6D3C-C7D2-0701499362E0</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>
