@@ -1,0 +1,76 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="82CE48CD-C7FE-C0F5-3D8B-D6DC0E81781A" name="BAIRRO">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-02 15:22:31 UTC</createdTime>
+<generatorID>F3791C52-4071-A8B6-9480-B4B00CEB4661</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="bairro_id" id="58821711-F865-00F9-DB66-6DFF2A357A0D">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-02 15:22:31 UTC</createdTime>
+<generatorID>FA7B7536-684E-D44E-F705-1DC5C0DC8A28</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nome" id="AEF65D45-4C6B-E851-46AC-2C10A8E4FF3C">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-02 15:22:31 UTC</createdTime>
+<generatorID>DCE2E8D7-E589-AE05-2434-7DBA6B1C7D1A</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CIDADE_cidade_id" id="C95C76AD-4386-821B-AF1E-468EB1C7BBAC">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-02 15:22:31 UTC</createdTime>
+<generatorID>C9B24398-5E73-C310-3E89-0382E100217D</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="FBD3E53D-19D1-016C-7BAE-137655345529" referredColumn="1483F938-084E-2128-92AF-C8A3E32CCAA2"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="40E4B76A-D925-43D6-2A25-6E1B1EA19BE7" name="BAIRRO_PK">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-02 15:22:31 UTC</createdTime>
+<generatorID>DF550335-F70B-B2F6-2071-D23985779589</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="58821711-F865-00F9-DB66-6DFF2A357A0D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="6A2AF34D-DEB3-E821-74D8-CB90CD1D6AF5" name="BAIRRO_CIDADE_FK">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-02 15:22:31 UTC</createdTime>
+<generatorID>F87DBE34-A598-FACE-D6C2-09BBF8FDFD18</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C95C76AD-4386-821B-AF1E-468EB1C7BBAC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

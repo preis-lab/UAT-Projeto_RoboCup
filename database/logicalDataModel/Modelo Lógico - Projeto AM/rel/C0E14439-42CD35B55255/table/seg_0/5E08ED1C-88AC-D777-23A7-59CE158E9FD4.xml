@@ -1,0 +1,99 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="5E08ED1C-88AC-D777-23A7-59CE158E9FD4" name="ENDERECO">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-02 15:22:31 UTC</createdTime>
+<generatorID>26A83FEC-0E0D-EADF-4E26-6365F5CA6C97</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="endereco_id" id="D32EE33A-72C6-ACE0-DD38-F76851AA7A93">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-02 15:22:31 UTC</createdTime>
+<generatorID>DE7F7E1A-9A6D-A8CB-E25A-B9A9AE65C655</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cep" id="EA22CE2F-E380-ECB9-7D98-A23F8A7BC6B6">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-02 15:22:31 UTC</createdTime>
+<generatorID>A42B6EC7-08FA-9835-1C00-C8E867A517D2</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>8</dataTypeSize>
+<ownDataTypeParameters>8,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nome_rua" id="6B4A194E-0720-8033-B2D5-3A2A91354467">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-02 15:22:31 UTC</createdTime>
+<generatorID>E68F8865-7092-2449-EC4A-6032880D3782</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="numero" id="6A43D942-35D7-F610-5773-0E6BA8D6B6A2">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-02 15:22:31 UTC</createdTime>
+<generatorID>C75C8875-6CCB-57E6-988B-0D005C084540</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="BAIRRO_bairro_id" id="C8EBBB74-C4F8-8025-C2FE-243C5C933DFB">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-02 15:22:31 UTC</createdTime>
+<generatorID>2454C8D5-3E18-372B-F56D-921B2C1382E6</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="87C65FD3-714B-3351-A142-45303ADE7F10" referredColumn="58821711-F865-00F9-DB66-6DFF2A357A0D"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="85A9C59A-2F1B-A911-2C94-EC9D74F29215" name="ENDERECO_PK">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-02 15:22:31 UTC</createdTime>
+<generatorID>859F3A27-F8E5-B30A-099F-AD2F222F9B26</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D32EE33A-72C6-ACE0-DD38-F76851AA7A93"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8C7ADD7F-09D3-DB17-D3FD-4D65545AB9FB" name="ENDERECO_BAIRRO_FK">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-02 15:22:31 UTC</createdTime>
+<generatorID>B2A881F6-74E2-1705-AD70-DBB1F74F4336</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C8EBBB74-C4F8-8025-C2FE-243C5C933DFB"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

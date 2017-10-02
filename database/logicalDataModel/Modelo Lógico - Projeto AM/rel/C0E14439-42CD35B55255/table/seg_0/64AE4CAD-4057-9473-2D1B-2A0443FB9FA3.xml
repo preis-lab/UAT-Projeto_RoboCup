@@ -1,0 +1,103 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="64AE4CAD-4057-9473-2D1B-2A0443FB9FA3" name="ALUNO">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-02 15:22:31 UTC</createdTime>
+<generatorID>685C9CB9-5530-C94D-0A17-4390B95671E3</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="rm" id="9DF650EE-8AFF-155F-6462-4DBCD5B1C6D8">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-02 15:22:31 UTC</createdTime>
+<generatorID>F5692839-6692-0902-6450-44520F315C07</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nome" id="508CF7C9-2C95-A0FF-8BC7-50C4CEEA7781">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-02 15:22:31 UTC</createdTime>
+<generatorID>ED4814B5-CFDF-4DCF-15F3-6A461A596EE9</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TURMA_turma_id" id="E952EBB1-437D-58A1-90E6-799C25050123">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-02 15:22:31 UTC</createdTime>
+<generatorID>7FEEFC3F-9890-5B79-527A-643A20CE43D3</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F5A8FCA7-9973-D3FC-471B-133090603479" referredColumn="C6CC58EA-F10B-18A8-D3F6-217B4C8D001F"/>
+</associations>
+</Column>
+<Column name="EQUIPE_equipe_id" id="087262C2-3D23-467A-3B85-A14F854BDE00">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-02 15:22:31 UTC</createdTime>
+<generatorID>A7405953-5311-B5AA-1896-EA7AAD6E7CBD</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="EE8B6884-1E22-1822-7AA0-125BE700CECB" referredColumn="E1B2438C-03C2-A354-591C-2B8AAC5C9C1D"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="942BF89A-E01C-B490-5156-48925EC7C42D" name="ALUNO_PK">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-02 15:22:31 UTC</createdTime>
+<generatorID>3BD0E171-F3D9-A6C8-9E4E-106B6F188820</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9DF650EE-8AFF-155F-6462-4DBCD5B1C6D8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="365DE489-4199-4194-064D-3B34503D25C4" name="ALUNO_EQUIPE_FK">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-02 15:22:31 UTC</createdTime>
+<generatorID>0B2D0265-4C6F-0408-8886-02BB9BFEFCCB</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="087262C2-3D23-467A-3B85-A14F854BDE00"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="244C522A-C58A-64A8-2715-114AFEB28A45" name="ALUNO_TURMA_FK">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-02 15:22:31 UTC</createdTime>
+<generatorID>1F79DC1F-9510-1884-AD18-19624410EB8D</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E952EBB1-437D-58A1-90E6-799C25050123"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

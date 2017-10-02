@@ -4,7 +4,7 @@
 <createdTime>2017-10-02 13:59:02 UTC</createdTime>
 <ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
 <engineerTo>
-<item key="184329CB-C3CD-A26F-B112-1D6D79F18481" value="true"/>
+<item key="73FFBDCE-C1E0-372A-C5ED-8337A73E2971" value="true"/>
 </engineerTo>
 <adequatelyNormalized>NO</adequatelyNormalized>
 <expectedVolumes>0</expectedVolumes>
@@ -20,7 +20,7 @@
 <createdTime>2017-10-02 13:59:07 UTC</createdTime>
 <ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
 <engineerTo>
-<item key="184329CB-C3CD-A26F-B112-1D6D79F18481" value="true"/>
+<item key="73FFBDCE-C1E0-372A-C5ED-8337A73E2971" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -32,12 +32,13 @@
 <createdTime>2017-10-02 13:59:16 UTC</createdTime>
 <ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
 <engineerTo>
-<item key="184329CB-C3CD-A26F-B112-1D6D79F18481" value="true"/>
+<item key="73FFBDCE-C1E0-372A-C5ED-8337A73E2971" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="estado_id" id="2F4DD531-6264-8E9E-6E0E-4289BCBAC254">
 <createdBy>pauloh</createdBy>
@@ -45,7 +46,7 @@
 <generatorID>98245E29-DF7C-7895-8CE1-C556797A8475</generatorID>
 <ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
 <engineerTo>
-<item key="184329CB-C3CD-A26F-B112-1D6D79F18481" value="true"/>
+<item key="73FFBDCE-C1E0-372A-C5ED-8337A73E2971" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
 <referedAttribute>2F5095A4-9663-4236-B23E-88A54FC53CB0</referedAttribute>
@@ -61,7 +62,7 @@
 <createdTime>2017-10-02 13:59:15 UTC</createdTime>
 <ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
 <engineerTo>
-<item key="184329CB-C3CD-A26F-B112-1D6D79F18481" value="true"/>
+<item key="73FFBDCE-C1E0-372A-C5ED-8337A73E2971" value="true"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>
