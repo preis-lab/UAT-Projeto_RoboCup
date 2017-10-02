@@ -4,49 +4,25 @@
 <createdTime>2017-10-02 10:53:05 UTC</createdTime>
 <ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
 <engineerTo>
-<item key="C0E14439-611B-8150-2954-42CD35B55255" value="true"/>
+<item key="F1BE7535-D0BA-C77C-6570-5F2B6D9AF09C" value="true"/>
 </engineerTo>
 <adequatelyNormalized>NO</adequatelyNormalized>
 <expectedVolumes>0</expectedVolumes>
 <fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
 <growthPercent>0</growthPercent>
 <growthType>Year</growthType>
+<hierarchicalParent>C9492803-BDF9-CBE5-BB31-B6067E4B86DF</hierarchicalParent>
 <maxVolumes>9999999</maxVolumes>
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="rm" id="F5692839-6692-0902-6450-44520F315C07">
-<createdBy>pauloh</createdBy>
-<createdTime>2017-10-02 10:53:12 UTC</createdTime>
-<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
-<engineerTo>
-<item key="C0E14439-611B-8150-2954-42CD35B55255" value="true"/>
-</engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="nome" id="ED4814B5-CFDF-4DCF-15F3-6A461A596EE9">
-<createdBy>pauloh</createdBy>
-<createdTime>2017-10-02 10:53:23 UTC</createdTime>
-<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
-<engineerTo>
-<item key="C0E14439-611B-8150-2954-42CD35B55255" value="true"/>
-</engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>30</dataTypeSize>
-<ownDataTypeParameters>30,,</ownDataTypeParameters>
-</Attribute>
 <Attribute name="equipe_id" id="A7405953-5311-B5AA-1896-EA7AAD6E7CBD">
 <createdBy>pauloh</createdBy>
 <createdTime>2017-10-02 10:59:50 UTC</createdTime>
 <generatorID>0B2D0265-4C6F-0408-8886-02BB9BFEFCCB</generatorID>
 <ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
 <engineerTo>
-<item key="C0E14439-611B-8150-2954-42CD35B55255" value="true"/>
+<item key="F1BE7535-D0BA-C77C-6570-5F2B6D9AF09C" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
 <referedAttribute>C743A8EA-8CB8-07A7-77D3-84CEC1285607</referedAttribute>
@@ -55,34 +31,20 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="turma_id" id="6A557E54-08A4-5005-F058-C14AEB79134E">
+<Attribute name="turma_id" id="5FA4A099-D4C0-EA4B-8634-D4FCD81E2A16">
 <createdBy>pauloh</createdBy>
-<createdTime>2017-10-02 17:31:05 UTC</createdTime>
-<generatorID>94A7521C-FC53-6D6C-2F12-EF2F4601EC8C</generatorID>
+<createdTime>2017-10-02 18:13:02 UTC</createdTime>
+<generatorID>A9445051-C147-DB63-EC96-F1B2815645AC</generatorID>
 <ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
 <engineerTo>
-<item key="C0E14439-611B-8150-2954-42CD35B55255" value="true"/>
+<item key="F1BE7535-D0BA-C77C-6570-5F2B6D9AF09C" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
-<referedAttribute>14D5CCA4-0DAE-5B5D-4812-D5E1939BD33D</referedAttribute>
+<referedAttribute>97311A0C-F456-B010-9102-A5197E3CA1B6</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
-<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
-<identifier id="3BD0E171-F3D9-A6C8-9E4E-106B6F188820" name="Aluno PK">
-<createdBy>pauloh</createdBy>
-<createdTime>2017-10-02 10:53:22 UTC</createdTime>
-<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
-<engineerTo>
-<item key="C0E14439-611B-8150-2954-42CD35B55255" value="true"/>
-</engineerTo>
-<pk>true</pk>
-<usedAttributes>
-<attributeRef>F5692839-6692-0902-6450-44520F315C07</attributeRef>
-</usedAttributes>
-</identifier>
-</identifiers>
 </Entity>
