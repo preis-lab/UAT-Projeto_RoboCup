@@ -1,7 +1,7 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="685C9CB9-5530-C94D-0A17-4390B95671E3" name="ALUNO">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="0AA2C436-3761-09A1-C584-18B247BB245E" name="TURMA">
 <createdBy>pauloh</createdBy>
-<createdTime>2017-10-02 10:53:05 UTC</createdTime>
+<createdTime>2017-10-02 17:30:18 UTC</createdTime>
 <ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
 <engineerTo>
 <item key="C0E14439-611B-8150-2954-42CD35B55255" value="true"/>
@@ -15,9 +15,9 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="rm" id="F5692839-6692-0902-6450-44520F315C07">
+<Attribute name="turma_id" id="14D5CCA4-0DAE-5B5D-4812-D5E1939BD33D">
 <createdBy>pauloh</createdBy>
-<createdTime>2017-10-02 10:53:12 UTC</createdTime>
+<createdTime>2017-10-02 17:30:22 UTC</createdTime>
 <ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
 <engineerTo>
 <item key="C0E14439-611B-8150-2954-42CD35B55255" value="true"/>
@@ -27,9 +27,9 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="nome" id="ED4814B5-CFDF-4DCF-15F3-6A461A596EE9">
+<Attribute name="nome" id="5C3D7110-8F48-DBE6-E6F5-4D8D8351DA53">
 <createdBy>pauloh</createdBy>
-<createdTime>2017-10-02 10:53:23 UTC</createdTime>
+<createdTime>2017-10-02 17:30:31 UTC</createdTime>
 <ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
 <engineerTo>
 <item key="C0E14439-611B-8150-2954-42CD35B55255" value="true"/>
@@ -37,34 +37,33 @@
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>30</dataTypeSize>
-<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="equipe_id" id="A7405953-5311-B5AA-1896-EA7AAD6E7CBD">
+<Attribute name="competicao_id" id="D9002ECF-5C1B-964F-3E63-6EC56534FD07">
 <createdBy>pauloh</createdBy>
-<createdTime>2017-10-02 10:59:50 UTC</createdTime>
-<generatorID>0B2D0265-4C6F-0408-8886-02BB9BFEFCCB</generatorID>
+<createdTime>2017-10-02 17:30:56 UTC</createdTime>
+<generatorID>A1995C94-3A8A-9484-FB84-F5ED8F162B59</generatorID>
 <ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
 <engineerTo>
 <item key="C0E14439-611B-8150-2954-42CD35B55255" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
-<referedAttribute>C743A8EA-8CB8-07A7-77D3-84CEC1285607</referedAttribute>
+<referedAttribute>7ADF4340-2A30-77E3-EBB5-86E4B856A9C6</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="turma_id" id="6A557E54-08A4-5005-F058-C14AEB79134E">
+<Attribute name="periodo_id" id="B36E3E70-B37A-9D11-C284-73E677FD9340">
 <createdBy>pauloh</createdBy>
-<createdTime>2017-10-02 17:31:05 UTC</createdTime>
-<generatorID>94A7521C-FC53-6D6C-2F12-EF2F4601EC8C</generatorID>
+<createdTime>2017-10-02 17:31:19 UTC</createdTime>
+<generatorID>756F1DEA-0EB5-B7AD-01BC-0F73C7B99793</generatorID>
 <ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
 <engineerTo>
 <item key="C0E14439-611B-8150-2954-42CD35B55255" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
-<referedAttribute>14D5CCA4-0DAE-5B5D-4812-D5E1939BD33D</referedAttribute>
+<referedAttribute>AFEAFF5F-CD93-6D3C-C7D2-0701499362E0</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
@@ -72,16 +71,16 @@
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
-<identifier id="3BD0E171-F3D9-A6C8-9E4E-106B6F188820" name="Aluno PK">
+<identifier id="520DBC38-FE4E-B2BA-FA3B-6B8B586EFD6B" name="TURMA PK">
 <createdBy>pauloh</createdBy>
-<createdTime>2017-10-02 10:53:22 UTC</createdTime>
+<createdTime>2017-10-02 17:30:30 UTC</createdTime>
 <ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
 <engineerTo>
 <item key="C0E14439-611B-8150-2954-42CD35B55255" value="true"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>
-<attributeRef>F5692839-6692-0902-6450-44520F315C07</attributeRef>
+<attributeRef>14D5CCA4-0DAE-5B5D-4812-D5E1939BD33D</attributeRef>
 </usedAttributes>
 </identifier>
 </identifiers>

@@ -1,0 +1,59 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="14B6B2B9-5B12-5B82-E8CE-97C9891653D9" name="FOGUETE">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-02 17:34:54 UTC</createdTime>
+<generatorID>AC3389E8-ED12-B5C1-DFC6-07427BBDA577</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="foguete_id" id="2C3BC389-40A2-088D-D105-91A1C032114D">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-02 17:34:54 UTC</createdTime>
+<generatorID>0FF17287-4C43-0D99-2332-81F71B6D2378</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="peso" id="5C5DE34D-DD1E-39DC-D3FB-275C0C8EA6B0">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-02 17:34:54 UTC</createdTime>
+<generatorID>349CA33D-FA62-BB57-5E54-3210AC601EDA</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="tamanho" id="EB026A1E-3B92-7EFA-B40D-D4CED9404CF4">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-02 17:34:54 UTC</createdTime>
+<generatorID>65C95534-2725-6A62-CC99-DAE42C94B58C</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="E03BE11A-8319-55EA-E333-E4C57565560E" name="FOGUETE_PK">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-02 17:34:54 UTC</createdTime>
+<generatorID>5870C20D-F212-9023-281F-0EE57CC33B0D</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2C3BC389-40A2-088D-D105-91A1C032114D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

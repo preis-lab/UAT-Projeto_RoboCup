@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="45923AF6-F644-B036-D679-478F69C63B7C" containerWithKeyObject="E7B2246F-AB65-6329-436D-EC1A76E7AB56" localFKIndex="F9F5F4AE-19AA-0871-E787-D06AB6DD9A2F" name="ALUNO_TURMA_FK">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-02 17:34:54 UTC</createdTime>
+<generatorID>94A7521C-FC53-6D6C-2F12-EF2F4601EC8C</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<referredTableLongName>TURMA</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>A539D370-CFD5-7BEB-E41C-BD7C79FE37A0</referredTableID>
+<keyObject>5537F87A-B54C-19D6-5FA5-6CA2F77432F9</keyObject>
+<referredKeyID>5537F87A-B54C-19D6-5FA5-6CA2F77432F9</referredKeyID>
+<mandatory>false</mandatory>
+<refColNames>turma_id</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

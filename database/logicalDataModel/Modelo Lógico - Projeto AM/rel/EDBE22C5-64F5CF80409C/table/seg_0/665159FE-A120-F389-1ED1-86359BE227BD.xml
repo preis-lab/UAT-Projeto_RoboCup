@@ -1,0 +1,49 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="665159FE-A120-F389-1ED1-86359BE227BD" name="TIPO_LOGRADOURO">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-02 17:34:54 UTC</createdTime>
+<generatorID>3908E616-E37F-859D-7A91-35BF167BFAD5</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="tipo_id" id="0F3CF715-643F-08D5-F593-58639CECA770">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-02 17:34:54 UTC</createdTime>
+<generatorID>5791303B-153C-1DDF-ECBE-DA5A9183F85E</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="descricao" id="E633CEB0-0306-C332-F1EB-EE7372554C67">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-02 17:34:54 UTC</createdTime>
+<generatorID>BACB6D36-42C9-E775-7263-2024FE7B529A</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="0379CF81-DB83-661D-BCF4-BD23AFD167D9" name="TIPO_LOGRADOURO_PK">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-02 17:34:54 UTC</createdTime>
+<generatorID>20052150-460B-7BB0-1BDC-94103EB2F9A0</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0F3CF715-643F-08D5-F593-58639CECA770"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="A1EF2D3C-85B2-0AB0-5406-8646CF454E28" containerWithKeyObject="D3D7EBCF-D9BF-3D9F-83D5-BD910F4C76BC" localFKIndex="BAA4EBB5-AC06-F25B-6FA5-0368BB12A9E0" name="LOGRADOURO_ENDERECO_FK">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-02 17:34:54 UTC</createdTime>
+<generatorID>552B4BC8-3FB1-B4FA-322A-C986AC81B04B</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<referredTableLongName>ENDERECO</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>ECCDE68E-CA53-8C5C-44DC-287F5738A8B7</referredTableID>
+<keyObject>412653B4-D575-477A-39B8-855EC040D79F</keyObject>
+<referredKeyID>412653B4-D575-477A-39B8-855EC040D79F</referredKeyID>
+<mandatory>false</mandatory>
+<refColNames>endereco_id</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

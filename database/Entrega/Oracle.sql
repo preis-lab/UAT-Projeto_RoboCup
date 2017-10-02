@@ -1,9 +1,10 @@
 
+
 CREATE TABLE aluno (
     rm                 INTEGER NOT NULL,
     nome               VARCHAR2(30) NOT NULL,
-    turma_turma_id     INTEGER,
-    equipe_equipe_id   INTEGER
+    equipe_equipe_id   INTEGER,
+    turma_turma_id     INTEGER
 );
 
 ALTER TABLE aluno ADD CONSTRAINT aluno_pk PRIMARY KEY ( rm );
@@ -114,10 +115,11 @@ ALTER TABLE tipo_logradouro ADD CONSTRAINT tipo_logradouro_pk PRIMARY KEY ( tipo
 
 CREATE TABLE turma (
     turma_id                   INTEGER NOT NULL,
-    nome                       VARCHAR2(30) NOT NULL,
+    nome                       VARCHAR2 
+--  ERROR: VARCHAR2 size not specified 
+     NOT NULL,
     competicao_competicao_id   INTEGER,
-    periodo_periodo_id         INTEGER,
-    turma_id1                  INTEGER NOT NULL
+    periodo_periodo_id         INTEGER
 );
 
 ALTER TABLE turma ADD CONSTRAINT turma_pk PRIMARY KEY ( turma_id );
