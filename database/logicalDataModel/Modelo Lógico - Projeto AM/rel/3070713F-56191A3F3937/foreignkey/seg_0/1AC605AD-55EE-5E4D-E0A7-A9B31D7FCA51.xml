@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="1AC605AD-55EE-5E4D-E0A7-A9B31D7FCA51" containerWithKeyObject="9FE6D750-71AB-3A9C-2E3E-CD4393E2A22B" localFKIndex="6DE9A7BC-5E7C-3AB2-B744-E0460BAD13E4" name="COMPETICAO_LOGRADOURO_FK">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-02 18:39:21 UTC</createdTime>
+<generatorID>BF55099C-5ED4-1454-30F4-310254BAC874</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<referredTableLongName>LOGRADOURO</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>37E101D2-9877-56BC-90F3-7CD36EF65530</referredTableID>
+<keyObject>C9DEC436-6F22-9BB1-E6AC-1DCB5FAE3593</keyObject>
+<referredKeyID>C9DEC436-6F22-9BB1-E6AC-1DCB5FAE3593</referredKeyID>
+<mandatory>false</mandatory>
+<refColNames>logradouro_id</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

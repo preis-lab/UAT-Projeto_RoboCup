@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="CA64C684-6BED-59A8-3137-4651451BA00C" containerWithKeyObject="F0AB96F1-DC93-E8AD-3003-754A573CD0A0" localFKIndex="63A10F87-B7AA-2CA0-C420-12EEB00EB956" name="LANCAMENTO_EQUIPE_FK">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-02 18:39:21 UTC</createdTime>
+<generatorID>C94D1CDD-967A-FD2D-2536-EA5AE4274869</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<referredTableLongName>EQUIPE</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>1C79A25A-90D2-9AFE-7D22-54DCB8431733</referredTableID>
+<keyObject>C0F8B530-89B6-F87B-699C-83FA10656B59</keyObject>
+<referredKeyID>C0F8B530-89B6-F87B-699C-83FA10656B59</referredKeyID>
+<mandatory>false</mandatory>
+<refColNames>equipe_id</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>
