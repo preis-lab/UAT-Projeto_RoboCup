@@ -1,0 +1,103 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="81D47B0B-7CB7-0AF6-2A43-66D922AD6DCA" name="TURMA">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-03 14:24:56 UTC</createdTime>
+<generatorID>0AA2C436-3761-09A1-C584-18B247BB245E</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="turma_id" id="4BA58B0A-145F-6852-5F6E-F447202CA811">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-03 14:24:56 UTC</createdTime>
+<generatorID>14D5CCA4-0DAE-5B5D-4812-D5E1939BD33D</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nome" id="8939812C-1818-272F-AF22-FD870D691955">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-03 14:24:56 UTC</createdTime>
+<generatorID>5C3D7110-8F48-DBE6-E6F5-4D8D8351DA53</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="COMPETICAO_competicao_id" id="97D3EFAB-B9B0-2956-8A83-720E99CB7986">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-03 14:24:56 UTC</createdTime>
+<generatorID>D9002ECF-5C1B-964F-3E63-6EC56534FD07</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="C947899F-4EA7-59DB-E652-43E50B3B665B" referredColumn="011F2052-2E49-D3CE-3C11-DE74641BCE08"/>
+</associations>
+</Column>
+<Column name="PERIODO_periodo_id" id="2753C686-88EE-AC92-6A1A-FA01D5F4921B">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-03 14:24:56 UTC</createdTime>
+<generatorID>B36E3E70-B37A-9D11-C284-73E677FD9340</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="8FB4550F-9D70-DBAB-0559-68C7489A92C2" referredColumn="C8E0D2AF-FA5C-D687-ABF6-06BE3D5F38DE"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="31DB7CD1-FAA8-9733-C083-CCB2EE4A3956" name="TURMA_PK">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-03 14:24:56 UTC</createdTime>
+<generatorID>520DBC38-FE4E-B2BA-FA3B-6B8B586EFD6B</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4BA58B0A-145F-6852-5F6E-F447202CA811"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="AD9F0544-4A75-801C-0CDE-87AF33308D53" name="TURMA_COMPETICAO_FK">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-03 14:24:56 UTC</createdTime>
+<generatorID>A1995C94-3A8A-9484-FB84-F5ED8F162B59</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="97D3EFAB-B9B0-2956-8A83-720E99CB7986"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="3401346B-091D-E9E1-DDF8-1AB02CC0F876" name="TURMA_PERIODO_FK">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-03 14:24:56 UTC</createdTime>
+<generatorID>756F1DEA-0EB5-B7AD-01BC-0F73C7B99793</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2753C686-88EE-AC92-6A1A-FA01D5F4921B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

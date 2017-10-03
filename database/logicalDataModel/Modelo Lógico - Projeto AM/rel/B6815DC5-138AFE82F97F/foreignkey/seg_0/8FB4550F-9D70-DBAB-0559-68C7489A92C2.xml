@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="8FB4550F-9D70-DBAB-0559-68C7489A92C2" containerWithKeyObject="81D47B0B-7CB7-0AF6-2A43-66D922AD6DCA" localFKIndex="3401346B-091D-E9E1-DDF8-1AB02CC0F876" name="TURMA_PERIODO_FK">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-03 14:24:56 UTC</createdTime>
+<generatorID>756F1DEA-0EB5-B7AD-01BC-0F73C7B99793</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<referredTableLongName>PERIODO</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>972BD344-5DFE-839E-7EAC-196B267ECB69</referredTableID>
+<keyObject>2A13DF86-70AD-CA31-5333-D7E348BB3614</keyObject>
+<referredKeyID>2A13DF86-70AD-CA31-5333-D7E348BB3614</referredKeyID>
+<mandatory>false</mandatory>
+<refColNames>periodo_id</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

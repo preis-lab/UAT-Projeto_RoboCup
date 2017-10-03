@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="FA8245C8-106E-C9BD-1332-F17AFCE98E99" containerWithKeyObject="9640C5B0-A173-9250-6A3F-8CE67F5BEC0A" localFKIndex="1811B3A0-78B6-CFA0-09F4-8C85FB41F29F" name="LANCAMENTO_FOGUETE_FK">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-03 14:24:56 UTC</createdTime>
+<generatorID>339D5AF3-DFD8-3835-C772-DA3C4408B6DD</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<referredTableLongName>FOGUETE</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>A2A7638D-57D6-5185-7D08-216A6718F01D</referredTableID>
+<keyObject>6651FCD1-C591-6481-0999-50F26F67A6DD</keyObject>
+<referredKeyID>6651FCD1-C591-6481-0999-50F26F67A6DD</referredKeyID>
+<mandatory>false</mandatory>
+<refColNames>foguete_id</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

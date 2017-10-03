@@ -1,0 +1,51 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="5B9AEDDF-E841-3276-C424-638E9BA6F2D9" name="ADMINISTRADOR">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-03 14:24:56 UTC</createdTime>
+<generatorID>7922C7E7-0AFA-89A6-74B6-E51610CE10A8</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="usuario_id" id="7804DC19-3997-3B0B-DFAA-D478A911DC39">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-03 14:24:56 UTC</createdTime>
+<generatorID>C41B70EE-F404-812C-F513-707749E4F3C9</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="1C334CBB-60C4-5614-26F1-C9F882A56976" referredColumn="3E522FC3-148B-ADC1-79CB-8770EA0DB83E"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="426814F0-1482-82DC-45A8-F6640F573766" name="ADMINISTRADOR_PK">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-03 14:24:56 UTC</createdTime>
+<generatorID>BFF13EBF-831B-ACC6-9C69-18AE5B690ADF</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7804DC19-3997-3B0B-DFAA-D478A911DC39"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F5603CA4-6BC7-2E41-F6BC-991B17294762" name="ADMINISTRADOR_USUARIO_FK">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-03 14:24:56 UTC</createdTime>
+<generatorID>FFD64C37-5B87-FF87-A10B-10E0019223DD</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7804DC19-3997-3B0B-DFAA-D478A911DC39"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

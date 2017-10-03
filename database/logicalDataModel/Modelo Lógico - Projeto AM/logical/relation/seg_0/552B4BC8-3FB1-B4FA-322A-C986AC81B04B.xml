@@ -4,15 +4,16 @@
 <createdTime>2017-10-02 14:06:19 UTC</createdTime>
 <ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
 <engineerTo>
-<item key="184329CB-C3CD-A26F-B112-1D6D79F18481" value="true"/>
+<item key="B6815DC5-1A1B-D69C-7069-138AFE82F97F" value="true"/>
 </engineerTo>
 <sourcePk>859F3A27-F8E5-B30A-099F-AD2F222F9B26</sourcePk>
+<targetPk>185B3198-5B98-F2DA-1D66-067D69EBBB63</targetPk>
 <identifying>false</identifying>
-<optionalSource>false</optionalSource>
-<optionalTarget>true</optionalTarget>
-<sourceCardinality>1</sourceCardinality>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>*</sourceCardinality>
 <sourceEntity>26A83FEC-0E0D-EADF-4E26-6365F5CA6C97</sourceEntity>
-<targetCardinalityString>*</targetCardinalityString>
+<targetCardinalityString>1</targetCardinalityString>
 <targetEntity>DBA6D8E5-9D69-0C5E-42BF-5707334609FB</targetEntity>
 <transferable>true</transferable>
 <deleteRule>NO ACTION</deleteRule>

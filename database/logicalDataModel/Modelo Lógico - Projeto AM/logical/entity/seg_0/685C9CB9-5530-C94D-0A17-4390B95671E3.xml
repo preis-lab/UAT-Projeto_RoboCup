@@ -4,7 +4,7 @@
 <createdTime>2017-10-02 10:53:05 UTC</createdTime>
 <ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
 <engineerTo>
-<item key="3070713F-8ABD-F1A5-893C-56191A3F3937" value="true"/>
+<item key="97ED0550-657E-A883-3A96-531D23257F51" value="true"/>
 </engineerTo>
 <adequatelyNormalized>NO</adequatelyNormalized>
 <expectedVolumes>0</expectedVolumes>
@@ -22,25 +22,10 @@
 <generatorID>0B2D0265-4C6F-0408-8886-02BB9BFEFCCB</generatorID>
 <ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
 <engineerTo>
-<item key="3070713F-8ABD-F1A5-893C-56191A3F3937" value="true"/>
+<item key="97ED0550-657E-A883-3A96-531D23257F51" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
 <referedAttribute>C743A8EA-8CB8-07A7-77D3-84CEC1285607</referedAttribute>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="turma_id" id="5FA4A099-D4C0-EA4B-8634-D4FCD81E2A16">
-<createdBy>pauloh</createdBy>
-<createdTime>2017-10-02 18:13:02 UTC</createdTime>
-<generatorID>A9445051-C147-DB63-EC96-F1B2815645AC</generatorID>
-<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
-<engineerTo>
-<item key="3070713F-8ABD-F1A5-893C-56191A3F3937" value="true"/>
-</engineerTo>
-<nullsAllowed>true</nullsAllowed>
-<referedAttribute>97311A0C-F456-B010-9102-A5197E3CA1B6</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>

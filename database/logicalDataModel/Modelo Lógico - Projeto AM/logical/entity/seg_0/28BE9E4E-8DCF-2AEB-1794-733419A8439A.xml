@@ -3,8 +3,9 @@
 <createdBy>pauloh</createdBy>
 <createdTime>2017-10-02 10:55:05 UTC</createdTime>
 <ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="3070713F-8ABD-F1A5-893C-56191A3F3937" value="true"/>
+<item key="97ED0550-657E-A883-3A96-531D23257F51" value="false"/>
 </engineerTo>
 <adequatelyNormalized>NO</adequatelyNormalized>
 <expectedVolumes>0</expectedVolumes>
@@ -19,8 +20,9 @@
 <createdBy>pauloh</createdBy>
 <createdTime>2017-10-02 10:55:11 UTC</createdTime>
 <ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="3070713F-8ABD-F1A5-893C-56191A3F3937" value="true"/>
+<item key="97ED0550-657E-A883-3A96-531D23257F51" value="false"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -31,8 +33,9 @@
 <createdBy>pauloh</createdBy>
 <createdTime>2017-10-02 10:55:24 UTC</createdTime>
 <ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="3070713F-8ABD-F1A5-893C-56191A3F3937" value="true"/>
+<item key="97ED0550-657E-A883-3A96-531D23257F51" value="false"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -44,8 +47,9 @@
 <createdBy>pauloh</createdBy>
 <createdTime>2017-10-02 10:55:47 UTC</createdTime>
 <ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="3070713F-8ABD-F1A5-893C-56191A3F3937" value="true"/>
+<item key="97ED0550-657E-A883-3A96-531D23257F51" value="false"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -53,16 +57,16 @@
 <dataTypeSize>1</dataTypeSize>
 <ownDataTypeParameters>1,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="turma_id" id="C0A6B94A-13F6-5D0B-5C3E-F347A1A2DEFF">
+<Attribute name="turma_id" id="39149307-8528-16E1-F8D5-EF93CC5B3B6E">
 <createdBy>pauloh</createdBy>
-<createdTime>2017-10-02 18:12:44 UTC</createdTime>
-<generatorID>E0ABCACE-BE78-CE75-EC81-814214BF8BA9</generatorID>
+<createdTime>2017-10-02 17:31:41 UTC</createdTime>
+<generatorID>EA996EA3-62CA-5E59-135E-BF5F4B772A6F</generatorID>
 <ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
 <engineerTo>
-<item key="3070713F-8ABD-F1A5-893C-56191A3F3937" value="true"/>
+<item key="97ED0550-657E-A883-3A96-531D23257F51" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
-<referedAttribute>97311A0C-F456-B010-9102-A5197E3CA1B6</referedAttribute>
+<referedAttribute>14D5CCA4-0DAE-5B5D-4812-D5E1939BD33D</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
@@ -74,8 +78,9 @@
 <createdBy>pauloh</createdBy>
 <createdTime>2017-10-02 10:55:23 UTC</createdTime>
 <ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="3070713F-8ABD-F1A5-893C-56191A3F3937" value="true"/>
+<item key="97ED0550-657E-A883-3A96-531D23257F51" value="false"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>
