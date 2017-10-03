@@ -2,11 +2,11 @@
 
 import os
 
-lista = open('bairrosSP.txt','r')
+lista = open('tipoLogradouro.txt','r')
 linha = ''
 i =0
-while(i<1734):
+while(i<45):
     linha = lista.readline()
-    sql = "INSERT INTO bairro(\`bairro_id\`, \`nome\`,\`cidade_cidade_id\`) VALUES (NULL,\'"+linha+"\',565);"
+    sql = "INSERT INTO ""\`logradouro\`(\`logradouro_id\`, \`tipo\`) VALUES (NULL,'"+linha+"');"
     os.system ("echo \""+sql+"\" >> carga.sql")
     i+=1

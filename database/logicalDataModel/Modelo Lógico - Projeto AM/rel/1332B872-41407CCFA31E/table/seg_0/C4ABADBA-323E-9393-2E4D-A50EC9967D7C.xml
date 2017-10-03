@@ -1,0 +1,88 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="C4ABADBA-323E-9393-2E4D-A50EC9967D7C" name="USUARIO">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-03 15:43:51 UTC</createdTime>
+<generatorID>C9492803-BDF9-CBE5-BB31-B6067E4B86DF</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="usuario_id" id="3DEB21E0-5BEC-3FF8-F20E-4E5173714222">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-03 15:43:51 UTC</createdTime>
+<generatorID>C41B70EE-F404-812C-F513-707749E4F3C9</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nome" id="AD20E430-CF14-65A1-5A2A-70FBA0EA9266">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-03 15:43:51 UTC</createdTime>
+<generatorID>8AB95ABA-901D-97E0-3FF1-14CE63C742E2</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="senha" id="96141082-1EB2-57B0-D8FC-766DE60F36F4">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-03 15:43:51 UTC</createdTime>
+<generatorID>C25402AF-F2B7-C40D-1411-ECA79181864C</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NIVEL_ACESSO_nivel_id" id="412E874C-CB7D-B455-FCFA-00DBD46BFB91">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-03 15:43:51 UTC</createdTime>
+<generatorID>748BD980-C8AC-34FE-0013-6AB2A32B36C4</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="9E4E4BB0-3A6F-F828-E891-C9EC3CF4DDFE" referredColumn="AAA63F13-28BF-F8DC-00FA-B29B3635A576"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="B6EBCB07-BC73-597B-8DFA-3F1EA37DF823" name="USUARIO_PK">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-03 15:43:51 UTC</createdTime>
+<generatorID>BFF13EBF-831B-ACC6-9C69-18AE5B690ADF</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3DEB21E0-5BEC-3FF8-F20E-4E5173714222"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C379D7DC-873D-CE99-7752-18A69DC37047" name="USUARIO_NIVEL_ACESSO_FK">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-03 15:43:51 UTC</createdTime>
+<generatorID>34F6FFA3-0C51-270E-5173-DD94D153E803</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="412E874C-CB7D-B455-FCFA-00DBD46BFB91"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

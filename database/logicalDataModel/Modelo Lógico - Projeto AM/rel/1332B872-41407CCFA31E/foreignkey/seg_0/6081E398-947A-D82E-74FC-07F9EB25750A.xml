@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="6081E398-947A-D82E-74FC-07F9EB25750A" containerWithKeyObject="D0036852-8DB1-A30F-30A0-8A7FC8DAC21A" localFKIndex="949C309D-3DD0-9601-0D14-F7014CE1DB8E" name="ENDERECO_RUA_FK">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-03 15:43:51 UTC</createdTime>
+<generatorID>8C5FD164-E42D-C140-7FC8-170C0EC0E92E</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<referredTableLongName>RUA</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>0F623D02-1094-0752-2802-E25B915CFEA8</referredTableID>
+<keyObject>A9B0F11A-9B31-7E2A-1007-A1BBD4F0C536</keyObject>
+<referredKeyID>A9B0F11A-9B31-7E2A-1007-A1BBD4F0C536</referredKeyID>
+<mandatory>false</mandatory>
+<refColNames>cep</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

@@ -1,7 +1,7 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="7C014296-A8E9-D63A-D41D-90CE5476509D" name="NIVEL_ACESSO">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="4366E3A6-9EE7-B1D5-F17F-43D2B1535DE4" name="RUA">
 <createdBy>pauloh</createdBy>
-<createdTime>2017-10-02 17:46:17 UTC</createdTime>
+<createdTime>2017-10-03 15:37:22 UTC</createdTime>
 <ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
 <engineerTo>
 <item key="B6815DC5-1A1B-D69C-7069-138AFE82F97F" value="true"/>
@@ -15,9 +15,9 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="nivel_id" id="64347EA3-D656-E93A-627F-E8CFEBEC2E00">
+<Attribute name="cep" id="D93C8504-ACFD-E059-F1A4-D3F7C89EB953">
 <createdBy>pauloh</createdBy>
-<createdTime>2017-10-02 17:46:24 UTC</createdTime>
+<createdTime>2017-10-03 15:37:28 UTC</createdTime>
 <ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
 <engineerTo>
 <item key="B6815DC5-1A1B-D69C-7069-138AFE82F97F" value="true"/>
@@ -27,9 +27,9 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="descricao" id="88476DF1-0486-C855-23E7-5ACED4EAAD98">
+<Attribute name="nome" id="2E404426-8B00-C197-B146-913CA2A1BC42">
 <createdBy>pauloh</createdBy>
-<createdTime>2017-10-02 17:46:32 UTC</createdTime>
+<createdTime>2017-10-03 15:38:14 UTC</createdTime>
 <ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
 <engineerTo>
 <item key="B6815DC5-1A1B-D69C-7069-138AFE82F97F" value="true"/>
@@ -37,21 +37,21 @@
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>30</dataTypeSize>
-<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
-<identifier id="79877822-B71A-3E54-497F-A44457BD3569" name="NIVEL_ACESSO PK">
+<identifier id="4CEE54EF-AB8E-E42E-7C3D-98FFA9B565A0" name="Rua PK">
 <createdBy>pauloh</createdBy>
-<createdTime>2017-10-02 17:46:39 UTC</createdTime>
+<createdTime>2017-10-03 15:40:03 UTC</createdTime>
 <ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
 <engineerTo>
 <item key="B6815DC5-1A1B-D69C-7069-138AFE82F97F" value="true"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>
-<attributeRef>64347EA3-D656-E93A-627F-E8CFEBEC2E00</attributeRef>
+<attributeRef>D93C8504-ACFD-E059-F1A4-D3F7C89EB953</attributeRef>
 </usedAttributes>
 </identifier>
 </identifiers>

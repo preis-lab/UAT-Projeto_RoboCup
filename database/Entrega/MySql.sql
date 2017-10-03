@@ -30,7 +30,6 @@ CREATE TABLE cidade (
 ALTER TABLE cidade ADD CONSTRAINT cidade_pk PRIMARY KEY ( cidade_id );
 ALTER TABLE cidade MODIFY COLUMN cidade_id INTEGER AUTO_INCREMENT;
 
-
 CREATE TABLE competicao (
     competicao_id          INTEGER NOT NULL,
     nome                   varchar(30) NOT NULL,
@@ -41,19 +40,16 @@ CREATE TABLE competicao (
 ALTER TABLE competicao ADD CONSTRAINT competicao_pk PRIMARY KEY ( competicao_id );
 ALTER TABLE competicao MODIFY COLUMN competicao_id INTEGER AUTO_INCREMENT;
 
-
 CREATE TABLE endereco (
     endereco_id                INTEGER NOT NULL,
-    cep                        varchar(8) NOT NULL,
-    nome_rua                   varchar(30) NOT NULL,
     numero                     INTEGER NOT NULL,
     bairro_bairro_id           INTEGER,
-    logradouro_logradouro_id   INTEGER
+    logradouro_logradouro_id   INTEGER,
+    rua_cep                    INTEGER
 );
 
 ALTER TABLE endereco ADD CONSTRAINT endereco_pk PRIMARY KEY ( endereco_id );
 ALTER TABLE endereco MODIFY COLUMN endereco_id INTEGER AUTO_INCREMENT;
-
 
 CREATE TABLE equipe (
     equipe_id        INTEGER NOT NULL,
@@ -65,7 +61,6 @@ CREATE TABLE equipe (
 ALTER TABLE equipe ADD CONSTRAINT equipe_pk PRIMARY KEY ( equipe_id );
 ALTER TABLE equipe MODIFY COLUMN equipe_id INTEGER AUTO_INCREMENT;
 
-
 CREATE TABLE estado (
     estado_id   INTEGER NOT NULL,
     nome        varchar(30) NOT NULL,
@@ -75,7 +70,6 @@ CREATE TABLE estado (
 ALTER TABLE estado ADD CONSTRAINT estado_pk PRIMARY KEY ( estado_id );
 ALTER TABLE estado MODIFY COLUMN estado_id INTEGER AUTO_INCREMENT;
 
-
 CREATE TABLE foguete (
     foguete_id   INTEGER NOT NULL,
     peso         FLOAT NOT NULL,
@@ -84,7 +78,6 @@ CREATE TABLE foguete (
 
 ALTER TABLE foguete ADD CONSTRAINT foguete_pk PRIMARY KEY ( foguete_id );
 ALTER TABLE foguete MODIFY COLUMN foguete_id INTEGER AUTO_INCREMENT;
-
 
 CREATE TABLE lancamento (
     lancamento_id             INTEGER NOT NULL,
@@ -107,7 +100,6 @@ CREATE TABLE lancamento (
 ALTER TABLE lancamento ADD CONSTRAINT lancamento_pk PRIMARY KEY ( lancamento_id );
 ALTER TABLE lancamento MODIFY COLUMN lancamento_id INTEGER AUTO_INCREMENT;
 
-
 CREATE TABLE logradouro (
     logradouro_id   INTEGER NOT NULL,
     tipo            varchar(30) NOT NULL
@@ -116,7 +108,6 @@ CREATE TABLE logradouro (
 ALTER TABLE logradouro ADD CONSTRAINT logradouro_pk PRIMARY KEY ( logradouro_id );
 ALTER TABLE logradouro MODIFY COLUMN logradouro_id INTEGER AUTO_INCREMENT;
 
-
 CREATE TABLE nivel_acesso (
     nivel_id    INTEGER NOT NULL,
     descricao   varchar(30) NOT NULL
@@ -124,7 +115,6 @@ CREATE TABLE nivel_acesso (
 
 ALTER TABLE nivel_acesso ADD CONSTRAINT nivel_acesso_pk PRIMARY KEY ( nivel_id );
 ALTER TABLE nivel_acesso MODIFY COLUMN nivel_id INTEGER AUTO_INCREMENT;
-
 
 CREATE TABLE periodo (
     periodo_id    INTEGER NOT NULL,
@@ -135,6 +125,13 @@ CREATE TABLE periodo (
 
 ALTER TABLE periodo ADD CONSTRAINT periodo_pk PRIMARY KEY ( periodo_id );
 ALTER TABLE periodo MODIFY COLUMN periodo_id INTEGER AUTO_INCREMENT;
+
+CREATE TABLE rua (
+    cep    INTEGER NOT NULL,
+    nome   varchar(50) NOT NULL
+);
+
+ALTER TABLE rua ADD CONSTRAINT rua_pk PRIMARY KEY ( cep );
 
 CREATE TABLE turma (
     turma_id                   INTEGER NOT NULL,
@@ -187,6 +184,10 @@ ALTER TABLE endereco
 ALTER TABLE endereco
     ADD CONSTRAINT endereco_logradouro_fk FOREIGN KEY ( logradouro_logradouro_id )
         REFERENCES logradouro ( logradouro_id );
+
+ALTER TABLE endereco
+    ADD CONSTRAINT endereco_rua_fk FOREIGN KEY ( rua_cep )
+        REFERENCES rua ( cep );
 
 ALTER TABLE equipe
     ADD CONSTRAINT equipe_turma_fk FOREIGN KEY ( turma_turma_id )

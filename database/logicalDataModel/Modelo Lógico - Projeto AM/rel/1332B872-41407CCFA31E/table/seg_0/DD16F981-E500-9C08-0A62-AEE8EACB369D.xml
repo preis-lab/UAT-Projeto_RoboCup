@@ -1,0 +1,78 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="DD16F981-E500-9C08-0A62-AEE8EACB369D" name="ALUNO">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-03 15:43:51 UTC</createdTime>
+<generatorID>685C9CB9-5530-C94D-0A17-4390B95671E3</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="usuario_id" id="C002D572-1C54-6738-1007-4B9E3F68C059">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-03 15:43:51 UTC</createdTime>
+<generatorID>C41B70EE-F404-812C-F513-707749E4F3C9</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="255B11D5-9437-0447-C300-D3030929CC76" referredColumn="3DEB21E0-5BEC-3FF8-F20E-4E5173714222"/>
+</associations>
+</Column>
+<Column name="EQUIPE_equipe_id" id="C0928580-0464-6221-2C75-B103541BBE7D">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-03 15:43:51 UTC</createdTime>
+<generatorID>A7405953-5311-B5AA-1896-EA7AAD6E7CBD</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F6968AC8-2C4F-4EAE-F87F-B8FF8897336B" referredColumn="529FB169-04BF-AA32-48D3-2760A07C6D0E"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="2642B7FB-A171-5B82-26B4-E2A8791E270D" name="ALUNO_PK">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-03 15:43:51 UTC</createdTime>
+<generatorID>BFF13EBF-831B-ACC6-9C69-18AE5B690ADF</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C002D572-1C54-6738-1007-4B9E3F68C059"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="6DFBED78-3265-4667-B78E-EE43452D4C96" name="ALUNO_USUARIO_FK">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-03 15:43:51 UTC</createdTime>
+<generatorID>F8D64AA2-E272-325F-0120-5D9DCB5147C8</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C002D572-1C54-6738-1007-4B9E3F68C059"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="08527C8E-A565-007D-7ACF-9E0DA74D304B" name="ALUNO_EQUIPE_FK">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-03 15:43:51 UTC</createdTime>
+<generatorID>0B2D0265-4C6F-0408-8886-02BB9BFEFCCB</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C0928580-0464-6221-2C75-B103541BBE7D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

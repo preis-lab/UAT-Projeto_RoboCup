@@ -1,0 +1,88 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="7891C435-C7FA-FFB0-D09B-4CA40E035FEE" name="EQUIPE">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-03 15:43:51 UTC</createdTime>
+<generatorID>28BE9E4E-8DCF-2AEB-1794-733419A8439A</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="equipe_id" id="529FB169-04BF-AA32-48D3-2760A07C6D0E">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-03 15:43:51 UTC</createdTime>
+<generatorID>C743A8EA-8CB8-07A7-77D3-84CEC1285607</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nome" id="8E843CC5-1169-D4D6-86B1-BD7D7C25616C">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-03 15:43:51 UTC</createdTime>
+<generatorID>AF07035E-008B-D567-8370-63DC8EFFEC76</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="classificado" id="E5D1D54C-71C6-833D-A6B4-6A0F41A8F559">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-03 15:43:51 UTC</createdTime>
+<generatorID>08720CAB-5E9C-3D0A-492F-1BF893FC34E1</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TURMA_turma_id" id="D44D308C-0B4A-BFFC-A7AA-B456066E387C">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-03 15:43:51 UTC</createdTime>
+<generatorID>39149307-8528-16E1-F8D5-EF93CC5B3B6E</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="3AEB6DE5-1138-F157-9953-B3C6FCA4E26C" referredColumn="92781B82-6ACF-867C-233E-32BB3136680A"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="16CD86B3-B98E-D667-9EC9-D56503B1B810" name="EQUIPE_PK">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-03 15:43:51 UTC</createdTime>
+<generatorID>F733FE49-B4D9-2115-352F-328AB206D28B</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="529FB169-04BF-AA32-48D3-2760A07C6D0E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="33898815-1CD9-13BB-8253-2DC2F5F64B2F" name="EQUIPE_TURMA_FK">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-03 15:43:51 UTC</createdTime>
+<generatorID>EA996EA3-62CA-5E59-135E-BF5F4B772A6F</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D44D308C-0B4A-BFFC-A7AA-B456066E387C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

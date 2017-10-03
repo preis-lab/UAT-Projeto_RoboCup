@@ -27,32 +27,6 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="cep" id="A42B6EC7-08FA-9835-1C00-C8E867A517D2">
-<createdBy>pauloh</createdBy>
-<createdTime>2017-10-02 11:56:52 UTC</createdTime>
-<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
-<engineerTo>
-<item key="B6815DC5-1A1B-D69C-7069-138AFE82F97F" value="true"/>
-</engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>8</dataTypeSize>
-<ownDataTypeParameters>8,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="nome_rua" id="E68F8865-7092-2449-EC4A-6032880D3782">
-<createdBy>pauloh</createdBy>
-<createdTime>2017-10-02 13:35:27 UTC</createdTime>
-<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
-<engineerTo>
-<item key="B6815DC5-1A1B-D69C-7069-138AFE82F97F" value="true"/>
-</engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>30</dataTypeSize>
-<ownDataTypeParameters>30,,</ownDataTypeParameters>
-</Attribute>
 <Attribute name="numero" id="C75C8875-6CCB-57E6-988B-0D005C084540">
 <createdBy>pauloh</createdBy>
 <createdTime>2017-10-02 14:05:57 UTC</createdTime>
@@ -90,6 +64,21 @@
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
 <referedAttribute>F4D62DCE-B48C-2743-4C7A-E3D4FB6C40AF</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="cep1" id="60881894-6B52-623F-7552-2AE441DA43AE">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-03 15:40:26 UTC</createdTime>
+<generatorID>8C5FD164-E42D-C140-7FC8-170C0EC0E92E</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<engineerTo>
+<item key="B6815DC5-1A1B-D69C-7069-138AFE82F97F" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>D93C8504-ACFD-E059-F1A4-D3F7C89EB953</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
