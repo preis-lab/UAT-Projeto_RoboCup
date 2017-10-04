@@ -1,0 +1,103 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="9FD4D51E-A216-1982-BA56-D486733E32E5" name="RUA">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-04 11:44:35 UTC</createdTime>
+<generatorID>4366E3A6-9EE7-B1D5-F17F-43D2B1535DE4</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="cep" id="37F06B1F-B5A3-AA20-D791-C672BA607F1B">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-04 11:44:35 UTC</createdTime>
+<generatorID>D93C8504-ACFD-E059-F1A4-D3F7C89EB953</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nome" id="330358E8-3641-C620-0B44-6D90A972E825">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-04 11:44:35 UTC</createdTime>
+<generatorID>2E404426-8B00-C197-B146-913CA2A1BC42</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="bairro_id" id="027FB60C-FEA1-DFC2-D43B-08EA5193CCCE">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-04 11:44:35 UTC</createdTime>
+<generatorID>D0B20216-CC51-E7DC-EC74-F1056A4CC92A</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="DEEFD8F4-1C38-B940-F0D6-2A621E401DA2" referredColumn="A6311806-B8F6-3747-902B-9144C748917C"/>
+</associations>
+</Column>
+<Column name="logradouro_id" id="D0015B08-B087-7B7C-65A5-8D4A70B73AA4">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-04 11:44:35 UTC</createdTime>
+<generatorID>3E9E973C-F373-D6FF-D706-C56AED342F57</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="BA0CEA60-E906-AE5B-9379-A3E769555C8C" referredColumn="6EE19EC2-017B-3F1A-7BEF-AEB1F62D914E"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="754E301B-83FF-ED16-F025-76ED3AF567D2" name="RUA_PK">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-04 11:44:35 UTC</createdTime>
+<generatorID>4CEE54EF-AB8E-E42E-7C3D-98FFA9B565A0</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="37F06B1F-B5A3-AA20-D791-C672BA607F1B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F12463BD-534A-C31C-DC6E-C92C8F01FDB8" name="RUA_BAIRRO_FK">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-04 11:44:35 UTC</createdTime>
+<generatorID>E06788E4-6AB8-B1E7-2E6B-02DFF5B30523</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="027FB60C-FEA1-DFC2-D43B-08EA5193CCCE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="111D3CB3-DEF7-E7F2-AF52-12952F6B2971" name="RUA_LOGRADOURO_FK">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-04 11:44:35 UTC</createdTime>
+<generatorID>6B18B8C2-F917-2A21-4DA8-266B9CB7163A</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D0015B08-B087-7B7C-65A5-8D4A70B73AA4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

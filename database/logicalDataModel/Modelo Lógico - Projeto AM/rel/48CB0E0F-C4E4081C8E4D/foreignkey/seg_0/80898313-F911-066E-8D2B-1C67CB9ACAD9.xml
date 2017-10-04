@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="80898313-F911-066E-8D2B-1C67CB9ACAD9" containerWithKeyObject="1B03782D-FA81-5022-AE0E-E170CCB80BDE" localFKIndex="C158A81A-09FB-AC9D-313B-4A7464BE89E7" name="USUARIO_NIVEL_ACESSO_FK">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-04 11:44:35 UTC</createdTime>
+<generatorID>A1E6A39C-B02B-E33A-B2F3-DB8B03870306</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<referredTableLongName>NIVEL_ACESSO</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>F22A55D2-8317-0E1C-8600-E35EE8EC15B3</referredTableID>
+<keyObject>479DF701-3525-77E5-F7A0-F912E304F6A3</keyObject>
+<referredKeyID>479DF701-3525-77E5-F7A0-F912E304F6A3</referredKeyID>
+<mandatory>false</mandatory>
+<refColNames>nivel_id</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

@@ -1,0 +1,64 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="E746E2CB-FEAA-0F40-AF8A-90DD113C8894" name="ENDERECO">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-04 11:44:35 UTC</createdTime>
+<generatorID>26A83FEC-0E0D-EADF-4E26-6365F5CA6C97</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="numero" id="CB859F3A-4A37-E221-F451-81926748D9E8">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-04 11:44:35 UTC</createdTime>
+<generatorID>C75C8875-6CCB-57E6-988B-0D005C084540</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cep" id="13A1D8B4-6936-8E83-5553-6E5EB01F5156">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-04 11:44:35 UTC</createdTime>
+<generatorID>F544711B-C566-821B-B101-C50EDA96C950</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="9BD09E9A-B7A3-B442-C1EB-D72B37F2996B" referredColumn="37F06B1F-B5A3-AA20-D791-C672BA607F1B"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="EE5E5E09-8E18-3522-2194-345094BA97A2" name="ENDERECO_PK">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-04 11:44:35 UTC</createdTime>
+<generatorID>859F3A27-F8E5-B30A-099F-AD2F222F9B26</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CB859F3A-4A37-E221-F451-81926748D9E8"/>
+<colUsage columnID="13A1D8B4-6936-8E83-5553-6E5EB01F5156"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="77DDBA2E-730B-B499-A609-CB329AB25B14" name="ENDERECO_RUA_FK">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-04 11:44:35 UTC</createdTime>
+<generatorID>97E4D0EB-0ED8-D46E-BA17-C3827E025111</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="13A1D8B4-6936-8E83-5553-6E5EB01F5156"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

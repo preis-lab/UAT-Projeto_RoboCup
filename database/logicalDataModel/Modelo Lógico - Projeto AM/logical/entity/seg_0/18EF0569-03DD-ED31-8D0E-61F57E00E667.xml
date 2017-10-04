@@ -4,7 +4,7 @@
 <createdTime>2017-10-02 10:37:13 UTC</createdTime>
 <ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
 <engineerTo>
-<item key="B6815DC5-1A1B-D69C-7069-138AFE82F97F" value="true"/>
+<item key="48CB0E0F-E73D-6B9E-46BC-C4E4081C8E4D" value="true"/>
 </engineerTo>
 <adequatelyNormalized>NO</adequatelyNormalized>
 <expectedVolumes>0</expectedVolumes>
@@ -20,52 +20,67 @@
 <createdTime>2017-10-02 10:37:29 UTC</createdTime>
 <ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
 <engineerTo>
-<item key="B6815DC5-1A1B-D69C-7069-138AFE82F97F" value="true"/>
+<item key="48CB0E0F-E73D-6B9E-46BC-C4E4081C8E4D" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="nome" id="7A0F3767-4D37-6D5C-208F-1EB08C63180B">
-<createdBy>pauloh</createdBy>
-<createdTime>2017-10-02 10:38:04 UTC</createdTime>
-<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
-<engineerTo>
-<item key="B6815DC5-1A1B-D69C-7069-138AFE82F97F" value="true"/>
-</engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>30</dataTypeSize>
-<ownDataTypeParameters>30,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="data" id="DD37C4DD-50FE-535A-8C5D-2507765E4A6A">
 <createdBy>pauloh</createdBy>
 <createdTime>2017-10-02 12:11:27 UTC</createdTime>
 <ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
 <engineerTo>
-<item key="B6815DC5-1A1B-D69C-7069-138AFE82F97F" value="true"/>
+<item key="48CB0E0F-E73D-6B9E-46BC-C4E4081C8E4D" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT007</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="endereco_id" id="D84CE466-D4C1-241D-CDBD-E6748EC823AE">
+<Attribute name="numero" id="917FF673-83FB-E202-3A41-1713AE97AD82">
 <createdBy>pauloh</createdBy>
-<createdTime>2017-10-03 14:24:18 UTC</createdTime>
+<createdTime>2017-10-04 10:08:38 UTC</createdTime>
 <generatorID>5CD2BBF5-CEE4-02FD-B530-ABDC460BA8F0</generatorID>
 <ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
 <engineerTo>
-<item key="B6815DC5-1A1B-D69C-7069-138AFE82F97F" value="true"/>
+<item key="48CB0E0F-E73D-6B9E-46BC-C4E4081C8E4D" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
-<referedAttribute>DE7F7E1A-9A6D-A8CB-E25A-B9A9AE65C655</referedAttribute>
+<referedAttribute>C75C8875-6CCB-57E6-988B-0D005C084540</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="tipo_competicao_id" id="351174F0-080F-912B-B11B-0E8201CD2AD1">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-04 11:38:30 UTC</createdTime>
+<generatorID>2F2A3E7E-603A-00C1-98DF-48BAE5345A1E</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<engineerTo>
+<item key="48CB0E0F-E73D-6B9E-46BC-C4E4081C8E4D" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>FB4FA946-2939-2B34-A69C-CF723FD1C926</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ativa" id="8F0FEE4A-2C4B-106B-C63B-B99EC8D129A9">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-04 11:38:41 UTC</createdTime>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<engineerTo>
+<item key="48CB0E0F-E73D-6B9E-46BC-C4E4081C8E4D" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
@@ -74,7 +89,7 @@
 <createdTime>2017-10-02 10:37:57 UTC</createdTime>
 <ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
 <engineerTo>
-<item key="B6815DC5-1A1B-D69C-7069-138AFE82F97F" value="true"/>
+<item key="48CB0E0F-E73D-6B9E-46BC-C4E4081C8E4D" value="true"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>

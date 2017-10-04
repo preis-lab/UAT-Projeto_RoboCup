@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="CB1AAED7-9C21-505F-026B-49756097180F" containerWithKeyObject="BD862A26-DB8E-6385-AB1E-02010E382165" localFKIndex="4018A904-568E-996F-59F1-9668861ACD27" name="TURMA_COMPETICAO_FK">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-04 11:44:35 UTC</createdTime>
+<generatorID>A1995C94-3A8A-9484-FB84-F5ED8F162B59</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<referredTableLongName>COMPETICAO</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>2400B571-1270-E493-E5B3-30D234E7F850</referredTableID>
+<keyObject>B25672D3-8AA3-8EDB-C0FB-A2A6BF2A5FDE</keyObject>
+<referredKeyID>B25672D3-8AA3-8EDB-C0FB-A2A6BF2A5FDE</referredKeyID>
+<mandatory>false</mandatory>
+<refColNames>competicao_id</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

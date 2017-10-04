@@ -1,0 +1,130 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="2400B571-1270-E493-E5B3-30D234E7F850" name="COMPETICAO">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-04 11:44:35 UTC</createdTime>
+<generatorID>18EF0569-03DD-ED31-8D0E-61F57E00E667</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="competicao_id" id="F9E97748-15A5-FE99-57B5-3C7A414D8441">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-04 11:44:35 UTC</createdTime>
+<generatorID>7ADF4340-2A30-77E3-EBB5-86E4B856A9C6</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="data" id="B9E723AF-43F1-1462-9E32-5A607AB0210E">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-04 11:44:35 UTC</createdTime>
+<generatorID>DD37C4DD-50FE-535A-8C5D-2507765E4A6A</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="numero" id="9545C2A5-65E5-E4FA-C30C-05238C1604C6">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-04 11:44:35 UTC</createdTime>
+<generatorID>917FF673-83FB-E202-3A41-1713AE97AD82</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="BF591C3B-C4C4-BA4A-4F5F-251F37A55B98" referredColumn="CB859F3A-4A37-E221-F451-81926748D9E8"/>
+</associations>
+</Column>
+<Column name="tipo_competicao_id" id="85105DD5-DC98-042E-BCE0-5F6959E88BDD">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-04 11:44:35 UTC</createdTime>
+<generatorID>351174F0-080F-912B-B11B-0E8201CD2AD1</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="3CC2F281-E402-C58A-A64B-F45381A38527" referredColumn="FAD797E2-54E3-2FE7-9EDE-838016660082"/>
+</associations>
+</Column>
+<Column name="ativa" id="C770AE3F-29D8-D569-85F9-580D8F161C55">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-04 11:44:35 UTC</createdTime>
+<generatorID>8F0FEE4A-2C4B-106B-C63B-B99EC8D129A9</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ENDERECO_cep" id="C71DD240-7468-DFAE-1E34-B65B4D3D3879">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-04 12:14:51 UTC</createdTime>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="BF591C3B-C4C4-BA4A-4F5F-251F37A55B98" referredColumn="13A1D8B4-6936-8E83-5553-6E5EB01F5156"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="B25672D3-8AA3-8EDB-C0FB-A2A6BF2A5FDE" name="COMPETICAO_PK">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-04 11:44:35 UTC</createdTime>
+<generatorID>D7B44E79-E3EF-A270-CEDD-3D2D6C6BFF1B</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F9E97748-15A5-FE99-57B5-3C7A414D8441"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="479780D3-FFF9-3328-928D-527BCE1FE20A" name="COMPETICAO_ENDERECO_FK">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-04 11:44:35 UTC</createdTime>
+<generatorID>5CD2BBF5-CEE4-02FD-B530-ABDC460BA8F0</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9545C2A5-65E5-E4FA-C30C-05238C1604C6"/>
+<colUsage columnID="C71DD240-7468-DFAE-1E34-B65B4D3D3879"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A73303A1-AFC4-4B9E-7F00-D17C08797B36" name="COMPETICAO_TIPO_COMPETICAO_FK">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-04 11:44:35 UTC</createdTime>
+<generatorID>2F2A3E7E-603A-00C1-98DF-48BAE5345A1E</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="85105DD5-DC98-042E-BCE0-5F6959E88BDD"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

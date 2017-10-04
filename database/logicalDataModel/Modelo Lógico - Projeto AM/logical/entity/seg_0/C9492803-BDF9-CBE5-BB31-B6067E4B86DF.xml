@@ -4,7 +4,7 @@
 <createdTime>2017-10-02 18:08:10 UTC</createdTime>
 <ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
 <engineerTo>
-<item key="B6815DC5-1A1B-D69C-7069-138AFE82F97F" value="true"/>
+<item key="1332B872-D7F2-3FA1-267D-41407CCFA31E" value="true"/>
 </engineerTo>
 <adequatelyNormalized>NO</adequatelyNormalized>
 <expectedVolumes>0</expectedVolumes>
@@ -20,7 +20,7 @@
 <createdTime>2017-10-02 18:08:15 UTC</createdTime>
 <ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
 <engineerTo>
-<item key="B6815DC5-1A1B-D69C-7069-138AFE82F97F" value="true"/>
+<item key="1332B872-D7F2-3FA1-267D-41407CCFA31E" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -32,7 +32,7 @@
 <createdTime>2017-10-02 18:08:37 UTC</createdTime>
 <ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
 <engineerTo>
-<item key="B6815DC5-1A1B-D69C-7069-138AFE82F97F" value="true"/>
+<item key="1332B872-D7F2-3FA1-267D-41407CCFA31E" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -45,7 +45,7 @@
 <createdTime>2017-10-02 18:08:49 UTC</createdTime>
 <ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
 <engineerTo>
-<item key="B6815DC5-1A1B-D69C-7069-138AFE82F97F" value="true"/>
+<item key="1332B872-D7F2-3FA1-267D-41407CCFA31E" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -53,46 +53,16 @@
 <dataTypeSize>30</dataTypeSize>
 <ownDataTypeParameters>30,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="nivel_id" id="4E6D567C-21A5-2585-AC98-5D265964E034">
+<Attribute name="nivel_id" id="04569C6B-00E5-5118-466E-3031CEFDE4AE">
 <createdBy>pauloh</createdBy>
-<createdTime>2017-10-02 18:17:16 UTC</createdTime>
-<generatorID>808DA319-7495-4E27-605E-E7ABD30929BF</generatorID>
+<createdTime>2017-10-04 10:08:04 UTC</createdTime>
+<generatorID>A1E6A39C-B02B-E33A-B2F3-DB8B03870306</generatorID>
 <ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
 <engineerTo>
-<item key="B6815DC5-1A1B-D69C-7069-138AFE82F97F" value="true"/>
+<item key="1332B872-D7F2-3FA1-267D-41407CCFA31E" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
-<referedAttribute>64347EA3-D656-E93A-627F-E8CFEBEC2E00</referedAttribute>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="nivel_id1" id="6C127788-4BF8-1B9F-C0F1-29C1102C3B67">
-<createdBy>pauloh</createdBy>
-<createdTime>2017-10-03 10:48:13 UTC</createdTime>
-<generatorID>C731ECDF-EA9B-29C9-92C0-49D4C45D62C0</generatorID>
-<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
-<engineerTo>
-<item key="B6815DC5-1A1B-D69C-7069-138AFE82F97F" value="true"/>
-</engineerTo>
-<nullsAllowed>true</nullsAllowed>
-<referedAttribute>64347EA3-D656-E93A-627F-E8CFEBEC2E00</referedAttribute>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="nivel_id2" id="748BD980-C8AC-34FE-0013-6AB2A32B36C4">
-<createdBy>pauloh</createdBy>
-<createdTime>2017-10-03 15:42:50 UTC</createdTime>
-<generatorID>34F6FFA3-0C51-270E-5173-DD94D153E803</generatorID>
-<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
-<engineerTo>
-<item key="B6815DC5-1A1B-D69C-7069-138AFE82F97F" value="true"/>
-</engineerTo>
-<nullsAllowed>true</nullsAllowed>
-<referedAttribute>64347EA3-D656-E93A-627F-E8CFEBEC2E00</referedAttribute>
+<referedAttribute>D91AAAA1-29BD-DEE4-E69C-D1D943B1F900</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
@@ -105,7 +75,7 @@
 <createdTime>2017-10-02 18:08:27 UTC</createdTime>
 <ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
 <engineerTo>
-<item key="B6815DC5-1A1B-D69C-7069-138AFE82F97F" value="true"/>
+<item key="1332B872-D7F2-3FA1-267D-41407CCFA31E" value="true"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>
