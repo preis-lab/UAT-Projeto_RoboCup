@@ -5,57 +5,54 @@ CREATE TABLE administrador (
 ALTER TABLE administrador ADD CONSTRAINT administrador_pk PRIMARY KEY ( usuario_id );
 
 CREATE TABLE aluno (
-    usuario_id         INTEGER NOT NULL,
-    equipe_equipe_id   INTEGER
+    usuario_id   INTEGER NOT NULL,
+    equipe_id    INTEGER
 );
 
 ALTER TABLE aluno ADD CONSTRAINT aluno_pk PRIMARY KEY ( usuario_id );
 
 CREATE TABLE bairro (
-    bairro_id          INTEGER NOT NULL,
-    nome               varchar(50) NOT NULL,
-    cidade_cidade_id   INTEGER
+    bairro_id   INTEGER NOT NULL,
+    nome        varchar(50) NOT NULL,
+    cidade_id   INTEGER
 );
 
 ALTER TABLE bairro ADD CONSTRAINT bairro_pk PRIMARY KEY ( bairro_id );
 ALTER TABLE bairro MODIFY COLUMN bairro_id INTEGER AUTO_INCREMENT;
 
-
 CREATE TABLE cidade (
-    cidade_id          INTEGER NOT NULL,
-    nome               varchar(30) NOT NULL,
-    estado_estado_id   INTEGER
+    cidade_id   INTEGER NOT NULL,
+    nome        varchar(30) NOT NULL,
+    estado_id   INTEGER
 );
 
 ALTER TABLE cidade ADD CONSTRAINT cidade_pk PRIMARY KEY ( cidade_id );
 ALTER TABLE cidade MODIFY COLUMN cidade_id INTEGER AUTO_INCREMENT;
 
 CREATE TABLE competicao (
-    competicao_id          INTEGER NOT NULL,
-    nome                   varchar(30) NOT NULL,
-    data                   DATE NOT NULL,
-    endereco_endereco_id   INTEGER
+    competicao_id        INTEGER NOT NULL,
+    data                 DATE NOT NULL,
+    numero               INTEGER,
+    tipo_competicao_id   INTEGER,
+    ativa                CHAR(1) NOT NULL,
+    cep                  INTEGER
 );
 
 ALTER TABLE competicao ADD CONSTRAINT competicao_pk PRIMARY KEY ( competicao_id );
 ALTER TABLE competicao MODIFY COLUMN competicao_id INTEGER AUTO_INCREMENT;
 
 CREATE TABLE endereco (
-    endereco_id                INTEGER NOT NULL,
-    numero                     INTEGER NOT NULL,
-    bairro_bairro_id           INTEGER,
-    logradouro_logradouro_id   INTEGER,
-    rua_cep                    INTEGER
+    numero   INTEGER NOT NULL,
+    cep      INTEGER NOT NULL
 );
 
-ALTER TABLE endereco ADD CONSTRAINT endereco_pk PRIMARY KEY ( endereco_id );
-ALTER TABLE endereco MODIFY COLUMN endereco_id INTEGER AUTO_INCREMENT;
+ALTER TABLE endereco ADD CONSTRAINT endereco_pk PRIMARY KEY ( numero,cep );
 
 CREATE TABLE equipe (
-    equipe_id        INTEGER NOT NULL,
-    nome             varchar(30) NOT NULL,
-    classificado     CHAR(1) NOT NULL,
-    turma_turma_id   INTEGER
+    equipe_id      INTEGER NOT NULL,
+    nome           varchar(30) NOT NULL,
+    classificado   CHAR(1) NOT NULL,
+    turma_id       INTEGER
 );
 
 ALTER TABLE equipe ADD CONSTRAINT equipe_pk PRIMARY KEY ( equipe_id );
@@ -93,8 +90,8 @@ CREATE TABLE lancamento (
     taxadescida               FLOAT NOT NULL,
     duracaovoo                DATE NOT NULL,
     distanciaentrequedaalvo   FLOAT NOT NULL,
-    equipe_equipe_id          INTEGER,
-    foguete_foguete_id        INTEGER
+    equipe_id                 INTEGER,
+    foguete_id                INTEGER
 );
 
 ALTER TABLE lancamento ADD CONSTRAINT lancamento_pk PRIMARY KEY ( lancamento_id );
@@ -127,38 +124,47 @@ ALTER TABLE periodo ADD CONSTRAINT periodo_pk PRIMARY KEY ( periodo_id );
 ALTER TABLE periodo MODIFY COLUMN periodo_id INTEGER AUTO_INCREMENT;
 
 CREATE TABLE rua (
-    cep    INTEGER NOT NULL,
-    nome   varchar(50) NOT NULL
+    cep             INTEGER NOT NULL,
+    nome            varchar(50) NOT NULL,
+    bairro_id       INTEGER,
+    logradouro_id   INTEGER
 );
 
 ALTER TABLE rua ADD CONSTRAINT rua_pk PRIMARY KEY ( cep );
 
+CREATE TABLE tipo_competicao (
+    tipo_competicao_id   INTEGER NOT NULL,
+    nome                 varchar(30) NOT NULL
+);
+
+ALTER TABLE tipo_competicao ADD CONSTRAINT tipo_competicao_pk PRIMARY KEY ( tipo_competicao_id );
+ALTER TABLE tipo_competicao MODIFY COLUMN tipo_competicao_id INTEGER AUTO_INCREMENT;
+
 CREATE TABLE turma (
-    turma_id                   INTEGER NOT NULL,
-    nome                       varchar(30) NOT NULL,
-    competicao_competicao_id   INTEGER,
-    periodo_periodo_id         INTEGER
+    turma_id        INTEGER NOT NULL,
+    nome            varchar(30) NOT NULL,
+    competicao_id   INTEGER,
+    periodo_id      INTEGER
 );
 
 ALTER TABLE turma ADD CONSTRAINT turma_pk PRIMARY KEY ( turma_id );
 ALTER TABLE turma MODIFY COLUMN turma_id INTEGER AUTO_INCREMENT;
 
 CREATE TABLE usuario (
-    usuario_id              INTEGER NOT NULL,
-    nome                    varchar(30) NOT NULL,
-    senha                   varchar(30) NOT NULL,
-    nivel_acesso_nivel_id   INTEGER
+    usuario_id   INTEGER NOT NULL,
+    nome         varchar(30) NOT NULL,
+    senha        varchar(30) NOT NULL,
+    nivel_id     INTEGER
 );
 
 ALTER TABLE usuario ADD CONSTRAINT usuario_pk PRIMARY KEY ( usuario_id );
-ALTER TABLE usuario MODIFY COLUMN usuario_id INTEGER AUTO_INCREMENT;
 
 ALTER TABLE administrador
     ADD CONSTRAINT administrador_usuario_fk FOREIGN KEY ( usuario_id )
         REFERENCES usuario ( usuario_id );
 
 ALTER TABLE aluno
-    ADD CONSTRAINT aluno_equipe_fk FOREIGN KEY ( equipe_equipe_id )
+    ADD CONSTRAINT aluno_equipe_fk FOREIGN KEY ( equipe_id )
         REFERENCES equipe ( equipe_id );
 
 ALTER TABLE aluno
@@ -166,49 +172,53 @@ ALTER TABLE aluno
         REFERENCES usuario ( usuario_id );
 
 ALTER TABLE bairro
-    ADD CONSTRAINT bairro_cidade_fk FOREIGN KEY ( cidade_cidade_id )
+    ADD CONSTRAINT bairro_cidade_fk FOREIGN KEY ( cidade_id )
         REFERENCES cidade ( cidade_id );
 
 ALTER TABLE cidade
-    ADD CONSTRAINT cidade_estado_fk FOREIGN KEY ( estado_estado_id )
+    ADD CONSTRAINT cidade_estado_fk FOREIGN KEY ( estado_id )
         REFERENCES estado ( estado_id );
 
 ALTER TABLE competicao
-    ADD CONSTRAINT competicao_endereco_fk FOREIGN KEY ( endereco_endereco_id )
-        REFERENCES endereco ( endereco_id );
+    ADD CONSTRAINT competicao_endereco_fk FOREIGN KEY ( numero,cep )
+        REFERENCES endereco ( numero,cep );
+
+ALTER TABLE competicao
+    ADD CONSTRAINT competicao_tipo_competicao_fk FOREIGN KEY ( tipo_competicao_id )
+        REFERENCES tipo_competicao ( tipo_competicao_id );
 
 ALTER TABLE endereco
-    ADD CONSTRAINT endereco_bairro_fk FOREIGN KEY ( bairro_bairro_id )
-        REFERENCES bairro ( bairro_id );
-
-ALTER TABLE endereco
-    ADD CONSTRAINT endereco_logradouro_fk FOREIGN KEY ( logradouro_logradouro_id )
-        REFERENCES logradouro ( logradouro_id );
-
-ALTER TABLE endereco
-    ADD CONSTRAINT endereco_rua_fk FOREIGN KEY ( rua_cep )
+    ADD CONSTRAINT endereco_rua_fk FOREIGN KEY ( cep )
         REFERENCES rua ( cep );
 
 ALTER TABLE equipe
-    ADD CONSTRAINT equipe_turma_fk FOREIGN KEY ( turma_turma_id )
+    ADD CONSTRAINT equipe_turma_fk FOREIGN KEY ( turma_id )
         REFERENCES turma ( turma_id );
 
 ALTER TABLE lancamento
-    ADD CONSTRAINT lancamento_equipe_fk FOREIGN KEY ( equipe_equipe_id )
+    ADD CONSTRAINT lancamento_equipe_fk FOREIGN KEY ( equipe_id )
         REFERENCES equipe ( equipe_id );
 
 ALTER TABLE lancamento
-    ADD CONSTRAINT lancamento_foguete_fk FOREIGN KEY ( foguete_foguete_id )
+    ADD CONSTRAINT lancamento_foguete_fk FOREIGN KEY ( foguete_id )
         REFERENCES foguete ( foguete_id );
 
+ALTER TABLE rua
+    ADD CONSTRAINT rua_bairro_fk FOREIGN KEY ( bairro_id )
+        REFERENCES bairro ( bairro_id );
+
+ALTER TABLE rua
+    ADD CONSTRAINT rua_logradouro_fk FOREIGN KEY ( logradouro_id )
+        REFERENCES logradouro ( logradouro_id );
+
 ALTER TABLE turma
-    ADD CONSTRAINT turma_competicao_fk FOREIGN KEY ( competicao_competicao_id )
+    ADD CONSTRAINT turma_competicao_fk FOREIGN KEY ( competicao_id )
         REFERENCES competicao ( competicao_id );
 
 ALTER TABLE turma
-    ADD CONSTRAINT turma_periodo_fk FOREIGN KEY ( periodo_periodo_id )
+    ADD CONSTRAINT turma_periodo_fk FOREIGN KEY ( periodo_id )
         REFERENCES periodo ( periodo_id );
 
 ALTER TABLE usuario
-    ADD CONSTRAINT usuario_nivel_acesso_fk FOREIGN KEY ( nivel_acesso_nivel_id )
+    ADD CONSTRAINT usuario_nivel_acesso_fk FOREIGN KEY ( nivel_id )
         REFERENCES nivel_acesso ( nivel_id );
