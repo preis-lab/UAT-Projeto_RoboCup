@@ -109,9 +109,14 @@ INSERT INTO `equipe` VALUES (null,'UAT',1,(SELECT turma_id FROM turma WHERE nome
 INSERT INTO `equipe` VALUES (null,'Fenomeno',1,(SELECT turma_id FROM turma WHERE nome = '2SIR'));
 INSERT INTO `equipe` VALUES (null,'Jacirando',1,(SELECT turma_id FROM turma WHERE nome = '2SIT'));
 
-INSERT INTO `aluno` VALUES (76729,(SELECT equipe_id FROM equipe WHERE nome = 'UAT'),'Paulo Henrique','1234',(SELECT nivel_id from nivel_acesso WHERE descricao = 'Aluno'));
-INSERT INTO `administrador` VALUES (00000,'root','12345',(SELECT nivel_id from nivel_acesso WHERE descricao = 'Administrador'));
-INSERT INTO `aluno` VALUES (76287,(SELECT equipe_id FROM equipe WHERE nome = 'UAT'),'Vitor','1234',(SELECT nivel_id from nivel_acesso WHERE descricao = 'Aluno'));
+INSERT INTO `usuario` VALUES (76729,'Paulo Henrique','1234',(SELECT nivel_id from nivel_acesso WHERE descricao = 'Aluno'));
+INSERT INTO `usuario` VALUES (00000,'root','12345',(SELECT nivel_id from nivel_acesso WHERE descricao = 'Administrador'));
+INSERT INTO `usuario` VALUES (76287,'Vitor','1234',(SELECT nivel_id from nivel_acesso WHERE descricao = 'Aluno'));
+
+INSERT INTO `aluno` VALUES (76729,(SELECT equipe_id FROM equipe WHERE nome = 'UAT'));
+INSERT INTO `aluno` VALUES (76287,(SELECT equipe_id FROM equipe WHERE nome = 'UAT'));
+
+INSERT INTO `administrador` VALUES (000000);
 
 INSERT INTO `foguete` VALUES (null,3,1);
 INSERT INTO `foguete` VALUES (null,6,2);

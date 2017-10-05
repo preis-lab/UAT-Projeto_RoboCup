@@ -1,17 +1,12 @@
 CREATE TABLE administrador (
-    usuario_id   INTEGER NOT NULL,
-    nome         varchar(30) NOT NULL,
-    senha        varchar(30) NOT NULL,
-    nivel_id     INTEGER
+    usuario_id   INTEGER NOT NULL
 );
+
 ALTER TABLE administrador ADD CONSTRAINT administrador_pk PRIMARY KEY ( usuario_id );
 
 CREATE TABLE aluno (
     usuario_id   INTEGER NOT NULL,
-    equipe_id    INTEGER,
-    nome         varchar(30) NOT NULL,
-    senha        varchar(30) NOT NULL,
-    nivel_id     INTEGER
+    equipe_id    INTEGER
 );
 
 ALTER TABLE aluno ADD CONSTRAINT aluno_pk PRIMARY KEY ( usuario_id );
@@ -155,17 +150,26 @@ CREATE TABLE turma (
 ALTER TABLE turma ADD CONSTRAINT turma_pk PRIMARY KEY ( turma_id );
 ALTER TABLE turma MODIFY COLUMN turma_id INTEGER AUTO_INCREMENT;
 
+CREATE TABLE usuario (
+    usuario_id   INTEGER NOT NULL,
+    nome         varchar(30) NOT NULL,
+    senha        varchar(30) NOT NULL,
+    nivel_id     INTEGER
+);
+
+ALTER TABLE usuario ADD CONSTRAINT usuario_pk PRIMARY KEY ( usuario_id );
+
 ALTER TABLE administrador
-    ADD CONSTRAINT administrador_nivel_acesso_fk FOREIGN KEY ( nivel_id )
-        REFERENCES nivel_acesso ( nivel_id );
+    ADD CONSTRAINT administrador_usuario_fk FOREIGN KEY ( usuario_id )
+        REFERENCES usuario ( usuario_id );
 
 ALTER TABLE aluno
     ADD CONSTRAINT aluno_equipe_fk FOREIGN KEY ( equipe_id )
         REFERENCES equipe ( equipe_id );
 
 ALTER TABLE aluno
-    ADD CONSTRAINT aluno_nivel_acesso_fk FOREIGN KEY ( nivel_id )
-        REFERENCES nivel_acesso ( nivel_id );
+    ADD CONSTRAINT aluno_usuario_fk FOREIGN KEY ( usuario_id )
+        REFERENCES usuario ( usuario_id );
 
 ALTER TABLE bairro
     ADD CONSTRAINT bairro_cidade_fk FOREIGN KEY ( cidade_id )
@@ -214,3 +218,7 @@ ALTER TABLE turma
 ALTER TABLE turma
     ADD CONSTRAINT turma_periodo_fk FOREIGN KEY ( periodo_id )
         REFERENCES periodo ( periodo_id );
+
+ALTER TABLE usuario
+    ADD CONSTRAINT usuario_nivel_acesso_fk FOREIGN KEY ( nivel_id )
+        REFERENCES nivel_acesso ( nivel_id );
