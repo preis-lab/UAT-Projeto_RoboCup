@@ -1,4 +1,4 @@
-public class Administrador {
+public class Aluno {
 
 	private int id;
 
@@ -6,7 +6,15 @@ public class Administrador {
 
 	private String senha;
 
-	public Administrador(int id, String nome, String senha) {
+	public Aluno(int id, String nome, String senha) {
+
+	}
+
+	public int getId() {
+		return 0;
+	}
+
+	public void setId(int id) {
 
 	}
 
@@ -24,14 +32,6 @@ public class Administrador {
 
 	public void setSenha(String senha) {
 
-	}
-
-	public int getId() {
-		return 0;
-	}
-
-	public int setId() {
-		return 0;
 	}
 
 }
