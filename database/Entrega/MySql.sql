@@ -193,7 +193,7 @@ ALTER TABLE equipe
 
 ALTER TABLE lancamento
     ADD CONSTRAINT lancamento_equipe_fk FOREIGN KEY ( equipe_id )
-        REFERENCES equipe ( equipe_id );
+        REFERENCES equipe ( equipe_id ) ON DELETE CASCADE;
 
 ALTER TABLE lancamento
     ADD CONSTRAINT lancamento_foguete_fk FOREIGN KEY ( foguete_id )
