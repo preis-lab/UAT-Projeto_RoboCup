@@ -20,8 +20,13 @@ WHERE c.data BETWEEN '2015-01-01' and '2017-12-31' and
     e.turma_id in (SELECT turma_id from turma where competicao_id in (c.competicao_id));
 
 --Questao 9
-SELECT `distanciadoalvo` as "Distancai do Alvo", `angulolancamento` as "Angulo lancamento", `velocidadevento` as "Velocidade Vento", `altitudemaxima` as "Altitude Maxima", `tempopropulsao` as "Tempo propulsão", `picoaceleracao`as "Pico Aceleracao", `aceleracaomedia` as "Aceleracao Media", `tempoapogeudescida` as "Tempo apogueu descida", `altitudeejecao` as "Altitude Ajecao", `taxadescida` as "Taxa Descida", `duracaovoo` as "Duracao Voo", `distanciaentrequedaalvo`as "Distancia entre queda e alvo"
+SELECT DISTINCT `distanciadoalvo` as "Distancai do Alvo", `angulolancamento` as "Angulo lancamento", `velocidadevento` as "Velocidade Vento", `altitudemaxima` as "Altitude Maxima", time(`tempopropulsao`) as "Tempo propulsão", `picoaceleracao`as "Pico Aceleracao", `aceleracaomedia` as "Aceleracao Media", time(`tempoapogeudescida`) as "Tempo apogueu descida", `altitudeejecao` as "Altitude Ajecao", `taxadescida` as "Taxa Descida",time( `duracaovoo`) as "Duracao Voo", `distanciaentrequedaalvo`as "Distancia entre queda e alvo"
 from lancamento as l ,equipe as e
-WHERE l.equipe_id in (SELECT turma_id from turma WHERE competicao_id in ((SELECT competicao_id from competicao WHERE year(data) = '2017'))) and e.nome = 'UAT'
+
+WHERE l.equipe_id = (SELECT equipe_id FROM equipe WHERE turma_id in (SELECT turma_id from turma WHERE competicao_id in
+  ((SELECT competicao_id from competicao WHERE year(data) = '2017'))) and nome = 'UAT')
 
 --Questao 10
+SELECT DISTINCT year(c.data) as "Ano do evento", count(l.lancamento_id) as "Quantidade lançamentos", max(l.altitudemaxima) as "Altitude Maxima", min(l.picoaceleracao) as "Menor velocidade maxima",TIME(AVG(duracaovoo)) as "Media duracao do voo"
+FROM competicao as c, lancamento as l
+GROUP by c.data;
