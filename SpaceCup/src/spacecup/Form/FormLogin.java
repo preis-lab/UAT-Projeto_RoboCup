@@ -155,7 +155,7 @@ public class FormLogin extends javax.swing.JFrame {
 
             if (usuario != null) {
                 this.dispose();
-                new FormLancamentosAluno().setVisible(true);
+                new FormLancamentos().setVisible(true);
             } else {
                 JOptionPane.showMessageDialog(this, "Login ou senha incorretos");
             }
