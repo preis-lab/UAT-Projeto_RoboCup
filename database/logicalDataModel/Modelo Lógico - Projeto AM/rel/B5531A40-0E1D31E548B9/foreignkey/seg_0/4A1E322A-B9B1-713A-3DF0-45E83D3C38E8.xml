@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="4A1E322A-B9B1-713A-3DF0-45E83D3C38E8" containerWithKeyObject="75A74ACD-31CB-E232-79CB-454D55A8A2CC" localFKIndex="573ECD2A-9B8B-48B0-8493-640703592EE5" name="COMPETICAO_ENDERECO_FK">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-13 11:54:40 UTC</createdTime>
+<generatorID>5CD2BBF5-CEE4-02FD-B530-ABDC460BA8F0</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<referredTableLongName>ENDERECO</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>F47FFE07-48C2-FC73-E13F-7E71C0F20E73</referredTableID>
+<keyObject>D9B2C8C7-C90B-D308-70D6-6B4A08D69B4A</keyObject>
+<referredKeyID>D9B2C8C7-C90B-D308-70D6-6B4A08D69B4A</referredKeyID>
+<mandatory>false</mandatory>
+<refColNames>numero,cep</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

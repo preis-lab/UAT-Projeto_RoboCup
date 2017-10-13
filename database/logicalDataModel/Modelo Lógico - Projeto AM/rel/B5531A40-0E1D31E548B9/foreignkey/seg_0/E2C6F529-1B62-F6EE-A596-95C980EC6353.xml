@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="E2C6F529-1B62-F6EE-A596-95C980EC6353" containerWithKeyObject="75A74ACD-31CB-E232-79CB-454D55A8A2CC" localFKIndex="E72EC457-982F-7565-E568-E86F6943D55D" name="COMPETICAO_TIPO_COMPETICAO_FK">
+<createdBy>pauloh</createdBy>
+<createdTime>2017-10-13 11:54:40 UTC</createdTime>
+<generatorID>2F2A3E7E-603A-00C1-98DF-48BAE5345A1E</generatorID>
+<ownerDesignName>Modelo Lógico - Projeto AM</ownerDesignName>
+<referredTableLongName>TIPO_COMPETICAO</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>3E6B8380-9255-9540-5D71-0B162CCD040F</referredTableID>
+<keyObject>82BC2B8C-9FAE-0B74-9CFA-8BEB03DDEFD9</keyObject>
+<referredKeyID>82BC2B8C-9FAE-0B74-9CFA-8BEB03DDEFD9</referredKeyID>
+<mandatory>false</mandatory>
+<refColNames>tipo_competicao_id</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>
