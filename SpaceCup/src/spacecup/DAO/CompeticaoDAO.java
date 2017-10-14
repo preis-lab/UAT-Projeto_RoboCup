@@ -43,14 +43,7 @@ public class CompeticaoDAO {
                     ativa = true;                    
                 } else {
                     ativa = false;
-                }
-                
-                System.out.println(rs.getInt(1));
-                System.out.println(rs.getDate(2));
-                System.out.println(rs.getInt(3));
-                System.out.println(rs.getInt(4));
-                System.out.println(rs.getInt(5));
-                System.out.println(rs.getString(6));
+                }         
                 
                 Competicao c = new Competicao();
                 c.setId(rs.getInt("competicao_id"));

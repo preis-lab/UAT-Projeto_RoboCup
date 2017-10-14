@@ -18,6 +18,10 @@ public class Lancamento {
     private Date duracaoVoo;
     private Date tempoPropulsao;
 
+    public Lancamento(){
+        
+    }
+    
     public Lancamento(int id, float distanciaDoAlvo, float anguloLancamento, float velocidadeVento, float altitudeMaxima, float altitudeEjecao, float picoAceleracao, float aceleracaoMedia, float taxaDescida, float distanciaEntreQuedaAlvo, Date tempoApogeuAescida, Date duracaoVoo, Date tempoPropulsao) {
         this.id = id;
         this.distanciaDoAlvo = distanciaDoAlvo;
