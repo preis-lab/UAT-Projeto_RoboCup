@@ -5,7 +5,9 @@
  */
 package spacecup.Form;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import javax.swing.table.DefaultTableModel;
 import spacecup.DAO.CompeticaoDAO;
 import spacecup.DAO.LancamentoDAO;
@@ -132,9 +134,10 @@ public class FormLancamentos extends javax.swing.JFrame {
     }//GEN-LAST:event_cbCompeticoesActionPerformed
 
     private void btnFiltrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFiltrarActionPerformed
-        String nome = cbCompeticoes.getItemAt(cbCompeticoes.getSelectedIndex());
-        String ano = cbAnoCompeticao.getItemAt(cbAnoCompeticao.getSelectedIndex());
-        List<Lancamento> lancamentos = new LancamentoDAO().getLancamentosByYear(nome, ano);
+        String nome = (String)cbCompeticoes.getSelectedItem();
+        String ano = (String)cbAnoCompeticao.getSelectedItem();
+        
+        List<Lancamento> lancamentos = new LancamentoDAO().getLancamentosByYear(nome, ano);             
         listar(lancamentos);
     }//GEN-LAST:event_btnFiltrarActionPerformed
 
@@ -145,8 +148,8 @@ public class FormLancamentos extends javax.swing.JFrame {
     private void listar(List<Lancamento> lancamentos) {
         DefaultTableModel model = (DefaultTableModel) jTable.getModel();
         clearList();
-
-        for (Lancamento l : lancamentos) {
+        
+        for (Lancamento l : lancamentos) {   
             model.addRow((Object[]) addLinha(l));
         }
     }
@@ -222,12 +225,19 @@ public class FormLancamentos extends javax.swing.JFrame {
     private javax.swing.JTable jTable;
     // End of variables declaration//GEN-END:variables
 
-    private void populaCompeticoes(List<Competicao> listaCompeticao) {        
-        for(Competicao c : listaCompeticao){
-            cbCompeticoes.addItem(c.getTipoCompeticao().getNome());            
+    /** Metodod para receber a lista de competicoes cadastradas no banco
+     * o <code>Set</code> é usado para não haver repetição de nomes no combobox
+     * @param <code>List<Competicao></code>
+     */
+    private void populaCompeticoes(List<Competicao> listaCompeticoes) {       
+        Set<String> display = new HashSet<String>();
+        for (Competicao c : listaCompeticoes) {
+            display.add(c.getTipoCompeticao().getNome());           
+        }
+        for (String s : display) {
+            cbCompeticoes.addItem(s);
         }
     }
-
     private void populaAnos(List<String> listaDatas) {      
        listaDatas = new CompeticaoDAO().getDatas((String)cbCompeticoes.getSelectedItem());       
        
