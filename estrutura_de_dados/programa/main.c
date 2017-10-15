@@ -2,36 +2,34 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "fila_INT.h"
-#include "pilha_INT.h"
-
-struct equipe_inscricao{
-    char nome[25];
-    int numero_componentes;
-
-    struct equipe_inscricao *prox;
-};
-typedef struct equipe_inscricao *Equipe;
-
-struct equipe_lancamento{
-    char nome[25];
-    int numero_componentes;
-    float distancia_alvo;
-    float altitude;
-
-    struct equipe_lancamento *prox;
-};
-typedef struct equipe_lancamento *Lancamento;
+#include "pilha_INSCRICAO.h"
 
 int main(){
+    tipopilha topo,novo;
 
-    Equipe fila_equipe;
-    Lancamento fila_lancamento;
+    topo = malloc(sizeof(tipopilha));
+    novo = malloc(sizeof(tipopilha));
 
-    do {
+    int op = 1;
+
+    INIT(&topo);
+    PUSH(&topo,"UAT",1);
+    printf("Nome da equipe: %s Qnt: %d\n",topo->nome, topo->n_componentes);
+
+    PUSH(&topo,"UAT",2);
+    printf("Nome da equipe: %s Qnt: %d\n",topo->nome, topo->n_componentes);
+
+    PUSH(&topo,"UAT",3);
+    printf("Nome da equipe: %s Qnt: %d\n",topo->nome, topo->n_componentes);
+
+    PUSH(&topo,"UAT",4);
+    printf("Nome da equipe: %s Qnt: %d\n",topo->nome, topo->n_componentes);
+
+    PUSH(&topo,"UAT",5);
+    printf("Nome da equipe: %s Qnt: %d\n",topo->nome, topo->n_componentes);
+
+    PUSH(&topo,"UAT",6);
+    printf("Nome da equipe: %s Qnt: %d\n",topo->nome, topo->n_componentes);
 
 
-
-
-    } while (1);
 }
