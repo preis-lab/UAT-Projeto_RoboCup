@@ -6,8 +6,6 @@ import java.sql.SQLException;
 
 public class Conexao {
 
-   
-
     private static final String DRIVER = "com.mysql.jdbc.Driver";
     private static final String URL = "jdbc:mysql://localhost:3306/SpaceCup?autoReconnect=true&useSSL=false";
     private static final String USUARIO = "root";

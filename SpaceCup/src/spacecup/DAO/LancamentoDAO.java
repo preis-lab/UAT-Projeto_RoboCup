@@ -51,12 +51,11 @@ public class LancamentoDAO {
         List<Lancamento> lista = null;
 
         con = new Conexao().getConnection();
-        sql = "SELECT * from lancamento where equipe_id in (SELECT equipe_id from equipe WHERE turma_id in (SELECT competicao_id from competicao WHERE tipo_competicao_id in (SELECT tipo_competicao_id FROM tipo_competicao WHERE nome = ?) and year(competicao.data) = ?))";
-
+        sql = "select * from lancamento where equipe_id in (select equipe_id from equipe where turma_id in (select turma_id from turma where competicao_id in (SELECT competicao_id from competicao WHERE year(competicao.data) = ? and tipo_competicao_id in (SELECT tipo_competicao_id from tipo_competicao where nome = ?))))";
         try {
             ps = con.prepareStatement(sql);
-            ps.setString(1, nome);
-            ps.setString(2, ano);
+            ps.setString(1, ano);
+            ps.setString(2, nome);
             rs = ps.executeQuery();
 
             lista = resposta(rs);
@@ -70,12 +69,13 @@ public class LancamentoDAO {
     }
 
     private List<Lancamento> resposta(ResultSet rs) {
-        List<Lancamento> lista=null;
-        Lancamento l = new Lancamento();
+        List<Lancamento> lista = new ArrayList<>();
+        Lancamento l = null;
 
         try {
             while (rs.next()) {
-                lista = new ArrayList<>();
+                l = new Lancamento();
+               
                 l.setId(rs.getInt("lancamento_id"));
                 l.setAceleracaoMedia(rs.getFloat("aceleracaoMedia"));
                 l.setAltitudeEjecao(rs.getFloat("altitudeEjecao"));
@@ -91,6 +91,7 @@ public class LancamentoDAO {
                 l.setVelocidadeVento(rs.getFloat("velocidadeVento"));
 
                 lista.add(l);
+
             }
         } catch (SQLException ex) {
             Logger.getLogger(LancamentoDAO.class.getName()).log(Level.SEVERE, null, ex);
