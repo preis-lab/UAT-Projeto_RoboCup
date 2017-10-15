@@ -1,10 +1,11 @@
 /* declaracao do no */
-	struct no { 
-		int dado;   //tipo do elemento da pilha
+	struct no {
+		char nome[30];
+		int n_componentes;
 		struct no *prox;
 	};
 
-/*Definição do tipo de dado pilha */ 
+/*Definição do tipo de dado pilha */
 	typedef struct no* tipopilha;
 
 void INIT (tipopilha *topo)
@@ -21,7 +22,7 @@ else
 }
 
 
-void PUSH (tipopilha *topo, int elem)
+void PUSH (tipopilha *topo, struct no elem)
 {
 tipopilha novo;
 novo = (tipopilha) malloc (sizeof(struct no));
@@ -35,7 +36,7 @@ else
 	printf("pilha cheia \n");
 }
 
-int POP (tipopilha *topo,int *elem)
+struct no POP (tipopilha *topo,struct no *elem)
 {
 tipopilha aux;
 aux = *topo;
@@ -52,7 +53,7 @@ else {
 }
 
 
-int TOP (tipopilha topo,int *elem)
+struct no TOP (tipopilha topo,struct no *elem)
 {
 if (!IsEmpty(topo))   {
      *elem= topo->dado;
