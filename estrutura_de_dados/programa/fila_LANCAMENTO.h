@@ -1,131 +1,87 @@
+#include <stdio.h>
 #include <stdlib.h>
 
+/* declaracao do no */
+struct lancamento { 
 
-
-struct no { 
-
-       int dado;
-
-       struct no *prox;
-
+		char nome[30];	
+       	int n_componentes;
+       	float distanciaDoAlvo;
+       	float altitude;
+       	struct no *prox;
 };
+/*Definição do tipo de dado fila */
+typedef struct lancamento* tipofila;
 
-
-
-typedef struct no* tipofila;
-
-
-
-void INIT (tipofila *inicio,tipofila *fim)
-
+/*Inicia a fila */
+void INITfila (tipofila *inicio,tipofila *fim)
 {
-
 *inicio=NULL;
-
 *fim=NULL;
-
 }
 
-
-
-void ENQUEUE(tipofila *inicio, tipofila *fim, int v)
-
+/*Insere o elemento no final da fila */
+void ENQUEUE(tipofila *inicio, tipofila *fim, char nome[30],int n_componentes, float distanciaDoAlvo, float altitude)
 {
-
 tipofila novo;
-
-novo=(tipofila) malloc (sizeof(struct no));
-
+novo=(tipofila) malloc (sizeof(struct lancamento));
 if (novo==NULL) 
-
    printf("Fila Cheia \n");
-
 else  {
-
-	 novo->dado=v;
-
+	 strcpy(novo->nome,nome);
+	 novo->n_componentes=n_componentes;
+	 novo->distanciaDoAlvo=distanciaDoAlvo;
+	 novo->altitude=altitude;
 	 novo->prox=NULL;
-
 	if (IsEmpty(*inicio,*fim)){
-
 	     *inicio = novo;
-
 	     }
-
 	else{
-
 	     (*fim)->prox= novo;
-
 	     }
-
         *fim=novo;
-
 	}
-
 }
 
-
+/*Verifica se a fila está vazia */
 
 int IsEmpty(tipofila ini, tipofila fim)
-
 {
-
 	if ( (ini == NULL) && (fim==NULL))
-
 		return 1;
-
 	else
-
 		return 0;
-
 }
 
-
-
-int FIRST(tipofila inicio, tipofila fim, int *v)
-
+/*Lê o elemento que está no inicio da fila e armazena na variável v */
+int FIRST(tipofila inicio, tipofila fim, struct no *elem)
 {
-
 	if(!IsEmpty(inicio,fim))	{	
-
-		*v = inicio->dado;
-
+		*elem = inicio->nome;
+		*elem = inicio->n_componentes;
+		*elem = inicio->distanciaDoAlvo;
+		*elem = inicio->altitude;
 		return 1;
-
 		}	
-
 	else
-
 		return 0;
-
 }		
 
-
-
-int DEQUEUE(tipofila *inicio, tipofila *fim, int *v)
-
+/*Remove o elemento do inicio da fila */
+int DEQUEUE(tipofila *inicio, tipofila *fim, struct no *elem)
 {
-
 	tipofila aux = *inicio;
-
 	if(!IsEmpty(*inicio,*fim))	{	
-
-		*v = (*inicio)->dado;
-
+		*elem = (*inicio)->nome;
+		*elem = (*inicio)->n_componentes;
+		*elem = (*inicio)->distanciaDoAlvo;
+		*elem = (*inicio)->altitude;
 		(*inicio) = (*inicio)->prox;
-
 		free (aux);
-
 		if (*inicio == NULL)
-
 			*fim = NULL;
-
 		return 1;
-
 		}	
-
 	else
-
 		return 0;
-
-}	
+}
