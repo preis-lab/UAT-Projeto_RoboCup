@@ -1,14 +1,10 @@
-#include <stdio.h>
-#include <stdlib.h>
-
 /* declaracao do no */
-struct lancamento { 
-
-		char nome[30];	
+struct lancamento {
+		char nome[30];
        	int n_componentes;
        	float distanciaDoAlvo;
        	float altitude;
-       	struct no *prox;
+       	struct lancamento *prox;
 };
 /*Definição do tipo de dado fila */
 typedef struct lancamento* tipofila;
@@ -23,9 +19,10 @@ void INITfila (tipofila *inicio,tipofila *fim)
 /*Insere o elemento no final da fila */
 void ENQUEUE(tipofila *inicio, tipofila *fim, char nome[30],int n_componentes, float distanciaDoAlvo, float altitude)
 {
+
 tipofila novo;
 novo=(tipofila) malloc (sizeof(struct lancamento));
-if (novo==NULL) 
+if (novo==NULL)
    printf("Fila Cheia \n");
 else  {
 	 strcpy(novo->nome,nome);
@@ -33,45 +30,48 @@ else  {
 	 novo->distanciaDoAlvo=distanciaDoAlvo;
 	 novo->altitude=altitude;
 	 novo->prox=NULL;
-	if (IsEmpty(*inicio,*fim)){
+
+	if (Fila_IsEmpty(*inicio,*fim)==1){
 	     *inicio = novo;
 	     }
 	else{
 	     (*fim)->prox= novo;
-	     }
-        *fim=novo;
+	}
+    *fim=novo;
 	}
 }
 
 /*Verifica se a fila está vazia */
 
-int IsEmpty(tipofila ini, tipofila fim)
+int Fila_IsEmpty(tipofila ini, tipofila fim)
 {
-	if ( (ini == NULL) && (fim==NULL))
+	if ((ini == NULL) && (fim==NULL)){
 		return 1;
-	else
-		return 0;
+	}
+	else{
+        return 0;
+	}
 }
 
 /*Lê o elemento que está no inicio da fila e armazena na variável v */
-int FIRST(tipofila inicio, tipofila fim, struct no *elem)
+int FIRST(tipofila inicio, tipofila fim, char *elem)
 {
-	if(!IsEmpty(inicio,fim))	{	
-		*elem = inicio->nome;
+	if(!Fila_IsEmpty(inicio,fim))	{
+        strcpy(&*elem,inicio->nome);
 		*elem = inicio->n_componentes;
 		*elem = inicio->distanciaDoAlvo;
 		*elem = inicio->altitude;
 		return 1;
-		}	
+		}
 	else
 		return 0;
-}		
+}
 
 /*Remove o elemento do inicio da fila */
-int DEQUEUE(tipofila *inicio, tipofila *fim, struct no *elem)
+int DEQUEUE(tipofila *inicio, tipofila *fim, char *elem)
 {
 	tipofila aux = *inicio;
-	if(!IsEmpty(*inicio,*fim))	{	
+	if(!Fila_IsEmpty(inicio,fim))	{
 		*elem = (*inicio)->nome;
 		*elem = (*inicio)->n_componentes;
 		*elem = (*inicio)->distanciaDoAlvo;
@@ -81,7 +81,7 @@ int DEQUEUE(tipofila *inicio, tipofila *fim, struct no *elem)
 		if (*inicio == NULL)
 			*fim = NULL;
 		return 1;
-		}	
+		}
 	else
 		return 0;
 }
