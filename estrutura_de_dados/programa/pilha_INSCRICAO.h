@@ -41,9 +41,9 @@ int POP (tipopilha *topo,tipopilha *elem)
 {
 tipopilha aux;
 aux = *topo;
+*elem = NULL;
 if (!IsEmpty(*topo))   {
-     //strcpy(&*elem,aux->nome);
-     *elem = &aux;
+     *elem = aux;
      *topo=aux->prox;
      free(aux);
      return(1);

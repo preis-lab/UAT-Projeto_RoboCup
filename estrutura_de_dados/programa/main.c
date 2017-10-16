@@ -14,6 +14,7 @@ int main(){
     //aloca memoria para pilha
     topo = malloc(sizeof(tipopilha));
     novo = malloc(sizeof(tipopilha));
+
     //aloca memoria para fila
     inicio = malloc(sizeof(tipofila));
     fim = malloc(sizeof(tipofila));
@@ -39,7 +40,7 @@ int main(){
         //adiciona na pilha a nova equipe
         PUSH(&topo, novo);
 
-        printf("\n Equipe: %s com %d integrantes cadastrada!",novo->nome,novo->n_componentes);
+        printf("\n Equipe: %s com %d integrantes cadastrada!",topo->nome,topo->n_componentes);
         printf("\n\nDeseja cadastrar mais uma equipe? [0 - para cadastrar lancamentos]: ");
         scanf("%d",&opcao);
     } while (opcao != 0);
@@ -49,7 +50,7 @@ int main(){
         topo->n_tentativas++;
         POP(&topo, &novo);
 
-        printf("\n\n\nCadastrando novo lancamento da equipe %s :", novo->nome);
+        printf("\n\n\nCadastrando novo lancamento da equipe %s integrantes %d:", novo->nome, novo->n_componentes);
         printf("\nA equipe conseguiu efeturar o lançamento?: [1/0]");
         scanf("%d",&opcao);
 
