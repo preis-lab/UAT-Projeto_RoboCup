@@ -1,5 +1,4 @@
 #include <stdlib.h>
-#include <stdlib.h>
 #include <string.h>
 
 #include "pilha_INSCRICAO.h"
@@ -33,7 +32,8 @@ int main(){
     do {
         printf("\n ===== Cadastro de nova equipe =====\n");
         printf("Nome da equipe: ");
-        scanf("%s",&novo->nome);
+        gets(novo->nome);
+        //scanf("%s",&novo->nome);
         printf("Quantidade de integrantes da equipe: ");
         scanf("%d", &novo->n_componentes);
 
@@ -48,6 +48,7 @@ int main(){
 
     do{
         topo->n_tentativas++;
+
         POP(&topo, &novo);
 
         printf("\n\n\nCadastrando novo lancamento da equipe %s integrantes %d:", novo->nome, novo->n_componentes);

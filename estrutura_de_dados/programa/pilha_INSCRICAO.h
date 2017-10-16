@@ -1,10 +1,10 @@
 /* declaracao do no */
-	struct equipe_inscricao {
-		char nome[30];
-		int n_componentes;
-		int n_tentativas;
-		struct equipe_inscricao *prox;
-	};
+struct equipe_inscricao {
+	char nome[30];
+	int n_componentes;
+	int n_tentativas;
+	struct equipe_inscricao *prox;
+};
 
 /*Definição do tipo de dado pilha */
 	typedef struct equipe_inscricao* tipopilha;
@@ -43,7 +43,7 @@ tipopilha aux;
 aux = *topo;
 *elem = NULL;
 if (!IsEmpty(*topo))   {
-     *elem = aux;
+     *elem = *topo;
      *topo=aux->prox;
      free(aux);
      return(1);
