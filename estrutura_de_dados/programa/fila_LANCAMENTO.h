@@ -1,13 +1,12 @@
 /* declaracao do no */
-struct lancamento {
-		char nome[30];
-       	int n_componentes;
+struct competicao {
+        tipopilha equipe;
        	float distanciaDoAlvo;
        	float altitude;
-       	struct lancamento *prox;
+       	struct competicao *prox;
 };
 /*Definição do tipo de dado fila */
-typedef struct lancamento* tipofila;
+typedef struct competicao* tipofila;
 
 /*Inicia a fila */
 void INITfila (tipofila *inicio,tipofila *fim)
@@ -17,19 +16,16 @@ void INITfila (tipofila *inicio,tipofila *fim)
 }
 
 /*Insere o elemento no final da fila */
-void ENQUEUE(tipofila *inicio, tipofila *fim, char nome[30],int n_componentes, float distanciaDoAlvo, float altitude)
+void ENQUEUE(tipofila *inicio, tipofila *fim, tipofila elem)
 {
 
 tipofila novo;
-novo=(tipofila) malloc (sizeof(struct lancamento));
+novo=(tipofila) malloc (sizeof(struct competicao));
 if (novo==NULL)
    printf("Fila Cheia \n");
 else  {
-	 strcpy(novo->nome,nome);
-	 novo->n_componentes=n_componentes;
-	 novo->distanciaDoAlvo=distanciaDoAlvo;
-	 novo->altitude=altitude;
-	 novo->prox=NULL;
+    novo = elem;
+	novo->prox=NULL;
 
 	if (Fila_IsEmpty(*inicio,*fim)==1){
 	     *inicio = novo;
@@ -54,13 +50,10 @@ int Fila_IsEmpty(tipofila ini, tipofila fim)
 }
 
 /*Lê o elemento que está no inicio da fila e armazena na variável v */
-int FIRST(tipofila inicio, tipofila fim, char *elem)
+int FIRST(tipofila inicio, tipofila fim, tipofila *elem)
 {
 	if(!Fila_IsEmpty(inicio,fim))	{
-        strcpy(&*elem,inicio->nome);
-		*elem = inicio->n_componentes;
-		*elem = inicio->distanciaDoAlvo;
-		*elem = inicio->altitude;
+        *elem = inicio;
 		return 1;
 		}
 	else
@@ -68,14 +61,11 @@ int FIRST(tipofila inicio, tipofila fim, char *elem)
 }
 
 /*Remove o elemento do inicio da fila */
-int DEQUEUE(tipofila *inicio, tipofila *fim, char *elem)
+int DEQUEUE(tipofila *inicio, tipofila *fim, tipofila *elem)
 {
 	tipofila aux = *inicio;
 	if(!Fila_IsEmpty(inicio,fim))	{
-		*elem = (*inicio)->nome;
-		*elem = (*inicio)->n_componentes;
-		*elem = (*inicio)->distanciaDoAlvo;
-		*elem = (*inicio)->altitude;
+        *elem = &inicio;
 		(*inicio) = (*inicio)->prox;
 		free (aux);
 		if (*inicio == NULL)

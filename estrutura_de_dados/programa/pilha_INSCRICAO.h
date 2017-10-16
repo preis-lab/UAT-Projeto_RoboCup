@@ -1,12 +1,13 @@
 /* declaracao do no */
-	struct no {
+	struct equipe_inscricao {
 		char nome[30];
 		int n_componentes;
-		struct no *prox;
+		int n_tentativas;
+		struct equipe_inscricao *prox;
 	};
 
 /*Definição do tipo de dado pilha */
-	typedef struct no* tipopilha;
+	typedef struct equipe_inscricao* tipopilha;
 
 void INIT (tipopilha *topo)
 {
@@ -22,14 +23,13 @@ else
 }
 
 
-void PUSH (tipopilha *topo, char nome[30],int n_componentes)
+void PUSH (tipopilha *topo, tipopilha elem)
 {
 tipopilha novo;
-novo = (tipopilha) malloc (sizeof(struct no));
+novo = (tipopilha) malloc (sizeof(struct equipe_inscricao));
 if (novo != NULL)
 	{
-	strcpy(novo->nome,nome);
-	novo->n_componentes = n_componentes;
+    novo = elem;
 	novo->prox=*topo;
 	*topo = novo;
 	}
