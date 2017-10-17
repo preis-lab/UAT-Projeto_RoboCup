@@ -20,13 +20,14 @@ int IsEmpty(tipopilha topo){
 
 
 void PUSH (tipopilha *topo, tipopilha elem){
-    tipopilha new;
-    new = (tipopilha) malloc (sizeof(struct equipe_inscricao));
+    tipopilha novo;
+    novo = (tipopilha) malloc (sizeof(struct equipe_inscricao));
 
-    if (new != NULL){
-        new = elem;
-        new->prox=*topo;
-        *topo = new;
+    if (novo != NULL){
+        strcpy(&novo->nome, elem->nome);
+        novo->n_componentes = elem->n_componentes;
+        novo->prox=*topo;
+        *topo = novo;
     } else {
         printf("Pilha cheia \n");
     }
@@ -35,9 +36,9 @@ void PUSH (tipopilha *topo, tipopilha elem){
 int POP (tipopilha *topo,tipopilha *elem){
     tipopilha aux;
     aux = *topo;
-    *elem = NULL;
     if (!IsEmpty(*topo)){
-        *elem = topo;
+        strcpy((*elem)->nome,aux->nome);
+        (*elem)->n_componentes = aux->n_componentes;
         *topo=aux->prox;
         free(aux);
         return(1);

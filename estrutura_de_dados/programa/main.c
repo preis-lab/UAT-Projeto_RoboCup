@@ -34,7 +34,7 @@ int main() {
     //inicia fila com null
     INIT_fila(&inicio, &fim);
 
-    int opcao=0;
+    int opcao=0,continua=1;
     float auxDistancia;
 
     printf("\n ============= Competicao de lancamento de foguetes ================\t\n\n");
@@ -57,16 +57,15 @@ int main() {
 
     //Esvazia a pilha
     while(!IsEmpty(topo)){
-        printf("\n ============= Lançamento da equipe %s ================\n\n", topo->nome);
 
+        printf("\n ============= Lançamento da equipe %s ================\n\n",topo->nome);
 
         POP(&topo, &novo);
-        printf("\nDEBUG: Memoria topo %p",topo);
-        printf("\nDEBUG: Memoria novo %p",novo);
+
         //copia os dados da equipe para o lancamento e adiciona 1 na quantidade de tentativas
         strcpy(aux->nome, novo->nome);
         aux->n_componentes = novo->n_componentes;
-        aux->tentativas++;
+        aux->tentativas=1;
         //verifica se o lancamento foi efetuado
         printf("\nA equipe realizou o lancamento?: [1/0]");
         scanf("%d",&opcao);
@@ -78,6 +77,7 @@ int main() {
 
             printf("Altura: ");
             scanf("%f",&aux->altura);
+
         } else {
             aux->distancia = 9999;
             aux->altura = 0;
@@ -86,14 +86,21 @@ int main() {
         ENQUEUE(&inicio,&fim,aux);
     }
 
-    //pega o primeiro elemento da fila para percorrela
-    FIRST(inicio, fim, &aux);
+    //recebe o topo para iniciar o loop
+    FIRST(inicio,fim,&aux);
 
     //realiza a segunda tentativa das equipes
-    while(aux->tentativas<2){
+    while(continua){
+        FIRST(inicio,fim,&aux);
+
+        //se a equipe ja realizou 2 lancamentos para o fluxo
+        if(aux->tentativas>=2){
+            continua = 1;
+            break;
+        }
+
         DEQUEUE(&inicio,&fim,&aux);
         aux->tentativas++;
-
         printf("\n ============= 2º Lançamento da equipe %s ================\n\n", aux->nome);
 
         printf("\nA equipe realizou o lancamento?: [1/0]");
@@ -101,6 +108,7 @@ int main() {
 
         //se sim, coleta os dados
         if(opcao == 1){
+            opcao=0;
             printf("\nNova distancia do alvo: ");
             scanf("%f",&auxDistancia);
 
@@ -113,22 +121,27 @@ int main() {
             } else {
                 printf("\nA distancia anterior era menor");
             }
-        } else {
-            aux->distancia = 9999;
-            aux->altura = 0;
         }
+        //coloca de volta o lancamento na fila
         ENQUEUE(&inicio, &fim, aux);
     }
 
     //GERA O RANKING
-    while(campea != aux){
+    while(strcmp(campea->nome,aux->nome)!=0){
         DEQUEUE(&inicio,&fim,&aux);
+
         if(aux->distancia == campea->distancia){
             if(aux->altura > campea->altura){
-                campea = aux;
+                strcpy(&campea->nome,aux->nome);
+                campea->distancia = aux->distancia;
+                campea->altura = aux->altura;
+                campea->n_componentes = campea->n_componentes;
             }
         } else if (aux->distancia > campea->distancia){
-            campea = aux;
+            strcpy(&campea->nome,aux->nome);
+            campea->distancia = aux->distancia;
+            campea->altura = aux->altura;
+            campea->n_componentes = campea->n_componentes;
         }
         ENQUEUE(&inicio,&fim,aux);
     }
@@ -138,13 +151,15 @@ int main() {
         DEQUEUE(&inicio,&fim,&aux);
 
         printf("\n|=====================");
-        printf("\nNome da equipe: %s",aux->nome);
-        printf("\nNº componentes: %d",aux->n_componentes);
-        printf("\nAltura: %f",aux->altura);
-        printf("\nDistancia: %f", aux->distancia);
+        printf("\n|Nome da equipe: %s",aux->nome);
+        printf("\n|Nº componentes: %d",aux->n_componentes);
+        printf("\n|Nº tentativas: %d",aux->tentativas);
+        printf("\n|Altura: %f",aux->altura);
+        printf("\n|Distancia: %f", aux->distancia);
+        printf("\n|=====================");
     }
 
-    printf("\n\nCAMPEA: %s %d",campea->nome, campea->distancia);
-    printf("\n ============= FIM DO PROGRAMA :D ================\n\n");
+    printf("\n\nCAMPEA: %s com a distancia de: %d",campea->nome, campea->distancia);
+    printf("\n\n\n ============= FIM DO PROGRAMA :D ================\n\n");
 
 }

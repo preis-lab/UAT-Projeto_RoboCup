@@ -22,7 +22,11 @@ void ENQUEUE(tipofila *inicio, tipofila *fim, tipofila elem){
     if (novo==NULL)
         printf("Fila Cheia \n");
     else  {
-        novo = elem;
+        novo->altura = elem->altura;
+        novo->distancia = elem->distancia;
+        novo->n_componentes = elem->n_componentes;
+        novo->tentativas = elem->tentativas;
+        strcpy(&novo->nome, elem->nome);
         novo->prox=NULL;
 
 	if (IsEmpty_fila(*inicio,*fim)){
@@ -45,7 +49,13 @@ int IsEmpty_fila(tipofila ini, tipofila fim){
 
 int FIRST(tipofila inicio, tipofila fim,  tipofila *elem){
 	if(!IsEmpty_fila(inicio,fim))	{
-		*elem = inicio;
+
+        strcpy((*elem)->nome, inicio->nome);
+		(*elem)->n_componentes = inicio->n_componentes;
+		(*elem)->altura = inicio->altura;
+		(*elem)->distancia = inicio->distancia;
+		(*elem)->tentativas = inicio->tentativas;
+
 		return 1;
     }
 	else
@@ -55,7 +65,11 @@ int FIRST(tipofila inicio, tipofila fim,  tipofila *elem){
 int DEQUEUE(tipofila *inicio, tipofila *fim,tipofila *elem){
 	tipofila aux = *inicio;
 	if(!IsEmpty_fila(*inicio,*fim))	{
-		*elem = (*inicio);
+		strcpy((*elem)->nome, (*inicio)->nome);
+		(*elem)->n_componentes = (*inicio)->n_componentes;
+		(*elem)->altura = (*inicio)->altura;
+		(*elem)->distancia = (*inicio)->distancia;
+		(*elem)->tentativas = (*inicio)->tentativas;
 		(*inicio) = (*inicio)->prox;
 		free (aux);
 
