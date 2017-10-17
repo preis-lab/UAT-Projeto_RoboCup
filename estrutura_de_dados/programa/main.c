@@ -1,39 +1,49 @@
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
-#include "pilha_INSCRICAO.h"
-#include "fila_LANCAMENTO.h"
+#include "pilha_inscricao.h"
+#include "fila_lancamento.h"
 
-int main(){
-    //define os tipos de dados
-    tipopilha topo,novo;
-    tipofila inicio, fim, auxFila;
-    int opcao;
+/*
+    PAULO HENRIQUE P. REIS RM 76729
+    VITOR HUGO             RM 76287
+    JEAN REIS              RM 75681
+    DANIEL PRATES          RM 77316
+*/
+int main() {
+    //define variaveis para pilha
+    tipopilha topo, novo;
+
+    //define variaveis para fila
+    tipofila inicio, fim, aux, campea;
 
     //aloca memoria para pilha
-    topo = malloc(sizeof(tipopilha));
-    novo = malloc(sizeof(tipopilha));
+    novo = (tipopilha) malloc(sizeof(struct equipe_inscricao));
+    topo = (tipopilha) malloc(sizeof(struct equipe_inscricao));
 
     //aloca memoria para fila
-    inicio = malloc(sizeof(tipofila));
-    fim = malloc(sizeof(tipofila));
+    inicio = (tipofila) malloc(sizeof(struct competicao));
+    fim = (tipofila) malloc(sizeof(struct competicao));
+    aux = (tipofila) malloc(sizeof(struct competicao));
+    campea = (tipofila) malloc(sizeof(struct competicao));
 
-    //iniciar as duas estruturas com null
+    //incia pilha com null
     INIT(&topo);
-    INITfila(&inicio,&fim);
 
+    //inicia fila com null
+    INIT_fila(&inicio, &fim);
 
-    //menu para selecao da funcao
+    int opcao=0;
+    float auxDistancia;
+
     printf("\n ============= Competicao de lancamento de foguetes ================\t\n\n");
-
-    printf("\nCadastro das equipes");
-
-    //loop para cadastro de todas as equipes
+    //loop para cadastro das equipes
     do {
         printf("\n ===== Cadastro de nova equipe =====\n");
         printf("Nome da equipe: ");
-        gets(novo->nome);
-        //scanf("%s",&novo->nome);
+
+        scanf("%s",&novo->nome);
         printf("Quantidade de integrantes da equipe: ");
         scanf("%d", &novo->n_componentes);
 
@@ -41,37 +51,100 @@ int main(){
         PUSH(&topo, novo);
 
         printf("\n Equipe: %s com %d integrantes cadastrada!",topo->nome,topo->n_componentes);
-        printf("\n\nDeseja cadastrar mais uma equipe? [0 - para cadastrar lancamentos]: ");
+        printf("\n\nDeseja cadastrar mais uma equipe? [1/0]: ");
         scanf("%d",&opcao);
-    } while (opcao != 0);
+    } while (opcao == 1);
 
+    //Esvazia a pilha
+    while(!IsEmpty(topo)){
+        printf("\n ============= Lançamento da equipe %s ================\n\n", topo->nome);
 
-    do{
-        topo->n_tentativas++;
 
         POP(&topo, &novo);
-
-        printf("\n\n\nCadastrando novo lancamento da equipe %s integrantes %d:", novo->nome, novo->n_componentes);
-        printf("\nA equipe conseguiu efeturar o lançamento?: [1/0]");
+        printf("\nDEBUG: Memoria topo %p",topo);
+        printf("\nDEBUG: Memoria novo %p",novo);
+        //copia os dados da equipe para o lancamento e adiciona 1 na quantidade de tentativas
+        strcpy(aux->nome, novo->nome);
+        aux->n_componentes = novo->n_componentes;
+        aux->tentativas++;
+        //verifica se o lancamento foi efetuado
+        printf("\nA equipe realizou o lancamento?: [1/0]");
         scanf("%d",&opcao);
 
-        if (opcao==1){
+        //se sim, coleta os dados
+        if(opcao == 1){
             printf("\nDistancia do alvo: ");
-            scanf("%f,",&auxFila->distanciaDoAlvo);
-            printf("Altitude: ");
-            scanf("%f",&auxFila->altitude);
+            scanf("%f",&aux->distancia);
 
-            auxFila->equipe = novo;
-
-            ENQUEUE(&inicio,&fim,auxFila);
-
-
+            printf("Altura: ");
+            scanf("%f",&aux->altura);
         } else {
-            auxFila->distanciaDoAlvo = 9999;
-            auxFila->altitude = 0;
+            aux->distancia = 9999;
+            aux->altura = 0;
         }
-    } while(!Fila_IsEmpty(inicio,fim) && topo->n_tentativas < 2);
+
+        ENQUEUE(&inicio,&fim,aux);
+    }
+
+    //pega o primeiro elemento da fila para percorrela
+    FIRST(inicio, fim, &aux);
+
+    //realiza a segunda tentativa das equipes
+    while(aux->tentativas<2){
+        DEQUEUE(&inicio,&fim,&aux);
+        aux->tentativas++;
+
+        printf("\n ============= 2º Lançamento da equipe %s ================\n\n", aux->nome);
+
+        printf("\nA equipe realizou o lancamento?: [1/0]");
+        scanf("%d",&opcao);
+
+        //se sim, coleta os dados
+        if(opcao == 1){
+            printf("\nNova distancia do alvo: ");
+            scanf("%f",&auxDistancia);
+
+            //se a nova distancia for menor, registrar
+            if(auxDistancia < aux->distancia){
+                aux->distancia = auxDistancia;
+
+                printf("Altura: ");
+                scanf("%f",&aux->altura);
+            } else {
+                printf("\nA distancia anterior era menor");
+            }
+        } else {
+            aux->distancia = 9999;
+            aux->altura = 0;
+        }
+        ENQUEUE(&inicio, &fim, aux);
+    }
+
+    //GERA O RANKING
+    while(campea != aux){
+        DEQUEUE(&inicio,&fim,&aux);
+        if(aux->distancia == campea->distancia){
+            if(aux->altura > campea->altura){
+                campea = aux;
+            }
+        } else if (aux->distancia > campea->distancia){
+            campea = aux;
+        }
+        ENQUEUE(&inicio,&fim,aux);
+    }
+
+    //exibe todas as equipes e esvazia a fila
+    while(!IsEmpty_fila(inicio,fim)){
+        DEQUEUE(&inicio,&fim,&aux);
+
+        printf("\n|=====================");
+        printf("\nNome da equipe: %s",aux->nome);
+        printf("\nNº componentes: %d",aux->n_componentes);
+        printf("\nAltura: %f",aux->altura);
+        printf("\nDistancia: %f", aux->distancia);
+    }
+
+    printf("\n\nCAMPEA: %s %d",campea->nome, campea->distancia);
+    printf("\n ============= FIM DO PROGRAMA :D ================\n\n");
+
 }
-
-
-
