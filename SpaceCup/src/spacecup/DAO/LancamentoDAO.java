@@ -9,6 +9,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
@@ -114,17 +115,17 @@ public class LancamentoDAO {
             ps.setFloat(4, lancamento.getVelocidadeVento());
             ps.setFloat(5, lancamento.getAltitudeMaxima());
             
-            ps.setDate(6, lancamento.getTempoPropulsao());
+            ps.setDate(6, new java.sql.Date(lancamento.getTempoPropulsao().getTime()));
             
             ps.setFloat(7, lancamento.getPicoAceleracao());
             ps.setFloat(8, lancamento.getAceleracaoMedia());
             
-            ps.setDate(9, lancamento.getTempoApogeuAescida());
+            ps.setDate(9, new java.sql.Date(lancamento.getTempoApogeuAescida().getTime()));
             
             ps.setFloat(10, lancamento.getAltitudeEjecao());
             ps.setFloat(11, lancamento.getTaxaDescida());
                         
-            ps.setDate(12, lancamento.getDuracaoVoo());
+            ps.setDate(12, new java.sql.Date(lancamento.getDuracaoVoo().getTime()));
             
             ps.setFloat(13, lancamento.getDistanciaEntreQuedaAlvo());
             ps.setInt(14, lancamento.getEquipe().getId());
