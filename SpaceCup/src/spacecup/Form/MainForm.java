@@ -147,6 +147,11 @@ public class MainForm extends javax.swing.JFrame {
         );
 
         competicoes.setBackground(new java.awt.Color(4, 47, 107));
+        competicoes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                competicoesMouseClicked(evt);
+            }
+        });
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/spacecup/icons/rocket.png"))); // NOI18N
 
@@ -176,6 +181,11 @@ public class MainForm extends javax.swing.JFrame {
         );
 
         foguetes.setBackground(new java.awt.Color(4, 47, 107));
+        foguetes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                foguetesMouseClicked(evt);
+            }
+        });
 
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/spacecup/icons/rocket.png"))); // NOI18N
 
@@ -278,6 +288,14 @@ public class MainForm extends javax.swing.JFrame {
     private void equipesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_equipesMouseClicked
         addJanela(new EquipesForm());
     }//GEN-LAST:event_equipesMouseClicked
+
+    private void competicoesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_competicoesMouseClicked
+        addJanela(new CompeticoesForm());
+    }//GEN-LAST:event_competicoesMouseClicked
+
+    private void foguetesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_foguetesMouseClicked
+        addJanela(new ForguetesForm());
+    }//GEN-LAST:event_foguetesMouseClicked
 
     private void addJanela(JInternalFrame janela) {
         jdPanel.removeAll();
