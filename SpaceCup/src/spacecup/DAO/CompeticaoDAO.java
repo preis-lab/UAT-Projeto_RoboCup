@@ -82,6 +82,36 @@ public class CompeticaoDAO {
         return listaDatas;
     }
     
-    
+    public void adicionaCompeticao(Competicao competicao){
+        try {
+            con = new Conexao().getConnection();
+            
+            sql = "INSERT INTO `competicao` VALUES (?,?,?,?,?,?)";
+            
+            ps = con.prepareStatement(sql);
+            
+            ps.setInt(1, competicao.getId());
+            ps.setDate(2, new java.sql.Date(competicao.getData().getDate()));
+            ps.setInt(3, competicao.getEndereco().getNumero());
+            ps.setInt(4, competicao.getTipoCompeticao().getId());
+            
+            if(competicao.isAtiva()){
+                ps.setInt(5, 1);
+            } else {
+                ps.setInt(5, 2);
+            }
+            
+            ps.setString(6,competicao.getEndereco().getCep());
+            
+            ps.execute();
+            
+            con.close();
+            
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(CompeticaoDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }
     
 }
