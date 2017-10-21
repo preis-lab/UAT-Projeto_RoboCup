@@ -90,7 +90,8 @@ public class LancamentoDAO {
                 l.setTempoApogeuAescida(rs.getDate("tempoApogeuDescida"));
                 l.setTempoPropulsao(rs.getDate("tempoPropulsao"));
                 l.setVelocidadeVento(rs.getFloat("velocidadeVento"));
-
+                l.setEquipe(new EquipeDAO().getById(rs.getInt("equipe_id")));
+                l.setFoguete(new FogueteDAO().getById(rs.getInt("foguete_id")));
                 lista.add(l);
 
             }
