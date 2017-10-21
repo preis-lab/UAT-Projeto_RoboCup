@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
+import spacecup.DAO.FogueteDAO;
 import spacecup.Model.Foguete;
 
 public class ForguetesForm extends javax.swing.JInternalFrame {
@@ -111,7 +112,7 @@ public class ForguetesForm extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jTableMouseClicked
 
     private void populaLista() {
-        List<Foguete> foguetes = new ArrayList<>();
+        List<Foguete> foguetes = new FogueteDAO().getFoguetes();
         listar(foguetes);
     }
 

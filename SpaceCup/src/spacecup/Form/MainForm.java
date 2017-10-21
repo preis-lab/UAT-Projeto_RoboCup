@@ -1,14 +1,20 @@
 
 package spacecup.Form;
 
+import java.awt.Color;
 import java.awt.Dimension;
 import javax.swing.JInternalFrame;
+import javax.swing.JPanel;
 
 public class MainForm extends javax.swing.JFrame {
+    
+    private final Color inativoColor = new Color(4,47,107);
+    private final Color ativoColor = new Color(0,40,95);
 
     public MainForm() {
         initComponents();
         addJanela(new FormGerenciarLancamento());
+        mudaBG(lancamentos, ativoColor);
     }
 
     @SuppressWarnings("unchecked")
@@ -278,22 +284,27 @@ public class MainForm extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void lancamentosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lancamentosMouseClicked
+        mudaBG(lancamentos, ativoColor);
         addJanela(new FormGerenciarLancamento());
     }//GEN-LAST:event_lancamentosMouseClicked
 
     private void alunosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_alunosMouseClicked
+        mudaBG(alunos, ativoColor);
         addJanela(new AlunoForm());
     }//GEN-LAST:event_alunosMouseClicked
 
     private void equipesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_equipesMouseClicked
+        mudaBG(equipes, ativoColor);
         addJanela(new EquipesForm());
     }//GEN-LAST:event_equipesMouseClicked
 
     private void competicoesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_competicoesMouseClicked
+        mudaBG(competicoes, ativoColor);
         addJanela(new CompeticoesForm());
     }//GEN-LAST:event_competicoesMouseClicked
 
     private void foguetesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_foguetesMouseClicked
+        mudaBG(foguetes, ativoColor);
         addJanela(new ForguetesForm());
     }//GEN-LAST:event_foguetesMouseClicked
 
@@ -305,6 +316,20 @@ public class MainForm extends javax.swing.JFrame {
         janela.setLocation(0, 0);
         janela.setVisible(true);
     }
+    
+    private void resetaBG() {
+        lancamentos.setBackground(inativoColor);
+        alunos.setBackground(inativoColor);
+        equipes.setBackground(inativoColor);
+        competicoes.setBackground(inativoColor);
+        foguetes.setBackground(inativoColor);
+    }
+    
+    private void mudaBG(JPanel painel, Color cor) {
+        resetaBG();
+        painel.setBackground(cor);
+    }
+        
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel alunos;
