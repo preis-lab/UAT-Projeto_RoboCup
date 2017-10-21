@@ -37,8 +37,7 @@ public class EquipeDAO {
             ps.setInt(1, id);
             rs = ps.executeQuery();
 
-            while (rs.next()) {
-
+            if (rs.next()) {
                 if (rs.getInt("classificado") == 1) {
                     classificado = true;
                 }
