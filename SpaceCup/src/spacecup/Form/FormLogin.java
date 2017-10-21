@@ -150,7 +150,21 @@ public class FormLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_txtSenhaActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        abreConexao();
+        String id = txtNome.getText();
+        String senha = new String(txtSenha.getPassword());
+
+        if (validaDadosLogin(id, senha)) {
+            Usuario usuario = new UsuarioDAO().autentica(Integer.parseInt(id), senha);
+
+            if (usuario != null) {
+                this.dispose();
+                new MainForm().setVisible(true);
+            } else {
+                JOptionPane.showMessageDialog(this, "Login ou senha incorretos");
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "Verifique o login e senha");
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -201,24 +215,6 @@ public class FormLogin extends javax.swing.JFrame {
     private javax.swing.JPasswordField txtSenha;
     // End of variables declaration//GEN-END:variables
 
-    private void abreConexao() {
-        String id = txtNome.getText();
-        String senha = new String(txtSenha.getPassword());
-
-        if (validaDadosLogin(id, senha)) {
-            Usuario usuario = new UsuarioDAO().autentica(Integer.parseInt(id), senha);
-
-            if (usuario != null) {
-                this.dispose();
-                new FormLancamentos().setVisible(true);
-            } else {
-                JOptionPane.showMessageDialog(this, "Login ou senha incorretos");
-            }
-        } else {
-            JOptionPane.showMessageDialog(this, "Verifique o login e senha");
-        }
-
-    }
 
     private boolean validaDadosLogin(String id, String senha) {
         boolean saida = false;
