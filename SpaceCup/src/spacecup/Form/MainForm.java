@@ -28,13 +28,11 @@ public class MainForm extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         sideBar.setBackground(new java.awt.Color(4, 47, 107));
-        sideBar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         logo.setBackground(new java.awt.Color(50, 230, 200));
         logo.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
         logo.setForeground(new java.awt.Color(50, 230, 200));
         logo.setText("Space Cup");
-        sideBar.add(logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, 130, -1));
 
         Lancamentos.setBackground(new java.awt.Color(4, 47, 107));
         Lancamentos.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -70,9 +68,6 @@ public class MainForm extends javax.swing.JFrame {
                 .addContainerGap(16, Short.MAX_VALUE))
         );
 
-        sideBar.add(Lancamentos, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 230, 60));
-        sideBar.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 210, 20));
-
         Alunos.setBackground(new java.awt.Color(4, 47, 107));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/spacecup/icons/rocket.png"))); // NOI18N
@@ -102,7 +97,31 @@ public class MainForm extends javax.swing.JFrame {
                 .addContainerGap(16, Short.MAX_VALUE))
         );
 
-        sideBar.add(Alunos, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 230, -1));
+        javax.swing.GroupLayout sideBarLayout = new javax.swing.GroupLayout(sideBar);
+        sideBar.setLayout(sideBarLayout);
+        sideBarLayout.setHorizontalGroup(
+            sideBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(sideBarLayout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(sideBarLayout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(Lancamentos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(Alunos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        sideBarLayout.setVerticalGroup(
+            sideBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(sideBarLayout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addComponent(logo)
+                .addGap(7, 7, 7)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
+                .addComponent(Lancamentos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
+                .addComponent(Alunos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
 
         jdPanel.setBackground(new java.awt.Color(50, 230, 200));
 
@@ -117,7 +136,7 @@ public class MainForm extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(sideBar, javax.swing.GroupLayout.DEFAULT_SIZE, 478, Short.MAX_VALUE)
+            .addComponent(sideBar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jdPanel)
         );
 
