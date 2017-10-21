@@ -3,6 +3,7 @@ package spacecup.Form;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
 import spacecup.DAO.UsuarioDAO;
+import spacecup.Model.Aluno;
 import spacecup.Model.Usuario;
 
 public class AlunoForm extends javax.swing.JInternalFrame {
@@ -70,15 +71,15 @@ public class AlunoForm extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void getAlunos() {
-        List<Usuario> alunos = new UsuarioDAO().getAlunos();
+        List<Aluno> alunos = new UsuarioDAO().getAlunos();
         listar(alunos);
     }
-    
-    private void listar(List<Usuario> alunos) {
+
+    private void listar(List<Aluno> alunos) {
         DefaultTableModel model = (DefaultTableModel) jTable.getModel();
         clearList();
 
-        for (Usuario a : alunos) {
+        for (Aluno a : alunos) {
             model.addRow((Object[]) addLinha(a));
         }
     }
@@ -91,11 +92,10 @@ public class AlunoForm extends javax.swing.JInternalFrame {
         }
     }
 
-    private Object addLinha(Usuario a) {
+    private Object addLinha(Aluno a) {
         return new Object[]{
             a.getId(),
-            a.getNome(),
-        };
+            a.getNome(),};
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel jPanel1;
