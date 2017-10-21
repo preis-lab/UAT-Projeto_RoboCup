@@ -4,29 +4,13 @@ package spacecup.Form;
 import java.awt.Dimension;
 import javax.swing.JInternalFrame;
 
-public class MainForm extends javax.swing.JPanel implements java.beans.Customizer {
-    
-    private Object bean;
+public class MainForm extends javax.swing.JFrame {
 
     public MainForm() {
         initComponents();
-        LancamentosForm janela = new LancamentosForm();
-        addJanela(janela);
-    }
-    
-    public void setObject(Object bean) {
-        this.bean = bean;
-    }
-    
-    private void addJanela(JInternalFrame janela) {
-        jdPanel.removeAll();
-        Dimension size = jdPanel.getSize();
-        janela.setSize(size);
-        jdPanel.add(janela);
-        janela.setLocation(0, 0);
-        janela.setVisible(true);
     }
 
+    @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -39,10 +23,9 @@ public class MainForm extends javax.swing.JPanel implements java.beans.Customize
         Alunos = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        desktop = new javax.swing.JPanel();
         jdPanel = new javax.swing.JDesktopPane();
 
-        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         sideBar.setBackground(new java.awt.Color(4, 47, 107));
         sideBar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -107,7 +90,7 @@ public class MainForm extends javax.swing.JPanel implements java.beans.Customize
                 .addComponent(jLabel4)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel5)
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addContainerGap(99, Short.MAX_VALUE))
         );
         AlunosLayout.setVerticalGroup(
             AlunosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -119,29 +102,46 @@ public class MainForm extends javax.swing.JPanel implements java.beans.Customize
                 .addContainerGap(16, Short.MAX_VALUE))
         );
 
-        sideBar.add(Alunos, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, -1, -1));
-
-        add(sideBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 230, 460));
-
-        desktop.setBackground(new java.awt.Color(50, 230, 200));
-        desktop.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        sideBar.add(Alunos, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 230, -1));
 
         jdPanel.setBackground(new java.awt.Color(50, 230, 200));
-        desktop.add(jdPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 680, 460));
 
-        add(desktop, new org.netbeans.lib.awtextra.AbsoluteConstraints(227, 0, 680, 460));
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(sideBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jdPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 766, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(sideBar, javax.swing.GroupLayout.DEFAULT_SIZE, 478, Short.MAX_VALUE)
+            .addComponent(jdPanel)
+        );
+
+        pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void LancamentosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LancamentosMouseClicked
-        LancamentosForm janela = new LancamentosForm();
+        FormGerenciarLancamento janela = new FormGerenciarLancamento();
         addJanela(janela);
     }//GEN-LAST:event_LancamentosMouseClicked
 
+    private void addJanela(JInternalFrame janela) {
+        jdPanel.removeAll();
+        Dimension size = jdPanel.getSize();
+        janela.setSize(size);
+        jdPanel.add(janela);
+        janela.setLocation(0, 0);
+        janela.setVisible(true);
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Alunos;
     private javax.swing.JPanel Lancamentos;
-    private javax.swing.JPanel desktop;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
