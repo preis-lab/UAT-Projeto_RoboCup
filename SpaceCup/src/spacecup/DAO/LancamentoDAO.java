@@ -105,7 +105,7 @@ public class LancamentoDAO {
         
         con = new Conexao().getConnection();
         
-        sql = "INSERT INTO `lancamento` VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+        sql = "INSERT INTO lancamento VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
         try {
             ps = con.prepareStatement(sql);
             
@@ -113,20 +113,14 @@ public class LancamentoDAO {
             ps.setFloat(2, lancamento.getDistanciaDoAlvo());
             ps.setFloat(3, lancamento.getAnguloLancamento());
             ps.setFloat(4, lancamento.getVelocidadeVento());
-            ps.setFloat(5, lancamento.getAltitudeMaxima());
-            
-            ps.setDate(6, new java.sql.Date(lancamento.getTempoPropulsao().getTime()));
-            
+            ps.setFloat(5, lancamento.getAltitudeMaxima());            
+            ps.setDate(6, new java.sql.Date(lancamento.getTempoPropulsao().getTime()));            
             ps.setFloat(7, lancamento.getPicoAceleracao());
-            ps.setFloat(8, lancamento.getAceleracaoMedia());
-            
-            ps.setDate(9, new java.sql.Date(lancamento.getTempoApogeuAescida().getTime()));
-            
+            ps.setFloat(8, lancamento.getAceleracaoMedia());            
+            ps.setDate(9, new java.sql.Date(lancamento.getTempoApogeuAescida().getTime()));            
             ps.setFloat(10, lancamento.getAltitudeEjecao());
-            ps.setFloat(11, lancamento.getTaxaDescida());
-                        
-            ps.setDate(12, new java.sql.Date(lancamento.getDuracaoVoo().getTime()));
-            
+            ps.setFloat(11, lancamento.getTaxaDescida());                        
+            ps.setDate(12, new java.sql.Date(lancamento.getDuracaoVoo().getTime()));            
             ps.setFloat(13, lancamento.getDistanciaEntreQuedaAlvo());
             ps.setInt(14, lancamento.getEquipe().getId());
             ps.setInt(15, lancamento.getFoguete().getId());
@@ -138,8 +132,39 @@ public class LancamentoDAO {
         } catch (SQLException ex) {
             Logger.getLogger(LancamentoDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }    
         
+    public void alteraLancamento(Lancamento lancamento){
         
+        con = new Conexao().getConnection();
         
-    }
+        sql = "UPDATE `lancamento` SET `distanciadoalvo`=?,`angulolancamento`=?,`velocidadevento`=?,`altitudemaxima`=?,`tempopropulsao`=?,`picoaceleracao`=?,`aceleracaomedia`=?,`tempoapogeudescida`=?,`altitudeejecao`=?,`taxadescida`=?,`duracaovoo`=?,`distanciaentrequedaalvo`=?,`equipe_id`=?,`foguete_id`=? WHERE `lancamento_id`= ?";
+        try {
+            ps = con.prepareStatement(sql);
+            
+            ps.setFloat(1, lancamento.getDistanciaDoAlvo());
+            ps.setFloat(2, lancamento.getAnguloLancamento());
+            ps.setFloat(3, lancamento.getVelocidadeVento());
+            ps.setFloat(4, lancamento.getAltitudeMaxima());            
+            ps.setDate(5, new java.sql.Date(lancamento.getTempoPropulsao().getTime()));            
+            ps.setFloat(6, lancamento.getPicoAceleracao());
+            ps.setFloat(7, lancamento.getAceleracaoMedia());            
+            ps.setDate(8, new java.sql.Date(lancamento.getTempoApogeuAescida().getTime()));            
+            ps.setFloat(9, lancamento.getAltitudeEjecao());
+            ps.setFloat(10, lancamento.getTaxaDescida());                        
+            ps.setDate(11, new java.sql.Date(lancamento.getDuracaoVoo().getTime()));            
+            ps.setFloat(12, lancamento.getDistanciaEntreQuedaAlvo());
+            ps.setInt(13, lancamento.getEquipe().getId());
+            ps.setInt(14, lancamento.getFoguete().getId());
+            ps.setInt(15, lancamento.getId());
+
+            ps.execute();
+            
+            con.close();
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(LancamentoDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }    
+    
 }
