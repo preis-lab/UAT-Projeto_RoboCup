@@ -17,12 +17,14 @@ public class Lancamento {
     private Date tempoApogeuAescida;
     private Date duracaoVoo;
     private Date tempoPropulsao;
-
+    private Equipe equipe;
+    private Foguete foguete;
+    
     public Lancamento(){
         
     }
-    
-    public Lancamento(int id, float distanciaDoAlvo, float anguloLancamento, float velocidadeVento, float altitudeMaxima, float altitudeEjecao, float picoAceleracao, float aceleracaoMedia, float taxaDescida, float distanciaEntreQuedaAlvo, Date tempoApogeuAescida, Date duracaoVoo, Date tempoPropulsao) {
+
+    public Lancamento(int id, float distanciaDoAlvo, float anguloLancamento, float velocidadeVento, float altitudeMaxima, float altitudeEjecao, float picoAceleracao, float aceleracaoMedia, float taxaDescida, float distanciaEntreQuedaAlvo, Date tempoApogeuAescida, Date duracaoVoo, Date tempoPropulsao, Equipe equipe, Foguete foguete) {
         this.id = id;
         this.distanciaDoAlvo = distanciaDoAlvo;
         this.anguloLancamento = anguloLancamento;
@@ -36,8 +38,12 @@ public class Lancamento {
         this.tempoApogeuAescida = tempoApogeuAescida;
         this.duracaoVoo = duracaoVoo;
         this.tempoPropulsao = tempoPropulsao;
+        this.equipe = equipe;
+        this.foguete = foguete;
     }
 
+    
+    
     public int getId() {
         return id;
     }
@@ -142,5 +148,22 @@ public class Lancamento {
         this.tempoPropulsao = tempoPropulsao;
     }
 
+    public Equipe getEquipe() {
+        return equipe;
+    }
+
+    public void setEquipe(Equipe equipe) {
+        this.equipe = equipe;
+    }
+
+    public Foguete getFoguete() {
+        return foguete;
+    }
+
+    public void setFoguete(Foguete foguete) {
+        this.foguete = foguete;
+    }
     
+    
+
 }

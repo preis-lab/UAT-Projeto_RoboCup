@@ -99,4 +99,43 @@ public class LancamentoDAO {
 
         return lista;
     }
+
+    public void insereLancamento(Lancamento lancamento){
+        
+        con = new Conexao().getConnection();
+        
+        sql = "INSERT INTO `lancamento` VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+        try {
+            ps = con.prepareStatement(sql);
+            
+            ps.setInt(1, lancamento.getId());
+            ps.setFloat(2, lancamento.getDistanciaDoAlvo());
+            ps.setFloat(3, lancamento.getAnguloLancamento());
+            ps.setFloat(4, lancamento.getVelocidadeVento());
+            ps.setFloat(5, lancamento.getAltitudeMaxima());
+            
+            ps.setDate(6, lancamento.getTempoPropulsao());
+            
+            ps.setFloat(7, lancamento.getPicoAceleracao());
+            ps.setFloat(8, lancamento.getAceleracaoMedia());
+            
+            ps.setDate(9, lancamento.getTempoApogeuAescida());
+            
+            ps.setFloat(10, lancamento.getAltitudeEjecao());
+            ps.setFloat(11, lancamento.getTaxaDescida());
+                        
+            ps.setDate(12, lancamento.getDuracaoVoo());
+            
+            ps.setFloat(13, lancamento.getDistanciaEntreQuedaAlvo());
+            ps.setInt(14, lancamento.getEquipe().getId());
+            ps.setInt(15, lancamento.getFoguete().getId());
+            
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(LancamentoDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
+        
+    }
 }
