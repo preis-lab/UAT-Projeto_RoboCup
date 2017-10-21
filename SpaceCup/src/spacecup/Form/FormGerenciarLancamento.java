@@ -1,19 +1,18 @@
-
 package spacecup.Form;
 
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
+import spacecup.DAO.CompeticaoDAO;
 import spacecup.DAO.LancamentoDAO;
+import spacecup.Model.Competicao;
 import spacecup.Model.Lancamento;
-
 
 public class FormGerenciarLancamento extends javax.swing.JInternalFrame {
 
-
     public FormGerenciarLancamento() {
         initComponents();
+        setComboBox();
     }
-
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -51,12 +50,6 @@ public class FormGerenciarLancamento extends javax.swing.JInternalFrame {
         jTextField11 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-
-        cbCompeticoes.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cbCompeticoesActionPerformed(evt);
-            }
-        });
 
         jLabel1.setText("Ano");
 
@@ -211,7 +204,7 @@ public class FormGerenciarLancamento extends javax.swing.JInternalFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(jButton2))
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -231,7 +224,7 @@ public class FormGerenciarLancamento extends javax.swing.JInternalFrame {
                 .addComponent(btnFiltrar)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jScrollPane1)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -243,22 +236,18 @@ public class FormGerenciarLancamento extends javax.swing.JInternalFrame {
                     .addComponent(jLabel1)
                     .addComponent(cbAnoCompeticao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnFiltrar))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void cbCompeticoesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbCompeticoesActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cbCompeticoesActionPerformed
-
     private void btnFiltrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFiltrarActionPerformed
-        String nome = (String)cbCompeticoes.getSelectedItem();
-        String ano = (String)cbAnoCompeticao.getSelectedItem();
+        String nome = (String) cbCompeticoes.getSelectedItem();
+        String ano = (String) cbAnoCompeticao.getSelectedItem();
 
         List<Lancamento> lancamentos = new LancamentoDAO().getLancamentosByYear(nome, ano);
         listar(lancamentos);
@@ -271,12 +260,12 @@ public class FormGerenciarLancamento extends javax.swing.JInternalFrame {
     private void listar(List<Lancamento> lancamentos) {
         DefaultTableModel model = (DefaultTableModel) jTable.getModel();
         clearList();
-        
-        for (Lancamento l : lancamentos) {   
+
+        for (Lancamento l : lancamentos) {
             model.addRow((Object[]) addLinha(l));
         }
     }
-    
+
     /**
      * Método para limpar a lista de Lancamentos.
      */
@@ -289,7 +278,8 @@ public class FormGerenciarLancamento extends javax.swing.JInternalFrame {
     }
 
     /**
-     * Método para adcionar um objeto <code>Lancamento</code> na linha da tabela.
+     * Método para adcionar um objeto <code>Lancamento</code> na linha da
+     * tabela.
      *
      * @param objeto <code>Lancamento</code>
      * @return Um objeto tipo <code>Vector</code> já formatado para ser colocado
@@ -303,6 +293,15 @@ public class FormGerenciarLancamento extends javax.swing.JInternalFrame {
         };
     }
 
+    private void setComboBox() {
+        for (Competicao c : new CompeticaoDAO().getCompeticoes()) {
+            cbCompeticoes.addItem(c.getTipoCompeticao().getNome());
+
+            for (String data : new CompeticaoDAO().getDatas(c.getTipoCompeticao().getNome())) {
+                cbAnoCompeticao.addItem(data);
+            }
+        }
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnFiltrar;
     private javax.swing.JComboBox<String> cbAnoCompeticao;
