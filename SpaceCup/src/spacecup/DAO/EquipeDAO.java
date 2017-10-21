@@ -80,4 +80,31 @@ public class EquipeDAO {
         }
         return equipe;
     }
+
+    public void inserir(Equipe equipe){        
+        
+        try {
+            con = new Conexao().getConnection();
+            sql = "INSERT INTO `equipe`  VALUES (?,?,?,?)";
+            
+            ps = con.prepareStatement(sql);
+            ps.setInt(1, equipe.getId());
+            ps.setString(2, equipe.getNome());
+            
+            if(equipe.isClassificado()){
+                ps.setInt(3, 1);
+            } else {
+                ps.setInt(3,0);
+            }
+            
+            ps.setInt(4, equipe.getTurmaId());
+            
+            ps.execute();
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(EquipeDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
+    }
 }
