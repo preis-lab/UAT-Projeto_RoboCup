@@ -2,6 +2,7 @@ package spacecup.Form;
 
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
 import spacecup.DAO.CompeticaoDAO;
 import spacecup.DAO.LancamentoDAO;
 import spacecup.Model.Competicao;
@@ -76,6 +77,11 @@ public class FormGerenciarLancamento extends javax.swing.JInternalFrame {
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
+            }
+        });
+        jTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTableMouseClicked(evt);
             }
         });
         jScrollPane1.setViewportView(jTable);
@@ -253,10 +259,17 @@ public class FormGerenciarLancamento extends javax.swing.JInternalFrame {
         listar(lancamentos);
     }//GEN-LAST:event_btnFiltrarActionPerformed
 
-    /**
-     * Método para listar os Lancamentos e exibi-los na tabela. Gera um
-     * <code>Array</code> de <code>Lancamento</code> e exibe cada um na tabela
-     */
+    private void jTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableMouseClicked
+        int index = jTable.getSelectedRow();
+        TableModel model = jTable.getModel();
+
+        if (index != -1) {
+            txtDistanciaAlvo.setText(String.valueOf(model.getValueAt(index, 1)));
+            txtAnguloLancamento.setText(String.valueOf(model.getValueAt(index, 2)));
+            txtVelocidadeVento.setText(String.valueOf(model.getValueAt(index, 3)));
+        }
+    }//GEN-LAST:event_jTableMouseClicked
+
     private void listar(List<Lancamento> lancamentos) {
         DefaultTableModel model = (DefaultTableModel) jTable.getModel();
         clearList();
@@ -266,9 +279,6 @@ public class FormGerenciarLancamento extends javax.swing.JInternalFrame {
         }
     }
 
-    /**
-     * Método para limpar a lista de Lancamentos.
-     */
     private void clearList() {
         DefaultTableModel model = (DefaultTableModel) jTable.getModel();
 
@@ -277,14 +287,6 @@ public class FormGerenciarLancamento extends javax.swing.JInternalFrame {
         }
     }
 
-    /**
-     * Método para adcionar um objeto <code>Lancamento</code> na linha da
-     * tabela.
-     *
-     * @param objeto <code>Lancamento</code>
-     * @return Um objeto tipo <code>Vector</code> já formatado para ser colocado
-     * na linha da tabela
-     */
     private Object addLinha(Lancamento l) {
         return new Object[]{
             l.getId(),
