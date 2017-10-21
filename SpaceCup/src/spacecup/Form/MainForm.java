@@ -113,6 +113,11 @@ public class MainForm extends javax.swing.JFrame {
         );
 
         equipes.setBackground(new java.awt.Color(4, 47, 107));
+        equipes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                equipesMouseClicked(evt);
+            }
+        });
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/spacecup/icons/rocket.png"))); // NOI18N
 
@@ -269,6 +274,10 @@ public class MainForm extends javax.swing.JFrame {
     private void alunosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_alunosMouseClicked
         addJanela(new AlunoForm());
     }//GEN-LAST:event_alunosMouseClicked
+
+    private void equipesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_equipesMouseClicked
+        addJanela(new EquipesForm());
+    }//GEN-LAST:event_equipesMouseClicked
 
     private void addJanela(JInternalFrame janela) {
         jdPanel.removeAll();
