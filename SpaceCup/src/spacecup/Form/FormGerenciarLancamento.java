@@ -68,7 +68,7 @@ public class FormGerenciarLancamento extends javax.swing.JInternalFrame {
 
             },
             new String [] {
-                "ID", "Distancia do Alvo", "Angulo Lançamento", "Velocidade do Vento", "Altitude Máxima", "Altitude Injeção", "Pico Aceleração", "Aceleração Média", "Taxa Descida", "Distância Entre Queda e Alvo"
+                "ID", "Equipe", "Turma", "Velocidade do Vento", "Altitude Máxima", "Altitude Injeção", "Pico Aceleração", "Aceleração Média", "Taxa Descida", "Distância Entre Queda e Alvo"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -290,8 +290,8 @@ public class FormGerenciarLancamento extends javax.swing.JInternalFrame {
     private Object addLinha(Lancamento l) {
         return new Object[]{
             l.getId(),
-            l.getDistanciaDoAlvo(),
-            l.getAnguloLancamento()
+            l.getEquipe().getNome(),
+            l.getEquipe().getTurmaId()
         };
     }
 
