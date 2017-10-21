@@ -1,0 +1,1 @@
+UPDATE `lancamento` SET `distanciadoalvo`=2],`angulolancamento`=3],`velocidadevento`=4],`altitudemaxima`=5],`tempopropulsao`=6],`picoaceleracao`=7],`aceleracaomedia`=8],`tempoapogeudescida`=9],`altitudeejecao`=10],`taxadescida`=11],`duracaovoo`=12],`distanciaentrequedaalvo`=13],`equipe_id`=14],`foguete_id`=15] WHERE `lancamento_id`= ,
