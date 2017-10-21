@@ -5,13 +5,13 @@ public class Equipe {
     private int id;
     private String nome;
     private boolean classificado;
-    private int turmaId;
+    private Turma turma;
 
-    public Equipe(String nome, int id, boolean classificado, int turmaId) {
+    public Equipe(String nome, int id, boolean classificado, Turma turma) {
         this.nome = nome;
         this.id = id;
         this.classificado = classificado;
-        this.turmaId = turmaId;
+        this.turma = turma;
     }
 
     public String getNome() {
@@ -38,12 +38,12 @@ public class Equipe {
         this.classificado = classificado;
     }
 
-    public int getTurmaId() {
-        return turmaId;
+    public Turma getTurma() {
+        return turma;
     }
 
-    public void setTurmaId(int turmaId) {
-        this.turmaId = turmaId;
+    public void setTurma(Turma turma) {
+        this.turma = turma;
     }
 
 }

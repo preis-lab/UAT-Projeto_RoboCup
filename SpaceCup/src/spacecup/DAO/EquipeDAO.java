@@ -36,7 +36,7 @@ public class EquipeDAO {
                     classificado = false;
                 }
 
-                lista.add(new Equipe(rs.getString("nome"), rs.getInt("equipe_id"), classificado, rs.getInt("turma_id")));
+                lista.add(new Equipe(rs.getString("nome"), rs.getInt("equipe_id"), classificado, new TurmaDAO().getById(rs.getInt("turma_id"))));
             }
 
         } catch (SQLException ex) {
@@ -61,7 +61,7 @@ public class EquipeDAO {
                 if (rs.getInt("classificado") == 1) {
                     classificado = true;
                 }
-                equipe = new Equipe(rs.getString("nome"), rs.getInt("equipe_id"), classificado, rs.getInt("turma_id"));
+                equipe = new Equipe(rs.getString("nome"), rs.getInt("equipe_id"), classificado, new TurmaDAO().getById(rs.getInt("turma_id")));
             }
             con.close();
         } catch (SQLException ex) {
@@ -86,7 +86,7 @@ public class EquipeDAO {
                 ps.setInt(3, 0);
             }
 
-            ps.setInt(4, equipe.getTurmaId());
+            ps.setInt(4, equipe.getTurma().getId());
 
             ps.execute();
             con.close();
@@ -110,7 +110,7 @@ public class EquipeDAO {
             } else {
                 ps.setInt(2, 0);
             }
-            ps.setInt(3, equipe.getTurmaId());
+            ps.setInt(3, equipe.getTurma().getId());
             ps.setInt(4, equipe.getId());
 
             ps.execute();
