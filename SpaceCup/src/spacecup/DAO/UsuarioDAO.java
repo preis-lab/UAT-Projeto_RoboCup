@@ -14,6 +14,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import spacecup.Conexao.Conexao;
+import spacecup.Model.Aluno;
 import spacecup.Model.Usuario;
 
 /**
@@ -72,8 +73,9 @@ public class UsuarioDAO {
 
             rs = ps.executeQuery();
 
-            while (rs.next()) {
-                 new Usuario(rs.getInt("usuario_id"), rs.getString("nome"), senha, id);
+            while (rs.next()) {     
+               
+                alunos.add(new Aluno(rs.getInt("usuario_id"), rs.getString("nome") , rs.getString("senha"), rs.getInt("nivel_acesso"), new EquipeDAO().getById(rs.getInt("equipe_id"))));
             }
             con.close();
         } catch (SQLException ex) {
