@@ -27,35 +27,34 @@ public class EquipeDAO {
     private ResultSet rs;
     private String sql;
 
-    public List<Equipe> getEquipes(){
+    public List<Equipe> getEquipes() {
         List<Equipe> lista = new ArrayList<Equipe>();
         try {
             boolean classificado = false;
             con = new Conexao().getConnection();
             sql = "select * from equipe";
             ps = con.prepareStatement(sql);
-            
+
             rs = ps.executeQuery();
-            
-            while(rs.next()){
-                
-                if(rs.getInt("classificado")==1){
+
+            while (rs.next()) {
+
+                if (rs.getInt("classificado") == 1) {
                     classificado = true;
                 } else {
                     classificado = false;
                 }
-                
+
                 lista.add(new Equipe(rs.getString("nome"), rs.getInt("equipe_id"), classificado, rs.getInt("turma_id")));
             }
-            
+
         } catch (SQLException ex) {
             Logger.getLogger(EquipeDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        
+
         return lista;
     }
-    
+
     public Equipe getById(int id) {
         Equipe equipe = null;
 
@@ -72,7 +71,7 @@ public class EquipeDAO {
                 if (rs.getInt("classificado") == 1) {
                     classificado = true;
                 }
-                equipe = new Equipe(rs.getString("nome"), rs.getInt("equipe_id"), classificado, rs.getInt("turma_id"));               
+                equipe = new Equipe(rs.getString("nome"), rs.getInt("equipe_id"), classificado, rs.getInt("turma_id"));
             }
             con.close();
         } catch (SQLException ex) {
@@ -81,30 +80,53 @@ public class EquipeDAO {
         return equipe;
     }
 
-    public void inserir(Equipe equipe){        
-        
+    public void inserir(Equipe equipe) {
+
         try {
             con = new Conexao().getConnection();
             sql = "INSERT INTO `equipe`  VALUES (?,?,?,?)";
-            
+
             ps = con.prepareStatement(sql);
             ps.setInt(1, equipe.getId());
             ps.setString(2, equipe.getNome());
-            
-            if(equipe.isClassificado()){
+
+            if (equipe.isClassificado()) {
                 ps.setInt(3, 1);
             } else {
-                ps.setInt(3,0);
+                ps.setInt(3, 0);
             }
-            
+
             ps.setInt(4, equipe.getTurmaId());
-            
+
             ps.execute();
-            
+            con.close();
         } catch (SQLException ex) {
             Logger.getLogger(EquipeDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        
+
+    }
+
+    public void alterar(Equipe equipe) {
+        try {
+            con = new Conexao().getConnection();
+            sql = "UPDATE `equipe` SET `nome`=?,`classificado`=?,`turma_id`=? WHERE `equipe_id`=?";
+
+            ps = con.prepareStatement(sql);
+            
+            ps.setString(1, equipe.getNome());
+
+            if (equipe.isClassificado()) {
+                ps.setInt(2, 1);
+            } else {
+                ps.setInt(2, 0);
+            }
+            ps.setInt(3, equipe.getTurmaId());
+            ps.setInt(4, equipe.getId());
+
+            ps.execute();
+            con.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(EquipeDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 }
