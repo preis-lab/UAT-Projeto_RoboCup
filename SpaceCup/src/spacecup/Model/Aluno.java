@@ -9,17 +9,20 @@ package spacecup.Model;
  *
  * @author pauloh
  */
-public class Usuario {
-    protected int id;
-    protected String nome;
-    protected String senha;
-    protected int nivelAcesso;
+public class Aluno extends Usuario{
+    private Equipe equipe;
+    
+    public Aluno(int id, String nome, String senha, int nivelAcesso, Equipe equipe) {
+        super(id, nome, senha, nivelAcesso);
+        this.equipe = equipe;
+    }
 
-    public Usuario(int id, String nome, String senha, int nivelAcesso) {
-        this.id = id;
-        this.nome = nome;
-        this.senha = senha;
-        this.nivelAcesso = nivelAcesso;
+    public Equipe getEquipe() {
+        return equipe;
+    }
+
+    public void setEquipe(Equipe equipe) {
+        this.equipe = equipe;
     }
 
     public int getId() {
