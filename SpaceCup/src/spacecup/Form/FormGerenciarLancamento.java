@@ -18,7 +18,7 @@ import spacecup.Model.Lancamento;
  *
  * @author pauloh
  */
-public class FormLancamentos extends javax.swing.JFrame {
+public class FormGerenciarLancamento extends javax.swing.JFrame {
 
     /**
      * Creates new form FormLancamentos
@@ -27,7 +27,7 @@ public class FormLancamentos extends javax.swing.JFrame {
     private List<Competicao> listaCompeticao;
     private List<String> listaDatas;
     
-    public FormLancamentos() {
+    public FormGerenciarLancamento() {
         initComponents();
         atualizaDados();
         populaCompeticoes(listaCompeticao);
@@ -50,6 +50,7 @@ public class FormLancamentos extends javax.swing.JFrame {
         btnFiltrar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable = new javax.swing.JTable();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -63,7 +64,7 @@ public class FormLancamentos extends javax.swing.JFrame {
 
         jLabel2.setText("Competicao");
 
-        btnFiltrar.setText("Filtrar");
+        btnFiltrar.setText("Selecionar");
         btnFiltrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnFiltrarActionPerformed(evt);
@@ -93,23 +94,28 @@ public class FormLancamentos extends javax.swing.JFrame {
             jTable.getColumnModel().getColumn(2).setResizable(false);
         }
 
+        jButton1.setText("Cadastrar Lançamento");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane1)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(cbCompeticoes, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(cbAnoCompeticao, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnFiltrar)
-                .addContainerGap(26, Short.MAX_VALUE))
-            .addComponent(jScrollPane1)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cbCompeticoes, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cbAnoCompeticao, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnFiltrar))
+                    .addComponent(jButton1))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -123,7 +129,9 @@ public class FormLancamentos extends javax.swing.JFrame {
                     .addComponent(btnFiltrar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(246, 246, 246))
+                .addGap(18, 18, 18)
+                .addComponent(jButton1)
+                .addGap(197, 197, 197))
         );
 
         pack();
@@ -197,20 +205,21 @@ public class FormLancamentos extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FormLancamentos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FormGerenciarLancamento.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FormLancamentos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FormGerenciarLancamento.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FormLancamentos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FormGerenciarLancamento.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FormLancamentos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FormGerenciarLancamento.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FormLancamentos().setVisible(true);
+                new FormGerenciarLancamento().setVisible(true);
             }
         });
     }
@@ -219,6 +228,7 @@ public class FormLancamentos extends javax.swing.JFrame {
     private javax.swing.JButton btnFiltrar;
     private javax.swing.JComboBox<String> cbAnoCompeticao;
     private javax.swing.JComboBox<String> cbCompeticoes;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
