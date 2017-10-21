@@ -63,8 +63,8 @@ public class UsuarioDAO {
         return usuario;
     }
 
-    public List<Usuario> getAlunos() {
-        List<Usuario> alunos = new ArrayList<Usuario>();
+    public List<Aluno> getAlunos() {
+        List<Aluno> alunos = new ArrayList<Aluno>();
         try {
             con = new Conexao().getConnection();
             sql = "select * from aluno";
@@ -81,7 +81,7 @@ public class UsuarioDAO {
         } catch (SQLException ex) {
             Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return null;
+        return alunos;
     }
     
     public Usuario getAlunoById(int id){
