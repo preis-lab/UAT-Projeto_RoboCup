@@ -42,11 +42,7 @@ public class EquipeDAO {
         } catch (SQLException ex) {
             Logger.getLogger(EquipeDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
-<<<<<<< HEAD
-        System.out.println(lista.toString());
-=======
 
->>>>>>> dca921c9051056b42afb85e1fd431b1bb44a259f
         return lista;
     }
 
