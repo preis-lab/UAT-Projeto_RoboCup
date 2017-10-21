@@ -131,6 +131,9 @@ public class LancamentoDAO {
             ps.setInt(14, lancamento.getEquipe().getId());
             ps.setInt(15, lancamento.getFoguete().getId());
             
+            ps.execute();
+            
+            con.close();
             
         } catch (SQLException ex) {
             Logger.getLogger(LancamentoDAO.class.getName()).log(Level.SEVERE, null, ex);
