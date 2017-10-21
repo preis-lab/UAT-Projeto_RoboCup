@@ -42,7 +42,11 @@ public class EquipeDAO {
         } catch (SQLException ex) {
             Logger.getLogger(EquipeDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
+<<<<<<< HEAD
         System.out.println(lista.toString());
+=======
+
+>>>>>>> dca921c9051056b42afb85e1fd431b1bb44a259f
         return lista;
     }
 
@@ -71,30 +75,53 @@ public class EquipeDAO {
         return equipe;
     }
 
-    public void inserir(Equipe equipe){        
-        
+    public void inserir(Equipe equipe) {
+
         try {
             con = new Conexao().getConnection();
             sql = "INSERT INTO `equipe`  VALUES (?,?,?,?)";
-            
+
             ps = con.prepareStatement(sql);
             ps.setInt(1, equipe.getId());
             ps.setString(2, equipe.getNome());
-            
-            if(equipe.isClassificado()){
+
+            if (equipe.isClassificado()) {
                 ps.setInt(3, 1);
             } else {
-                ps.setInt(3,0);
+                ps.setInt(3, 0);
             }
-            
+
             ps.setInt(4, equipe.getTurmaId());
-            
+
             ps.execute();
-            
+            con.close();
         } catch (SQLException ex) {
             Logger.getLogger(EquipeDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        
+
+    }
+
+    public void alterar(Equipe equipe) {
+        try {
+            con = new Conexao().getConnection();
+            sql = "UPDATE `equipe` SET `nome`=?,`classificado`=?,`turma_id`=? WHERE `equipe_id`=?";
+
+            ps = con.prepareStatement(sql);
+            
+            ps.setString(1, equipe.getNome());
+
+            if (equipe.isClassificado()) {
+                ps.setInt(2, 1);
+            } else {
+                ps.setInt(2, 0);
+            }
+            ps.setInt(3, equipe.getTurmaId());
+            ps.setInt(4, equipe.getId());
+
+            ps.execute();
+            con.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(EquipeDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 }
