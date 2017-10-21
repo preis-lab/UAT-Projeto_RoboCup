@@ -50,5 +50,4 @@ public class EquipeDAO {
         }
         return equipe;
     }
-
 }
