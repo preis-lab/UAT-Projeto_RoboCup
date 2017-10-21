@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package spacecup.DAO;
 
 import java.sql.Connection;
@@ -16,10 +11,6 @@ import java.util.logging.Logger;
 import spacecup.Conexao.Conexao;
 import spacecup.Model.Equipe;
 
-/**
- *
- * @author pauloh
- */
 public class EquipeDAO {
 
     private Connection con;
@@ -27,35 +18,34 @@ public class EquipeDAO {
     private ResultSet rs;
     private String sql;
 
-    public List<Equipe> getEquipes(){
+    public List<Equipe> getEquipes() {
         List<Equipe> lista = new ArrayList<Equipe>();
         try {
             boolean classificado = false;
             con = new Conexao().getConnection();
             sql = "select * from equipe";
             ps = con.prepareStatement(sql);
-            
+
             rs = ps.executeQuery();
-            
-            while(rs.next()){
-                
-                if(rs.getInt("classificado")==1){
+
+            while (rs.next()) {
+
+                if (rs.getInt("classificado") == 1) {
                     classificado = true;
                 } else {
                     classificado = false;
                 }
-                
+
                 lista.add(new Equipe(rs.getString("nome"), rs.getInt("equipe_id"), classificado, rs.getInt("turma_id")));
             }
-            
+
         } catch (SQLException ex) {
             Logger.getLogger(EquipeDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        
+        System.out.println(lista.toString());
         return lista;
     }
-    
+
     public Equipe getById(int id) {
         Equipe equipe = null;
 
@@ -72,7 +62,7 @@ public class EquipeDAO {
                 if (rs.getInt("classificado") == 1) {
                     classificado = true;
                 }
-                equipe = new Equipe(rs.getString("nome"), rs.getInt("equipe_id"), classificado, rs.getInt("turma_id"));               
+                equipe = new Equipe(rs.getString("nome"), rs.getInt("equipe_id"), classificado, rs.getInt("turma_id"));
             }
             con.close();
         } catch (SQLException ex) {
