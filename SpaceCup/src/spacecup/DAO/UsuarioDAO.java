@@ -69,7 +69,7 @@ public class UsuarioDAO {
             con = new Conexao().getConnection();
             sql = "select * from aluno";
 
-            ps = con.prepareStatement(sql);;
+            ps = con.prepareStatement(sql);
 
             rs = ps.executeQuery();
 
@@ -83,8 +83,31 @@ public class UsuarioDAO {
         }
         return null;
     }
+    
+    public Usuario getAlunoById(int id){
+        Aluno aluno = null;
+        
+        return aluno;
+    }
+    
+    public void adicionaAluno(Aluno a) {
+       try {
+            con = new Conexao().getConnection();
+            sql = "INSERT INTO `aluno` VALUES (?,?,?,?,?)";
 
-    public void adicionaUsuario(Usuario u) {
+            ps = con.prepareStatement(sql);
 
+            ps.setInt(1, a.getId());
+            ps.setString(2, a.getNome());
+            ps.setString(3, a.getSenha());
+            ps.setInt(4, a.getNivelAcesso());
+            ps.setInt(5, a.getEquipe().getId());
+
+            ps.execute();
+
+            con.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(TipoCompeticaoDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 }
