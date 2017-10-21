@@ -95,7 +95,9 @@ public class AlunoForm extends javax.swing.JInternalFrame {
     private Object addLinha(Aluno a) {
         return new Object[]{
             a.getId(),
-            a.getNome(),};
+            a.getNome(),
+            null,
+            a.getEquipe().getNome(),};
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel jPanel1;
