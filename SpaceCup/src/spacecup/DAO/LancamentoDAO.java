@@ -29,24 +29,32 @@ public class LancamentoDAO {
             ps.setInt(1, id);
             rs = ps.executeQuery();
 
-            l = new Lancamento();
+            if (rs.next()) {
 
-            l.setId(rs.getInt("lancamento_id"));
-            l.setAceleracaoMedia(rs.getFloat("aceleracaoMedia"));
-            l.setAltitudeEjecao(rs.getFloat("altitudeEjecao"));
-            l.setAltitudeMaxima(rs.getFloat("altitudeMaxima"));
-            l.setAnguloLancamento(rs.getFloat("anguloLancamento"));
-            l.setDistanciaDoAlvo(rs.getFloat("distanciaDoAlvo"));
-            l.setDistanciaEntreQuedaAlvo(rs.getFloat("distanciaEntreQuedaAlvo"));
-            l.setDuracaoVoo(rs.getDate("duracaoVoo"));
-            l.setPicoAceleracao(rs.getFloat("picoAceleracao"));
-            l.setTaxaDescida(rs.getFloat("taxaDescida"));
-            l.setTempoApogeuAescida(rs.getDate("tempoApogeuDescida"));
-            l.setTempoPropulsao(rs.getDate("tempoPropulsao"));
-            l.setVelocidadeVento(rs.getFloat("velocidadeVento"));
-            l.setEquipe(new EquipeDAO().getById(rs.getInt("equipe_id")));
-            l.setFoguete(new FogueteDAO().getById(rs.getInt("foguete_id")));
+                l = new Lancamento();
 
+                l.setId(rs.getInt("lancamento_id"));
+
+                l.setAceleracaoMedia(rs.getFloat("aceleracaoMedia"));
+                System.out.println(l.getAceleracaoMedia());
+
+                l.setAltitudeEjecao(rs.getFloat("altitudeEjecao"));
+                System.out.println(l.getAltitudeEjecao());
+
+                l.setAltitudeMaxima(rs.getFloat("altitudeMaxima"));
+                l.setAnguloLancamento(rs.getFloat("anguloLancamento"));
+                l.setDistanciaDoAlvo(rs.getFloat("distanciaDoAlvo"));
+                l.setDistanciaEntreQuedaAlvo(rs.getFloat("distanciaEntreQuedaAlvo"));
+                l.setDuracaoVoo(rs.getDate("duracaoVoo"));
+                l.setPicoAceleracao(rs.getFloat("picoAceleracao"));
+                l.setTaxaDescida(rs.getFloat("taxaDescida"));
+                l.setTempoApogeuDescida(rs.getDate("tempoApogeuDescida"));
+                l.setTempoPropulsao(rs.getDate("tempoPropulsao"));
+                l.setVelocidadeVento(rs.getFloat("velocidadeVento"));
+                l.setEquipe(new EquipeDAO().getById(rs.getInt("equipe_id")));
+                l.setFoguete(new FogueteDAO().getById(rs.getInt("foguete_id")));
+
+            }
             con.close();
         } catch (SQLException ex) {
             Logger.getLogger(LancamentoDAO.class.getName()).log(Level.SEVERE, null, ex);
@@ -114,7 +122,7 @@ public class LancamentoDAO {
                 l.setDuracaoVoo(rs.getDate("duracaoVoo"));
                 l.setPicoAceleracao(rs.getFloat("picoAceleracao"));
                 l.setTaxaDescida(rs.getFloat("taxaDescida"));
-                l.setTempoApogeuAescida(rs.getDate("tempoApogeuDescida"));
+                l.setTempoApogeuDescida(rs.getDate("tempoApogeuDescida"));
                 l.setTempoPropulsao(rs.getDate("tempoPropulsao"));
                 l.setVelocidadeVento(rs.getFloat("velocidadeVento"));
                 l.setEquipe(new EquipeDAO().getById(rs.getInt("equipe_id")));
@@ -145,7 +153,7 @@ public class LancamentoDAO {
             ps.setDate(6, new java.sql.Date(lancamento.getTempoPropulsao().getTime()));
             ps.setFloat(7, lancamento.getPicoAceleracao());
             ps.setFloat(8, lancamento.getAceleracaoMedia());
-            ps.setDate(9, new java.sql.Date(lancamento.getTempoApogeuAescida().getTime()));
+            ps.setDate(9, new java.sql.Date(lancamento.getTempoApogeuDescida().getTime()));
             ps.setFloat(10, lancamento.getAltitudeEjecao());
             ps.setFloat(11, lancamento.getTaxaDescida());
             ps.setDate(12, new java.sql.Date(lancamento.getDuracaoVoo().getTime()));
@@ -177,7 +185,7 @@ public class LancamentoDAO {
             ps.setDate(5, new java.sql.Date(lancamento.getTempoPropulsao().getTime()));
             ps.setFloat(6, lancamento.getPicoAceleracao());
             ps.setFloat(7, lancamento.getAceleracaoMedia());
-            ps.setDate(8, new java.sql.Date(lancamento.getTempoApogeuAescida().getTime()));
+            ps.setDate(8, new java.sql.Date(lancamento.getTempoApogeuDescida().getTime()));
             ps.setFloat(9, lancamento.getAltitudeEjecao());
             ps.setFloat(10, lancamento.getTaxaDescida());
             ps.setDate(11, new java.sql.Date(lancamento.getDuracaoVoo().getTime()));
@@ -193,6 +201,10 @@ public class LancamentoDAO {
         } catch (SQLException ex) {
             Logger.getLogger(LancamentoDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+
+    public void AlteraLancamento(Lancamento l) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }
