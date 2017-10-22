@@ -17,6 +17,10 @@ public class Aluno extends Usuario{
         this.equipe = equipe;
     }
 
+    public Aluno() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     public Equipe getEquipe() {
         return equipe;
     }

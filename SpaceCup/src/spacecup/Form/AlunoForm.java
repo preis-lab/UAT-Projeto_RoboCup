@@ -3,11 +3,12 @@ package spacecup.Form;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
+import spacecup.DAO.EquipeDAO;
 import spacecup.DAO.UsuarioDAO;
 import spacecup.Model.Aluno;
 
 public class AlunoForm extends javax.swing.JInternalFrame {
-
+    
     public AlunoForm() {
         initComponents();
         populaLista();
@@ -39,8 +40,18 @@ public class AlunoForm extends javax.swing.JInternalFrame {
         cbEquipe.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         btnSalvar.setText("Salvar");
+        btnSalvar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalvarActionPerformed(evt);
+            }
+        });
 
         btnEditar.setText("Editar");
+        btnEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditarActionPerformed(evt);
+            }
+        });
 
         btnRemover.setText("Remover");
 
@@ -140,6 +151,24 @@ public class AlunoForm extends javax.swing.JInternalFrame {
             txtNome.setText(String.valueOf(model.getValueAt(index, 1)));
         }
     }//GEN-LAST:event_jTableMouseClicked
+
+    private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
+        Aluno a = new Aluno();
+        a.setId(Integer.parseInt(txtRm.getText()));
+        a.setNome(txtNome.getText());
+        a.setEquipe(new EquipeDAO().getByNome(WIDTH));
+        new AlunoDAO().alterar(a);
+        populaLista();
+    }//GEN-LAST:event_btnEditarActionPerformed
+
+    private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
+        Aluno a = new Aluno();
+        a.setId(Integer.parseInt(txtRm.getText()));
+        a.setNome(txtNome.getText());
+        a.setEquipe(new EquipeDAO().getByNome(WIDTH));
+        new AlunoDAO().alterar(a);
+        populaLista();
+    }//GEN-LAST:event_btnSalvarActionPerformed
 
     private void populaLista() {
         List<Aluno> alunos = new UsuarioDAO().getAlunos();

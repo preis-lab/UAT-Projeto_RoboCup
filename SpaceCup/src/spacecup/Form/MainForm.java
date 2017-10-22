@@ -17,6 +17,19 @@ public class MainForm extends javax.swing.JFrame {
         mudaBG(lancamentos, ativoColor);
     }
 
+    MainForm(int nivelAcesso) {
+        initComponents();
+        addJanela(new FormGerenciarLancamento());
+        mudaBG(lancamentos, ativoColor);
+        
+        switch (nivelAcesso) {
+            case 1:
+                break;
+            case 2:
+                break;
+        }
+    }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {

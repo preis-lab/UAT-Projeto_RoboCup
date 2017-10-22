@@ -3,10 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/mnt/Biblioteca/galeria/Dev/java/projetos/UAT-Projeto_RoboCup/SpaceCup/src/spacecup/Conexao/Conexao.java</file>
             <file>file:/mnt/Biblioteca/galeria/Dev/java/projetos/UAT-Projeto_RoboCup/SpaceCup/src/spacecup/Form/MainForm.java</file>
-            <file>file:/mnt/Biblioteca/galeria/Dev/java/projetos/UAT-Projeto_RoboCup/SpaceCup/src/spacecup/Form/FormGerenciarLancamento.java</file>
-            <file>file:/mnt/Biblioteca/galeria/Dev/java/projetos/UAT-Projeto_RoboCup/SpaceCup/src/spacecup/DAO/LancamentoDAO.java</file>
+            <file>file:/mnt/Biblioteca/galeria/Dev/java/projetos/UAT-Projeto_RoboCup/SpaceCup/src/spacecup/Form/FormLogin.java</file>
+            <file>file:/mnt/Biblioteca/galeria/Dev/java/projetos/UAT-Projeto_RoboCup/SpaceCup/src/spacecup/Form/AlunoDAO.java</file>
+            <file>file:/mnt/Biblioteca/galeria/Dev/java/projetos/UAT-Projeto_RoboCup/SpaceCup/src/spacecup/Form/AlunoForm.java</file>
         </group>
     </open-files>
 </project-private>

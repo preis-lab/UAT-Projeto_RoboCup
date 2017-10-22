@@ -119,4 +119,8 @@ public class EquipeDAO {
             Logger.getLogger(EquipeDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+
+    public Equipe getByNome(int WIDTH) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

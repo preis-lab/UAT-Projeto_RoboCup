@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package spacecup.DAO;
 
 import java.sql.Connection;
@@ -16,10 +11,6 @@ import java.util.logging.Logger;
 import spacecup.Conexao.Conexao;
 import spacecup.Model.TipoCompeticao;
 
-/**
- *
- * @author pauloh
- */
 public class TipoCompeticaoDAO {
 
     private Connection con;
@@ -54,7 +45,7 @@ public class TipoCompeticaoDAO {
             ps = con.prepareStatement(sql);
 
             ps.setString(1, tc.getNome());
-            ps.setInt(2, tc.getId());            
+            ps.setInt(2, tc.getId());
 
             ps.execute();
 
@@ -96,6 +87,29 @@ public class TipoCompeticaoDAO {
 
             while (rs.next()) {
                 tp = new TipoCompeticao(id, rs.getString("nome"));
+            }
+            con.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(TipoCompeticaoDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return tp;
+
+    }
+
+    public TipoCompeticao getBynome(String nome) {
+        TipoCompeticao tp = null;
+
+        try {
+
+            con = new Conexao().getConnection();
+            sql = "select * from tipo_competicao where nome = ?";
+
+            ps = con.prepareStatement(sql);
+            ps.setString(1, nome);
+            rs = ps.executeQuery();
+
+            if (rs.next()) {
+                tp = new TipoCompeticao(rs.getInt("tipo_competicao_id"), rs.getString("nome"));
             }
             con.close();
         } catch (SQLException ex) {

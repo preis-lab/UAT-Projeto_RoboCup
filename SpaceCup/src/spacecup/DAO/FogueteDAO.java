@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package spacecup.DAO;
 
 import java.sql.Connection;
@@ -16,10 +11,6 @@ import java.util.logging.Logger;
 import spacecup.Conexao.Conexao;
 import spacecup.Model.Foguete;
 
-/**
- *
- * @author pauloh
- */
 public class FogueteDAO {
 
     private Connection con;
@@ -52,7 +43,7 @@ public class FogueteDAO {
             sql = "UPDATE `foguete` SET `peso`=?,`tamanho`=? WHERE `foguete_id`= ?";
 
             ps = con.prepareStatement(sql);
-            
+
             ps.setFloat(1, f.getPeso());
             ps.setFloat(2, f.getTamanho());
             ps.setInt(3, f.getId());
@@ -68,12 +59,11 @@ public class FogueteDAO {
     public void insere(Foguete f) {
         try {
             con = new Conexao().getConnection();
-            sql = "INSERT INTO `foguete` VALUES (?,?,?)";
+            sql = "INSERT INTO `foguete` VALUES (?, ?)";
 
             ps = con.prepareStatement(sql);
 
-            ps.setInt(1, f.getId());
-            ps.setFloat(2, f.getPeso());
+            ps.setFloat(1, f.getPeso());
             ps.setFloat(2, f.getTamanho());
 
             ps.execute();

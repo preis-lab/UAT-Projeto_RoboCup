@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package spacecup.DAO;
 
 import java.sql.Connection;
@@ -16,10 +11,6 @@ import java.util.logging.Logger;
 import spacecup.Conexao.Conexao;
 import spacecup.Model.Endereco;
 
-/**
- *
- * @author pauloh
- */
 public class EnderecoDAO {
 
     private Connection con;
@@ -41,6 +32,28 @@ public class EnderecoDAO {
 
             while (rs.next()) {
                 endereco = new Endereco(numero, cep, rs.getString("descricao"), new CidadeDAO().getById(rs.getInt("cidade_id")).getNome(), rs.getString("rua"));
+            }
+            con.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(EnderecoDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return endereco;
+    }
+    
+    public Endereco getByRua(String rua) {
+        Endereco endereco = null;
+
+        try {
+            sql = "select * from endereco where rua = ?";
+            con = new Conexao().getConnection();
+
+            ps = con.prepareStatement(sql);
+            ps.setString(1, rua);
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+                endereco = new Endereco(rs.getInt("numero"), rs.getString("cep"), rs.getString("descricao"), new CidadeDAO().getById(rs.getInt("cidade_id")).getNome(), rs.getString("rua"));
             }
             con.close();
         } catch (SQLException ex) {

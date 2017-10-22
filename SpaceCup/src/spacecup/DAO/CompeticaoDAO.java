@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package spacecup.DAO;
 
 import java.sql.Connection;
@@ -16,10 +11,6 @@ import java.util.logging.Logger;
 import spacecup.Conexao.Conexao;
 import spacecup.Model.Competicao;
 
-/**
- *
- * @author pauloh
- */
 public class CompeticaoDAO {
 
     private Connection con;
@@ -85,19 +76,18 @@ public class CompeticaoDAO {
         try {
             con = new Conexao().getConnection();
 
-            sql = "INSERT INTO `competicao` VALUES (?,?,?,?,?,?)";
+            sql = "INSERT INTO `competicao` VALUES (?, ?, ?, ?)";
 
             ps = con.prepareStatement(sql);
 
-            ps.setInt(1, competicao.getId());
-            ps.setDate(2, new java.sql.Date(competicao.getData().getDate()));
-            ps.setInt(3, competicao.getEndereco().getNumero());
-            ps.setInt(4, competicao.getTipoCompeticao().getId());
+            ps.setDate(1, new java.sql.Date(competicao.getData().getDate()));
+            ps.setInt(2, competicao.getEndereco().getNumero());
+            ps.setInt(3, competicao.getTipoCompeticao().getId());
 
             if (competicao.isAtiva()) {
-                ps.setInt(5, 1);
+                ps.setInt(4, 1);
             } else {
-                ps.setInt(5, 2);
+                ps.setInt(4, 2);
             }
 
             ps.setString(6, competicao.getEndereco().getCep());
@@ -167,7 +157,7 @@ public class CompeticaoDAO {
                 c.setAtiva(ativa);
                 c.setData(rs.getDate("data"));
                 c.setEndereco(new EnderecoDAO().getById(rs.getInt("numero"), rs.getString("cep")));
-                c.setTipoCompeticao(new TipoCompeticaoDAO().getById(rs.getInt("tipo_competicao_id")));                                
+                c.setTipoCompeticao(new TipoCompeticaoDAO().getById(rs.getInt("tipo_competicao_id")));
             }
             con.close();
         } catch (SQLException ex) {
