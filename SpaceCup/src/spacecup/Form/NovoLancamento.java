@@ -1,11 +1,13 @@
 package spacecup.Form;
 
-import java.util.Date;
 import java.util.List;
 import javax.swing.JOptionPane;
+import spacecup.DAO.EquipeDAO;
+import spacecup.DAO.FogueteDAO;
 import spacecup.DAO.LancamentoDAO;
 import spacecup.DAO.UsuarioDAO;
 import spacecup.Model.Aluno;
+import spacecup.Model.Foguete;
 import spacecup.Model.Lancamento;
 import spacecup.Model.Usuario;
 
@@ -18,11 +20,17 @@ public class NovoLancamento extends javax.swing.JFrame {
         btnSalvar.setEnabled(true);
         btnAlterar.setEnabled(false);
         this.usuario = usuario;
-        System.out.println(usuario.getNivelAcesso()==0);
-        if (usuario.getNivelAcesso()==0) {
+
+        if (usuario.getNivelAcesso() == 0) {
             Aluno aluno = new UsuarioDAO().getAlunoById(usuario.getId());
             lblEquipe.setText(aluno.getEquipe().getNome());
             lblTurma.setText(aluno.getEquipe().getTurma().getNome());
+        }
+
+        List<Foguete> foguetes = new FogueteDAO().getFoguetes();
+
+        for (Foguete f : foguetes) {
+            cbFoguete.addItem(String.valueOf(f.getId()));
         }
     }
 
@@ -31,8 +39,9 @@ public class NovoLancamento extends javax.swing.JFrame {
 
         initComponents();
 
-        Lancamento l = new Lancamento();
-        l = new LancamentoDAO().getLancamento(id);
+        Lancamento l = new LancamentoDAO().getLancamento(id);
+        
+        lblId.setText(String.valueOf(l.getId()));
         txtDistanciaAlvo.setText(String.valueOf(l.getDistanciaDoAlvo()));
         txtAnguloLancamento.setText(String.valueOf(l.getAnguloLancamento()));
         txtVelocidadeVento.setText(String.valueOf(l.getVelocidadeVento()));
@@ -48,9 +57,13 @@ public class NovoLancamento extends javax.swing.JFrame {
         btnSalvar.setEnabled(false);
         btnAlterar.setEnabled(true);
 
-        if (usuario instanceof Aluno) {
-            lblEquipe.setText(((Aluno) usuario).getEquipe().getNome());
-            lblTurma.setText(((Aluno) usuario).getEquipe().getTurma().getNome());
+        lblEquipe.setText(l.getEquipe().getNome());
+        lblTurma.setText(l.getEquipe().getTurma().getNome());
+
+        List<Foguete> foguetes = new FogueteDAO().getFoguetes();
+
+        for (Foguete f : foguetes) {
+            cbFoguete.addItem(String.valueOf(f.getId()));
         }
     }
 
@@ -58,6 +71,7 @@ public class NovoLancamento extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jProgressBar1 = new javax.swing.JProgressBar();
         jPanel1 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         txtDistanciaAlvo = new javax.swing.JTextField();
@@ -97,6 +111,8 @@ public class NovoLancamento extends javax.swing.JFrame {
         jSeparator7 = new javax.swing.JSeparator();
         lblEquipe = new javax.swing.JLabel();
         lblTurma = new javax.swing.JLabel();
+        cbFoguete = new javax.swing.JComboBox<>();
+        lblId = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(4, 47, 107));
@@ -258,6 +274,8 @@ public class NovoLancamento extends javax.swing.JFrame {
 
         lblTurma.setText("lblTurma");
 
+        lblId.setText("lblId");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -318,11 +336,10 @@ public class NovoLancamento extends javax.swing.JFrame {
                                 .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(txtTempoApogeu, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 24, Short.MAX_VALUE))
+                        .addGap(0, 27, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                         .addGap(12, 12, 12)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jSeparator7)
                             .addComponent(jSeparator6)
                             .addComponent(jSeparator4)
                             .addComponent(jSeparator3)
@@ -330,10 +347,18 @@ public class NovoLancamento extends javax.swing.JFrame {
                             .addComponent(jSeparator1)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnAlterar, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addGap(53, 53, 53)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jSeparator7)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(47, 47, 47)
+                                        .addComponent(cbFoguete, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(lblId)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(btnAlterar, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(btnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
                 .addContainerGap())
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
@@ -419,13 +444,15 @@ public class NovoLancamento extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(lblTurma)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(8, 8, 8)
                 .addComponent(jSeparator7, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCancelar)
                     .addComponent(btnSalvar)
-                    .addComponent(btnAlterar))
+                    .addComponent(btnAlterar)
+                    .addComponent(cbFoguete, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblId))
                 .addContainerGap())
         );
 
@@ -460,9 +487,15 @@ public class NovoLancamento extends javax.swing.JFrame {
         l.setPicoAceleracao(Float.parseFloat(txtPicoAcelerecao.getText()));
         l.setDistanciaEntreQuedaAlvo(Float.parseFloat(txtDistanciaQuedaAlvo.getText()));
         l.setTaxaDescida(Float.parseFloat(txtTaxaDescida.getText()));
-        l.setDuracaoVoo(new Date(txtDuracaoVoo.getText()));
-        l.setTempoApogeuDescida(new Date(txtTempoApogeu.getText()));
-        l.setAceleracaoMedia(Float.parseFloat(txtTempoApogeu.getText()));
+        l.setAceleracaoMedia(Float.parseFloat(txtAceleracaoMedia.getText()));
+
+        //datas
+        l.setDuracaoVoo(Float.parseFloat(txtDuracaoVoo.getText()));
+        l.setTempoApogeuDescida(Float.parseFloat(txtTempoApogeu.getText()));
+        l.setTempoPropulsao(Float.parseFloat(txtTempoPropulsao.getText()));
+
+        l.setEquipe(new EquipeDAO().getByNome(lblEquipe.getText()));
+        l.setFoguete(new FogueteDAO().getById(Integer.parseInt((String) cbFoguete.getSelectedItem())));
 
         new LancamentoDAO().insereLancamento(l);
         JOptionPane.showMessageDialog(this, "Lançamento salvo com sucesso!");
@@ -471,6 +504,8 @@ public class NovoLancamento extends javax.swing.JFrame {
 
     private void btnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterarActionPerformed
         Lancamento l = new Lancamento();
+        
+        l.setId(Integer.parseInt(lblId.getText()));
         l.setDistanciaDoAlvo(Float.parseFloat(txtDistanciaAlvo.getText()));
         l.setAnguloLancamento(Float.parseFloat(txtAnguloLancamento.getText()));
         l.setVelocidadeVento(Float.parseFloat(txtVelocidadeVento.getText()));
@@ -479,11 +514,17 @@ public class NovoLancamento extends javax.swing.JFrame {
         l.setPicoAceleracao(Float.parseFloat(txtPicoAcelerecao.getText()));
         l.setDistanciaEntreQuedaAlvo(Float.parseFloat(txtDistanciaQuedaAlvo.getText()));
         l.setTaxaDescida(Float.parseFloat(txtTaxaDescida.getText()));
-        l.setDuracaoVoo(new Date(txtDuracaoVoo.getText()));
-        l.setTempoApogeuDescida(new Date(txtTempoApogeu.getText()));
-        l.setAceleracaoMedia(Float.parseFloat(txtTempoApogeu.getText()));
+        l.setAceleracaoMedia(Float.parseFloat(txtAceleracaoMedia.getText()));
 
-        new LancamentoDAO().AlteraLancamento(l);
+        //datas
+        l.setDuracaoVoo(Float.parseFloat(txtDuracaoVoo.getText()));
+        l.setTempoApogeuDescida(Float.parseFloat(txtTempoApogeu.getText()));
+        l.setTempoPropulsao(Float.parseFloat(txtTempoPropulsao.getText()));
+
+        l.setEquipe(new EquipeDAO().getByNome(lblEquipe.getText()));
+        l.setFoguete(new FogueteDAO().getById(Integer.parseInt((String) cbFoguete.getSelectedItem())));
+
+        new LancamentoDAO().alteraLancamento(l);
         JOptionPane.showMessageDialog(this, "Lançamento salvo com sucesso!");
         this.dispose();
     }//GEN-LAST:event_btnAlterarActionPerformed
@@ -492,6 +533,7 @@ public class NovoLancamento extends javax.swing.JFrame {
     private javax.swing.JButton btnAlterar;
     private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnSalvar;
+    private javax.swing.JComboBox<String> cbFoguete;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -506,6 +548,7 @@ public class NovoLancamento extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JProgressBar jProgressBar1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
@@ -515,6 +558,7 @@ public class NovoLancamento extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator7;
     private javax.swing.JLabel lblDistanciaQuedaAlvo;
     private javax.swing.JLabel lblEquipe;
+    private javax.swing.JLabel lblId;
     private javax.swing.JLabel lblTurma;
     private javax.swing.JTextField txtAceleracaoMedia;
     private javax.swing.JTextField txtAltitudeEjecao;

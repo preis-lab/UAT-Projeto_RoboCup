@@ -13,7 +13,7 @@ INSERT INTO `turma` (`turma_id`, `nome`, `competicao_id`) VALUES (NULL, '2SIS', 
 
 INSERT INTO `equipe` (`equipe_id`, `nome`, `classificado`, `turma_id`) VALUES (NULL, 'Uat', '1', '1'), (NULL, 'Fenomeno', '1', '1');
 
-INSERT INTO `aluno` (`usuario_id`, `nome`, `senha`, `nivel_acesso`, `equipe_id`) VALUES ('76729', 'Paulo Henrique', '12345', '1', '1'), ('77316', 'Daniel', '12345', '1', '1');
+INSERT INTO `aluno` (`usuario_id`, `nome`, `senha`, `nivel_acesso`, `equipe_id`) VALUES ('76729', 'Paulo Henrique', '12345', '0', '1'), ('77316', 'Daniel', '12345', '0', '1');
 
 INSERT INTO `administrador` (`usuario_id`, `nome`, `senha`, `nivel_acesso`) VALUES ('0', 'root', '1234', '2');
 
