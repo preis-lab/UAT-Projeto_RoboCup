@@ -5,15 +5,25 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import spacecup.DAO.CompeticaoDAO;
 import spacecup.DAO.LancamentoDAO;
+import spacecup.DAO.TipoCompeticaoDAO;
 import spacecup.Model.Competicao;
 import spacecup.Model.Lancamento;
+import spacecup.Model.Usuario;
 
 public class FormGerenciarLancamento extends javax.swing.JInternalFrame {
     private int id;
+    private Usuario usuario;
 
+   
     public FormGerenciarLancamento() {
         initComponents();
         setComboBox();
+    }
+
+    FormGerenciarLancamento(Usuario usuario) {
+        initComponents();
+        setComboBox();
+        this.usuario = usuario;
     }
 
     @SuppressWarnings("unchecked")
@@ -30,6 +40,12 @@ public class FormGerenciarLancamento extends javax.swing.JInternalFrame {
         jPanel1 = new javax.swing.JPanel();
         btnEditar = new javax.swing.JButton();
         btnNovo = new javax.swing.JButton();
+
+        cbCompeticoes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbCompeticoesActionPerformed(evt);
+            }
+        });
 
         jLabel1.setText("Ano");
 
@@ -158,12 +174,16 @@ public class FormGerenciarLancamento extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jTableMouseClicked
 
     private void btnNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNovoActionPerformed
-        new NovoLancamento().setVisible(true);
+        new NovoLancamento(usuario).setVisible(true);
     }//GEN-LAST:event_btnNovoActionPerformed
 
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
-        new NovoLancamento(id).setVisible(true);
+        new NovoLancamento(id, usuario).setVisible(true);
     }//GEN-LAST:event_btnEditarActionPerformed
+
+    private void cbCompeticoesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbCompeticoesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbCompeticoesActionPerformed
 
     private void listar(List<Lancamento> lancamentos) {
         DefaultTableModel model = (DefaultTableModel) jTable.getModel();
@@ -191,11 +211,11 @@ public class FormGerenciarLancamento extends javax.swing.JInternalFrame {
     }
 
     private void setComboBox() {
-        for (Competicao c : new CompeticaoDAO().getCompeticoes()) {
-            cbCompeticoes.addItem(c.getTipoCompeticao().getNome());
+        for (String nome : new TipoCompeticaoDAO().getNomes()) {
+            cbCompeticoes.addItem(nome);
 
-            for (String data : new CompeticaoDAO().getDatas(c.getTipoCompeticao().getNome())) {
-                cbAnoCompeticao.addItem(data);
+            for (String s : new CompeticaoDAO().getDatas(nome)) {
+                cbAnoCompeticao.addItem(s);
             }
         }
     }

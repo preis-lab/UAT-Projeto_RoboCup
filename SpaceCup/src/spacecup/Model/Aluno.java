@@ -9,16 +9,16 @@ package spacecup.Model;
  *
  * @author pauloh
  */
-public class Aluno extends Usuario{
+public class Aluno extends Usuario {
+
     private Equipe equipe;
-    
+
+    public Aluno() {
+    }
+
     public Aluno(int id, String nome, String senha, int nivelAcesso, Equipe equipe) {
         super(id, nome, senha, nivelAcesso);
         this.equipe = equipe;
-    }
-
-    public Aluno() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     public Equipe getEquipe() {
@@ -60,6 +60,5 @@ public class Aluno extends Usuario{
     public void setNivelAcesso(int nivelAcesso) {
         this.nivelAcesso = nivelAcesso;
     }
-    
-    
+
 }

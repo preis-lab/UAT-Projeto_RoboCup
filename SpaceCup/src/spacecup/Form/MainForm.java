@@ -5,11 +5,13 @@ import java.awt.Color;
 import java.awt.Dimension;
 import javax.swing.JInternalFrame;
 import javax.swing.JPanel;
+import spacecup.Model.Usuario;
 
 public class MainForm extends javax.swing.JFrame {
     
     private final Color inativoColor = new Color(4,47,107);
     private final Color ativoColor = new Color(0,40,95);
+    private Usuario usuario;
 
     public MainForm() {
         initComponents();
@@ -17,12 +19,13 @@ public class MainForm extends javax.swing.JFrame {
         mudaBG(lancamentos, ativoColor);
     }
 
-    MainForm(int nivelAcesso) {
+    MainForm(Usuario usuario) {
         initComponents();
-        addJanela(new FormGerenciarLancamento());
+        this.usuario = usuario;
+        addJanela(new FormGerenciarLancamento(usuario));
         mudaBG(lancamentos, ativoColor);
         
-        switch (nivelAcesso) {
+        switch (usuario.getNivelAcesso()) {
             case 1:
                 break;
             case 2:
@@ -298,7 +301,7 @@ public class MainForm extends javax.swing.JFrame {
 
     private void lancamentosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lancamentosMouseClicked
         mudaBG(lancamentos, ativoColor);
-        addJanela(new FormGerenciarLancamento());
+        addJanela(new FormGerenciarLancamento(usuario));
     }//GEN-LAST:event_lancamentosMouseClicked
 
     private void alunosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_alunosMouseClicked

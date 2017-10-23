@@ -155,8 +155,8 @@ public class CompeticoesForm extends javax.swing.JInternalFrame {
         Competicao c = new Competicao();
         c.setId(id);
         c.setData(new Date(txtData.getText()));
-        c.getTipoCompeticao(new TipoCompeticaoDAO().getBynome(nome));
-        c.setEndereco(new EnderecoDAO().getByRua(rua));
+        //c.getTipoCompeticao(new TipoCompeticaoDAO().getBynome(nome));
+        //c.setEndereco(new EnderecoDAO().getByRua(rua));
         new CompeticaoDAO().adicionaCompeticao(c);
         populaLista();
     }//GEN-LAST:event_btnEditarActionPerformed
@@ -164,8 +164,8 @@ public class CompeticoesForm extends javax.swing.JInternalFrame {
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
         Competicao c = new Competicao();
         c.setData(new Date(txtData.getText()));
-        c.getTipoCompeticao(new TipoCompeticaoDAO().getBynome(nome));
-        c.setEndereco(new EnderecoDAO().getByRua(rua));
+        //c.getTipoCompeticao(new TipoCompeticaoDAO().getBynome(nome));
+        //c.setEndereco(new EnderecoDAO().getByRua(rua));
         new CompeticaoDAO().adicionaCompeticao(c);
         populaLista();
     }//GEN-LAST:event_btnSalvarActionPerformed

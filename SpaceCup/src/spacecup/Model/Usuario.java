@@ -15,6 +15,8 @@ public class Usuario {
     protected String senha;
     protected int nivelAcesso;
 
+    public Usuario(){}
+    
     public Usuario(int id, String nome, String senha, int nivelAcesso) {
         this.id = id;
         this.nome = nome;

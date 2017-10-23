@@ -138,7 +138,7 @@ public class EquipesForm extends javax.swing.JInternalFrame {
         Equipe e = new Equipe();
         e.setId(id);
         e.setNome(txtNome.getText());
-        e.setTurma(new TurmaDAO().getByNome(turma));
+        //e.setTurma(new TurmaDAO().getByNome(turma));
         new EquipeDAO().inserir(e);
         populaLista();
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -146,7 +146,7 @@ public class EquipesForm extends javax.swing.JInternalFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         Equipe e = new Equipe();
         e.setNome(txtNome.getText());
-        e.setTurma(new TurmaDAO().getByNome(turma));
+        //e.setTurma(new TurmaDAO().getByNome(turma));
         new EquipeDAO().inserir(e);
         populaLista();
     }//GEN-LAST:event_jButton2ActionPerformed

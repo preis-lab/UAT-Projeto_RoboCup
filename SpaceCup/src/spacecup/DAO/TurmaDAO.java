@@ -11,6 +11,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import spacecup.Conexao.Conexao;
@@ -37,7 +38,7 @@ public class TurmaDAO {
             rs = ps.executeQuery();
 
             while (rs.next()) {
-                lista.add(new Turma(rs.getInt("turma_id"), rs.getString("nome"),new CompeticaoDAO().getById(rs.getInt("competicao_id"))));
+                lista.add(new Turma(rs.getInt("turma_id"), rs.getString("nome"), new CompeticaoDAO().getById(rs.getInt("competicao_id"))));
             }
             con.close();
         } catch (SQLException ex) {
@@ -56,7 +57,7 @@ public class TurmaDAO {
             ps.setString(1, t.getNome());
             ps.setInt(2, t.getCompeticao().getId());
             ps.setInt(3, t.getId());
-       
+
             ps.execute();
 
             con.close();
@@ -97,7 +98,7 @@ public class TurmaDAO {
             rs = ps.executeQuery();
 
             if (rs.next()) {
-                c = new Turma(rs.getInt("turma_id"), rs.getString("nome"),new CompeticaoDAO().getById(rs.getInt("competicao_id")));
+                c = new Turma(rs.getInt("turma_id"), rs.getString("nome"), new CompeticaoDAO().getById(rs.getInt("competicao_id")));
             }
             con.close();
         } catch (SQLException ex) {
@@ -105,5 +106,24 @@ public class TurmaDAO {
         }
         return c;
 
+    }
+
+    public List<String> getNomes() {
+        List<String> lista = new ArrayList<>();
+        try {
+            con = new Conexao().getConnection();
+            sql = "select distinct nome from turma";
+            ps = con.prepareStatement(sql);
+
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+                lista.add(rs.getString("nome"));
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(EquipeDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return lista;
     }
 }

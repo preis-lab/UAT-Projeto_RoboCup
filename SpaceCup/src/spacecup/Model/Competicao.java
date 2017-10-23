@@ -17,9 +17,9 @@ public class Competicao {
         this.data = data;
         this.endereco = endereco;
     }
-    
+
     public Competicao(){}
-    
+
     public int getId() {
         return id;
     }

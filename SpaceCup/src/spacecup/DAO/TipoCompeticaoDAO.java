@@ -118,4 +118,24 @@ public class TipoCompeticaoDAO {
         return tp;
 
     }
+
+    public List<String> getNomes() {
+        List<String> lista = new ArrayList<>();
+        try {
+            con = new Conexao().getConnection();
+            sql = "select distinct nome from tipo_competicao";
+            ps = con.prepareStatement(sql);
+
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+                lista.add(rs.getString("nome"));
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(EquipeDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return lista;
+    }
+
 }

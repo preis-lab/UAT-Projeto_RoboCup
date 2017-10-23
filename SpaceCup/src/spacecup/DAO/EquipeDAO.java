@@ -5,7 +5,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import spacecup.Conexao.Conexao;
@@ -102,7 +104,7 @@ public class EquipeDAO {
             sql = "UPDATE `equipe` SET `nome`=?,`classificado`=?,`turma_id`=? WHERE `equipe_id`=?";
 
             ps = con.prepareStatement(sql);
-            
+
             ps.setString(1, equipe.getNome());
 
             if (equipe.isClassificado()) {
@@ -120,7 +122,48 @@ public class EquipeDAO {
         }
     }
 
-    public Equipe getByNome(int WIDTH) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Equipe getByNome(String nome) {
+        Equipe equipe = null;
+
+        try {
+            boolean classificado = false;
+
+            sql = "select * from equipe where nome = ?";
+            con = new Conexao().getConnection();
+            ps = con.prepareStatement(sql);
+            ps.setString(1, nome);
+            rs = ps.executeQuery();
+
+            if (rs.next()) {
+                if (rs.getInt("classificado") == 1) {
+                    classificado = true;
+                }
+                equipe = new Equipe(rs.getString("nome"), rs.getInt("equipe_id"), classificado, new TurmaDAO().getById(rs.getInt("turma_id")));
+            }
+            con.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(EquipeDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return equipe;
+    }
+
+    public List<String> getNomes() {
+        List<String> lista = new ArrayList<>();
+        try {
+            boolean classificado = false;
+            con = new Conexao().getConnection();
+            sql = "select distinct nome from equipe";
+            ps = con.prepareStatement(sql);
+
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+                lista.add(rs.getString("nome"));
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(EquipeDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return lista;
     }
 }

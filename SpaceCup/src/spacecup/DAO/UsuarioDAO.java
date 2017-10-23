@@ -42,7 +42,7 @@ public class UsuarioDAO {
             rs = ps.executeQuery();
 
             while (rs.next()) {
-                usuario = new Usuario(rs.getInt("usuario_id"), rs.getString("nome"), senha, id);
+                usuario = new Usuario(rs.getInt("usuario_id"), rs.getString("nome"), senha, rs.getInt("nivel_acesso"));
             }
 
             if (rs.next() == false) {
@@ -53,7 +53,7 @@ public class UsuarioDAO {
                 rs = ps.executeQuery();
 
                 while (rs.next()) {
-                    usuario = new Usuario(rs.getInt("usuario_id"), rs.getString("nome"), senha, id);
+                    usuario = new Usuario(rs.getInt("usuario_id"), rs.getString("nome"), senha, rs.getInt("nivel_acesso"));
                 }
             }
             con.close();
@@ -85,9 +85,26 @@ public class UsuarioDAO {
         return alunos;
     }
     
-    public Usuario getAlunoById(int id){
+    public Aluno getAlunoById(int id){
         Aluno aluno = null;
-        
+            try {
+            con = new Conexao().getConnection();
+            sql = "select * from aluno where usuario_id = ?";
+            
+
+            ps = con.prepareStatement(sql);
+            ps.setInt(1, id);
+            
+            rs = ps.executeQuery();
+
+            while (rs.next()) {                                    
+                aluno = new Aluno(rs.getInt("usuario_id"), rs.getString("nome") , rs.getString("senha"), rs.getInt("nivel_acesso"), new EquipeDAO().getById(rs.getInt("equipe_id")));               
+            }
+                
+            con.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
         return aluno;
     }
     
@@ -101,7 +118,7 @@ public class UsuarioDAO {
             ps.setInt(1, a.getId());
             ps.setString(2, a.getNome());
             ps.setString(3, a.getSenha());
-            ps.setInt(4, a.getNivelAcesso());
+            ps.setInt(4, 0);
             ps.setInt(5, a.getEquipe().getId());
 
             ps.execute();
@@ -111,4 +128,24 @@ public class UsuarioDAO {
             Logger.getLogger(TipoCompeticaoDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    public void alteraAluno(Aluno a) {
+       try {
+            con = new Conexao().getConnection();
+            sql = "UPDATE `aluno` SET `nome`=?,`senha`=?,`nivel_acesso`=?,`equipe_id`=? WHERE `usuario_id`=?";
+
+            ps = con.prepareStatement(sql);
+
+            ps.setInt(5, a.getId());
+            ps.setString(1, a.getNome());
+            ps.setString(2, a.getSenha());
+            ps.setInt(3, a.getNivelAcesso());
+            ps.setInt(4, a.getEquipe().getId());
+
+            ps.execute();
+
+            con.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(TipoCompeticaoDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }    
 }
