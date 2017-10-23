@@ -247,7 +247,7 @@ public class NovoEndereco extends javax.swing.JFrame {
         endereco.setNumero(Integer.parseInt(txtNumero.getText()));
         endereco.setCep(txtCep.getText());
         endereco.setDescricao(txtDescricao.getText());
-        endereco.setCidade(new CidadeDAO().getByNome((String) cbCidades.getSelectedItem()));
+        endereco.setCidade((String)cbCidades.getSelectedItem());
         new EnderecoDAO().inserir(endereco);
         JOptionPane.showMessageDialog(this, "Lançamento salvo com sucesso!");
         this.dispose();

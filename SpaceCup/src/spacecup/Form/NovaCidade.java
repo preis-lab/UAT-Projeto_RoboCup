@@ -1,6 +1,8 @@
 package spacecup.Form;
 
 import javax.swing.JOptionPane;
+import spacecup.DAO.CidadeDAO;
+import spacecup.Model.Cidade;
 import spacecup.Model.Usuario;
 
 public class NovaCidade extends javax.swing.JFrame {
@@ -17,7 +19,7 @@ public class NovaCidade extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         lblDistanciaQuedaAlvo = new javax.swing.JLabel();
-        txtDistanciaQuedaAlvo = new javax.swing.JTextField();
+        txtNome = new javax.swing.JTextField();
         btnSalvar = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
         jSeparator5 = new javax.swing.JSeparator();
@@ -32,11 +34,11 @@ public class NovaCidade extends javax.swing.JFrame {
         lblDistanciaQuedaAlvo.setForeground(new java.awt.Color(255, 250, 250));
         lblDistanciaQuedaAlvo.setText("Nome:");
 
-        txtDistanciaQuedaAlvo.setBackground(new java.awt.Color(4, 47, 107));
-        txtDistanciaQuedaAlvo.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        txtDistanciaQuedaAlvo.setForeground(new java.awt.Color(254, 254, 254));
-        txtDistanciaQuedaAlvo.setBorder(null);
-        txtDistanciaQuedaAlvo.setCaretColor(new java.awt.Color(254, 254, 254));
+        txtNome.setBackground(new java.awt.Color(4, 47, 107));
+        txtNome.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        txtNome.setForeground(new java.awt.Color(254, 254, 254));
+        txtNome.setBorder(null);
+        txtNome.setCaretColor(new java.awt.Color(254, 254, 254));
 
         btnSalvar.setText("Salvar");
         btnSalvar.addActionListener(new java.awt.event.ActionListener() {
@@ -70,7 +72,7 @@ public class NovaCidade extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(lblDistanciaQuedaAlvo, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtDistanciaQuedaAlvo, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -83,7 +85,7 @@ public class NovaCidade extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblDistanciaQuedaAlvo)
-                    .addComponent(txtDistanciaQuedaAlvo))
+                    .addComponent(txtNome))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -113,7 +115,7 @@ public class NovaCidade extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
-
+        new CidadeDAO().insere(new Cidade(0,txtNome.getText()));
         JOptionPane.showMessageDialog(this, "Lançamento salvo com sucesso!");
         this.dispose();
     }//GEN-LAST:event_btnSalvarActionPerformed
@@ -124,6 +126,6 @@ public class NovaCidade extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator5;
     private javax.swing.JLabel lblDistanciaQuedaAlvo;
-    private javax.swing.JTextField txtDistanciaQuedaAlvo;
+    private javax.swing.JTextField txtNome;
     // End of variables declaration//GEN-END:variables
 }

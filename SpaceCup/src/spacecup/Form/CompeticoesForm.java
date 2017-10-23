@@ -27,10 +27,10 @@ public class CompeticoesForm extends javax.swing.JInternalFrame {
     }
 
     private void getCompeticoes() {
-        List<Competicao> competicoes = new CompeticaoDAO().getCompeticoes();
-        for (Competicao c : competicoes) {
-            cbNomeCompeticao.addItem(c.getTipoCompeticao().getNome());
-        }
+        List<String> competicoes = new TipoCompeticaoDAO().getNomes();
+        for (String s : competicoes) {
+            cbNomeCompeticao.addItem(s);
+        }      
     }
 
     private void getEnderecos() {

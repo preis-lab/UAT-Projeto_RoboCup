@@ -71,11 +71,10 @@ public class CidadeDAO {
     public void insere(Cidade c) {
         try {
             con = new Conexao().getConnection();
-            sql = "insert into cidade values(?,?)";
+            sql = "insert into cidade values(NULL,?)";
 
             ps = con.prepareStatement(sql);
-            ps.setInt(1, c.getId());
-            ps.setString(2, c.getNome());
+            ps.setString(1, c.getNome());
 
             ps.execute();
             con.close();
@@ -90,9 +89,9 @@ public class CidadeDAO {
             sql = "UPDATE `cidade` SET `nome`=? WHERE `cidade_id`=?";
 
             ps = con.prepareStatement(sql);
-            
+
             ps.setString(1, c.getNome());
-            ps.setInt(2, c.getId());            
+            ps.setInt(2, c.getId());
 
             ps.execute();
             con.close();
@@ -101,7 +100,25 @@ public class CidadeDAO {
         }
     }
 
-    public String getByNome(String string) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Cidade getByNome(String nome) {
+        Cidade cidade = null;
+
+        sql = "select * from cidade where nome = ?";
+
+        try {
+            ps = con.prepareStatement(sql);
+            ps.setString(1, nome);
+
+            rs = ps.executeQuery();
+            if (rs.next()) {
+                cidade = new Cidade(rs.getInt("cidade_id"), rs.getString("nome"));
+            }
+            con.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(CidadeDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return cidade;
     }
+
 }
