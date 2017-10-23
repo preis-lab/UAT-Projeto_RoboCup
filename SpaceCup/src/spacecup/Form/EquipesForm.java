@@ -1,6 +1,7 @@
 package spacecup.Form;
 
 import java.util.List;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import spacecup.DAO.EquipeDAO;
@@ -26,7 +27,7 @@ public class EquipesForm extends javax.swing.JInternalFrame {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        cbTurma = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable = new javax.swing.JTable();
 
@@ -48,8 +49,6 @@ public class EquipesForm extends javax.swing.JInternalFrame {
 
         jLabel2.setText("Turma");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -62,7 +61,7 @@ public class EquipesForm extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(cbTurma, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 30, Short.MAX_VALUE)
                 .addComponent(jButton1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -79,7 +78,7 @@ public class EquipesForm extends javax.swing.JInternalFrame {
                     .addComponent(jButton1)
                     .addComponent(jButton2)
                     .addComponent(jLabel2)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cbTurma, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -131,6 +130,7 @@ public class EquipesForm extends javax.swing.JInternalFrame {
         if (index != -1) {
             id = (int) model.getValueAt(index, 0);
             txtNome.setText(String.valueOf(model.getValueAt(index, 1)));
+            cbTurma.setSelectedItem(String.valueOf(model.getValueAt(index, 2)));
         }
     }//GEN-LAST:event_jTableMouseClicked
 
@@ -138,16 +138,19 @@ public class EquipesForm extends javax.swing.JInternalFrame {
         Equipe e = new Equipe();
         e.setId(id);
         e.setNome(txtNome.getText());
-        //e.setTurma(new TurmaDAO().getByNome(turma));
-        new EquipeDAO().inserir(e);
+        e.setTurma(new TurmaDAO().getByNome((String) cbTurma.getSelectedItem()));
+        new EquipeDAO().alterar(e);
+        JOptionPane.showMessageDialog(this, "Equipe " + e.getNome() + " Alterada!");
         populaLista();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         Equipe e = new Equipe();
         e.setNome(txtNome.getText());
-        //e.setTurma(new TurmaDAO().getByNome(turma));
+        e.setTurma(new TurmaDAO().getByNome((String) cbTurma.getSelectedItem()));
         new EquipeDAO().inserir(e);
+        JOptionPane.showMessageDialog(this, "Equipe " + e.getNome() + " Adicionada!");
+
         populaLista();
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -163,6 +166,13 @@ public class EquipesForm extends javax.swing.JInternalFrame {
         for (Equipe e : equipes) {
             model.addRow((Object[]) addLinha(e));
         }
+
+        List<String> turmas = new TurmaDAO().getNomes();
+
+        for (String s : turmas) {
+            cbTurma.addItem(s);
+        }
+
     }
 
     private void clearList() {
@@ -182,9 +192,9 @@ public class EquipesForm extends javax.swing.JInternalFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> cbTurma;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;

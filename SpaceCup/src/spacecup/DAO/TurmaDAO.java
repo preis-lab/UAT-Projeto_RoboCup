@@ -126,4 +126,27 @@ public class TurmaDAO {
         }
         return lista;
     }
+
+    public Turma getByNome(String nome) {
+        Turma c = null;
+
+        try {
+
+            con = new Conexao().getConnection();
+            sql = "select * from turma where nome = ?";
+
+            ps = con.prepareStatement(sql);
+            ps.setString(1, nome);
+            rs = ps.executeQuery();
+
+            if (rs.next()) {
+                c = new Turma(rs.getInt("turma_id"), rs.getString("nome"), new CompeticaoDAO().getById(rs.getInt("competicao_id")));
+            }
+            con.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(TurmaDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return c;
+    }
 }
+

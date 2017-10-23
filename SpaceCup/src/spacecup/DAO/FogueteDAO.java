@@ -59,7 +59,7 @@ public class FogueteDAO {
     public void insere(Foguete f) {
         try {
             con = new Conexao().getConnection();
-            sql = "INSERT INTO `foguete` VALUES (?, ?)";
+            sql = "INSERT INTO `foguete` VALUES (NULL,?, ?)";
 
             ps = con.prepareStatement(sql);
 
