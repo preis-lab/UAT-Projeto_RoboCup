@@ -1,7 +1,11 @@
 package spacecup.Form;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
@@ -14,24 +18,24 @@ import spacecup.Model.Endereco;
 public class CompeticoesForm extends javax.swing.JInternalFrame {
 
     private int id;
-    
+
     public CompeticoesForm() {
         initComponents();
         populaLista();
         getCompeticoes();
         getEnderecos();
     }
-    
+
     private void getCompeticoes() {
         List<Competicao> competicoes = new CompeticaoDAO().getCompeticoes();
-        for(Competicao c : competicoes) {
+        for (Competicao c : competicoes) {
             cbNomeCompeticao.addItem(c.getTipoCompeticao().getNome());
         }
     }
-    
+
     private void getEnderecos() {
         List<Endereco> enderecos = new EnderecoDAO().getEndereco();
-        for(Endereco e : enderecos) {
+        for (Endereco e : enderecos) {
             cbEndereco.addItem(e.getRua());
         }
     }
@@ -178,17 +182,28 @@ public class CompeticoesForm extends javax.swing.JInternalFrame {
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
         Competicao c = new Competicao();
         c.setId(id);
-        c.setData(new Date(txtData.getText()));
+
+        try {
+            c.setData(new SimpleDateFormat("yyyy-mm-dd").parse(txtData.getText()));
+        } catch (ParseException ex) {
+            Logger.getLogger(CompeticoesForm.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
         c.setTipoCompeticao(new TipoCompeticaoDAO().getBynome((String) cbNomeCompeticao.getSelectedItem()));
         c.setEndereco(new EnderecoDAO().getByRua((String) cbEndereco.getSelectedItem()));
-        new CompeticaoDAO().adicionaCompeticao(c);
+        new CompeticaoDAO().alteraCompeticao(c);
         JOptionPane.showMessageDialog(this, "Competição alterada com sucesso");
         populaLista();
     }//GEN-LAST:event_btnEditarActionPerformed
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
         Competicao c = new Competicao();
-        c.setData(new Date(txtData.getText()));
+        try {
+            c.setData(new SimpleDateFormat("yyyy-mm-dd").parse(txtData.getText()));
+        } catch (ParseException ex) {
+            Logger.getLogger(CompeticoesForm.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
         c.setTipoCompeticao(new TipoCompeticaoDAO().getBynome((String) cbNomeCompeticao.getSelectedItem()));
         c.setEndereco(new EnderecoDAO().getByRua((String) cbEndereco.getSelectedItem()));
         new CompeticaoDAO().adicionaCompeticao(c);

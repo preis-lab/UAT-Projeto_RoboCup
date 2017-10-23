@@ -76,11 +76,11 @@ public class CompeticaoDAO {
         try {
             con = new Conexao().getConnection();
 
-            sql = "INSERT INTO `competicao` VALUES (?, ?, ?, ?)";
+            sql = "INSERT INTO `competicao` VALUES (NULL,?, ?, ?, ?,?)";
 
             ps = con.prepareStatement(sql);
 
-            ps.setDate(1, new java.sql.Date(competicao.getData().getDate()));
+            ps.setDate(1, new java.sql.Date(competicao.getData().getTime()));
             ps.setInt(2, competicao.getEndereco().getNumero());
             ps.setInt(3, competicao.getTipoCompeticao().getId());
 
@@ -90,7 +90,7 @@ public class CompeticaoDAO {
                 ps.setInt(4, 2);
             }
 
-            ps.setString(6, competicao.getEndereco().getCep());
+            ps.setString(5, competicao.getEndereco().getCep());
 
             ps.execute();
 
@@ -106,11 +106,11 @@ public class CompeticaoDAO {
         try {
             con = new Conexao().getConnection();
 
-            sql = "UPDATE `competicao` SET `data`=?,`numero`=?,`tipo_competicao_id`=?,`ativa`=?,`cep`=6 WHERE `competicao_id`=?";
+            sql = "UPDATE `competicao` SET `data`=?,`numero`=?,`tipo_competicao_id`=?,`ativa`=?,`cep`= ? WHERE `competicao_id`=?";
 
             ps = con.prepareStatement(sql);
 
-            ps.setDate(1, new java.sql.Date(competicao.getData().getDate()));
+            ps.setDate(1, new java.sql.Date(competicao.getData().getTime()));
             ps.setInt(2, competicao.getEndereco().getNumero());
             ps.setInt(3, competicao.getTipoCompeticao().getId());
 
@@ -119,9 +119,8 @@ public class CompeticaoDAO {
             } else {
                 ps.setInt(4, 2);
             }
-            ps.setInt(5, competicao.getId());
-
-            ps.setString(6, competicao.getEndereco().getCep());
+            ps.setString(5, competicao.getEndereco().getCep());
+            ps.setInt(6, competicao.getId());
 
             ps.execute();
 
