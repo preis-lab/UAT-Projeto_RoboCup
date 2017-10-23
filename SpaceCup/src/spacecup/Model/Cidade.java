@@ -9,6 +9,10 @@ public class Cidade {
         this.nome = nome;
     }
 
+    public Cidade() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     public int getId() {
         return id;
     }
