@@ -2,10 +2,14 @@ package spacecup.Form;
 
 import java.util.Date;
 import java.util.List;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import spacecup.DAO.CompeticaoDAO;
+import spacecup.DAO.EnderecoDAO;
+import spacecup.DAO.TipoCompeticaoDAO;
 import spacecup.Model.Competicao;
+import spacecup.Model.Endereco;
 
 public class CompeticoesForm extends javax.swing.JInternalFrame {
 
@@ -13,7 +17,23 @@ public class CompeticoesForm extends javax.swing.JInternalFrame {
     
     public CompeticoesForm() {
         initComponents();
-//        populaLista();
+        populaLista();
+        getCompeticoes();
+        getEnderecos();
+    }
+    
+    private void getCompeticoes() {
+        List<Competicao> competicoes = new CompeticaoDAO().getCompeticoes();
+        for(Competicao c : competicoes) {
+            cbNomeCompeticao.addItem(c.getTipoCompeticao().getNome());
+        }
+    }
+    
+    private void getEnderecos() {
+        List<Endereco> enderecos = new EnderecoDAO().getEndereco();
+        for(Endereco e : enderecos) {
+            cbEndereco.addItem(e.getRua());
+        }
     }
 
     @SuppressWarnings("unchecked")
@@ -72,13 +92,9 @@ public class CompeticoesForm extends javax.swing.JInternalFrame {
             }
         });
 
-        cbNomeCompeticao.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
         jLabel2.setText("Data");
 
         jLabel3.setText("Endereço");
-
-        cbEndereco.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jButton1.setText("Novo Endereço");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -154,6 +170,8 @@ public class CompeticoesForm extends javax.swing.JInternalFrame {
         if (index != -1) {
             id = (int) model.getValueAt(index, 0);
             txtData.setText(String.valueOf(model.getValueAt(index, 2)));
+            cbEndereco.setSelectedItem(model.getValueAt(index, 3));
+            cbNomeCompeticao.setSelectedItem(model.getValueAt(index, 1));
         }
     }//GEN-LAST:event_jTableMouseClicked
 
@@ -161,18 +179,20 @@ public class CompeticoesForm extends javax.swing.JInternalFrame {
         Competicao c = new Competicao();
         c.setId(id);
         c.setData(new Date(txtData.getText()));
-        //c.getTipoCompeticao(new TipoCompeticaoDAO().getBynome(nome));
-        //c.setEndereco(new EnderecoDAO().getByRua(rua));
+        c.setTipoCompeticao(new TipoCompeticaoDAO().getBynome((String) cbNomeCompeticao.getSelectedItem()));
+        c.setEndereco(new EnderecoDAO().getByRua((String) cbEndereco.getSelectedItem()));
         new CompeticaoDAO().adicionaCompeticao(c);
+        JOptionPane.showMessageDialog(this, "Competição alterada com sucesso");
         populaLista();
     }//GEN-LAST:event_btnEditarActionPerformed
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
         Competicao c = new Competicao();
         c.setData(new Date(txtData.getText()));
-        //c.getTipoCompeticao(new TipoCompeticaoDAO().getBynome(nome));
-        //c.setEndereco(new EnderecoDAO().getByRua(rua));
+        c.setTipoCompeticao(new TipoCompeticaoDAO().getBynome((String) cbNomeCompeticao.getSelectedItem()));
+        c.setEndereco(new EnderecoDAO().getByRua((String) cbEndereco.getSelectedItem()));
         new CompeticaoDAO().adicionaCompeticao(c);
+        JOptionPane.showMessageDialog(this, "Competição salva com sucesso");
         populaLista();
     }//GEN-LAST:event_btnSalvarActionPerformed
 
