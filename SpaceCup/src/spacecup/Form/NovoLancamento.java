@@ -5,6 +5,7 @@ import javax.swing.JOptionPane;
 import spacecup.DAO.EquipeDAO;
 import spacecup.DAO.FogueteDAO;
 import spacecup.DAO.LancamentoDAO;
+import spacecup.DAO.TurmaDAO;
 import spacecup.DAO.UsuarioDAO;
 import spacecup.Model.Aluno;
 import spacecup.Model.Foguete;
@@ -14,6 +15,9 @@ import spacecup.Model.Usuario;
 public class NovoLancamento extends javax.swing.JFrame {
 
     Usuario usuario;
+    List<String> listaEquipes;
+    List<String> listaTurmas;
+    List<Foguete> foguetes;
 
     NovoLancamento(Usuario usuario) {
         initComponents();
@@ -21,17 +25,21 @@ public class NovoLancamento extends javax.swing.JFrame {
         btnAlterar.setEnabled(false);
         this.usuario = usuario;
 
+        populaDados();
+
         if (usuario.getNivelAcesso() == 0) {
             Aluno aluno = new UsuarioDAO().getAlunoById(usuario.getId());
-            cbEquipe.setEnabled(false);
-            cbTurma.setEnabled(false);
+            if (aluno.getEquipe().getTurma().getCompeticao().isAtiva()) {
+                cbEquipe.setEnabled(false);
+                cbTurma.setEnabled(false);
+                cbEquipe.setSelectedItem(aluno.getEquipe().getNome());
+                cbEquipe.setSelectedItem(aluno.getEquipe().getTurma().getNome());
+            } else {
+                JOptionPane.showMessageDialog(this, "Você não está cadastrado em nenhuma competição ativa!");
+                this.dispose();
+            }
         }
 
-        List<Foguete> foguetes = new FogueteDAO().getFoguetes();
-
-        for (Foguete f : foguetes) {
-            cbFoguete.addItem(String.valueOf(f.getId()));
-        }
     }
 
     NovoLancamento(int id, Usuario usuario) {
@@ -40,7 +48,7 @@ public class NovoLancamento extends javax.swing.JFrame {
         initComponents();
 
         Lancamento l = new LancamentoDAO().getLancamento(id);
-        
+
         lblId.setText(String.valueOf(l.getId()));
         txtDistanciaAlvo.setText(String.valueOf(l.getDistanciaDoAlvo()));
         txtAnguloLancamento.setText(String.valueOf(l.getAnguloLancamento()));
@@ -59,11 +67,31 @@ public class NovoLancamento extends javax.swing.JFrame {
         cbEquipe.setSelectedItem(l.getEquipe().getNome());
         cbEquipe.setSelectedItem(l.getEquipe().getTurma().getNome());
 
+        foguetes = new FogueteDAO().getFoguetes();
+        
+        populaDados();
+    }
+
+    private void populaDados() {
+        listaEquipes = new EquipeDAO().getNomes();
+        listaTurmas = new TurmaDAO().getNomes();
+
+        for (String s : listaEquipes) {
+            cbEquipe.addItem(s);
+        }
+
+        for (String s : listaTurmas) {
+            cbTurma.addItem(s);
+        }
         List<Foguete> foguetes = new FogueteDAO().getFoguetes();
 
         for (Foguete f : foguetes) {
             cbFoguete.addItem(String.valueOf(f.getId()));
         }
+    }
+
+    private void verificaDados() {
+
     }
 
     @SuppressWarnings("unchecked")
@@ -290,6 +318,11 @@ public class NovoLancamento extends javax.swing.JFrame {
         cbEquipe.setBackground(new java.awt.Color(4, 47, 107));
         cbEquipe.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         cbEquipe.setForeground(new java.awt.Color(254, 254, 254));
+        cbEquipe.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbEquipeActionPerformed(evt);
+            }
+        });
 
         cbTurma.setBackground(new java.awt.Color(4, 47, 107));
         cbTurma.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
@@ -547,7 +580,7 @@ public class NovoLancamento extends javax.swing.JFrame {
 
     private void btnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterarActionPerformed
         Lancamento l = new Lancamento();
-        
+
         l.setId(Integer.parseInt(lblId.getText()));
         l.setDistanciaDoAlvo(Float.parseFloat(txtDistanciaAlvo.getText()));
         l.setAnguloLancamento(Float.parseFloat(txtAnguloLancamento.getText()));
@@ -571,6 +604,10 @@ public class NovoLancamento extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(this, "Lançamento salvo com sucesso!");
         this.dispose();
     }//GEN-LAST:event_btnAlterarActionPerformed
+
+    private void cbEquipeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbEquipeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbEquipeActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAlterar;

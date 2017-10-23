@@ -74,19 +74,18 @@ public class EquipeDAO {
 
         try {
             con = new Conexao().getConnection();
-            sql = "INSERT INTO `equipe`  VALUES (?,?,?,?)";
+            sql = "INSERT INTO `equipe`  VALUES (NULL,?,?,?)";
 
             ps = con.prepareStatement(sql);
-            ps.setInt(1, equipe.getId());
-            ps.setString(2, equipe.getNome());
+            ps.setString(1, equipe.getNome());
 
             if (equipe.isClassificado()) {
-                ps.setInt(3, 1);
+                ps.setInt(2, 1);
             } else {
-                ps.setInt(3, 0);
+                ps.setInt(2, 0);
             }
 
-            ps.setInt(4, equipe.getTurma().getId());
+            ps.setInt(3, equipe.getTurma().getId());
 
             ps.execute();
             con.close();
