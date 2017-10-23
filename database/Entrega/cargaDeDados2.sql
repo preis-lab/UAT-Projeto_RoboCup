@@ -20,7 +20,7 @@ INSERT INTO `administrador` (`usuario_id`, `nome`, `senha`, `nivel_acesso`) VALU
 INSERT INTO `foguete` (`foguete_id`, `peso`, `tamanho`) VALUES (NULL, '500', '500'), (NULL, '300', '300');
 
 INSERT INTO `lancamento` (`lancamento_id`, `distanciadoalvo`, `angulolancamento`, `velocidadevento`, `altitudemaxima`, `tempopropulsao`, `picoaceleracao`, `aceleracaomedia`, `tempoapogeudescida`, `altitudeejecao`, `taxadescida`, `duracaovoo`, `distanciaentrequedaalvo`, `equipe_id`, `foguete_id`)
-VALUES (NULL, '34', '13', '34', '34', TIME('00:00:50'), '32', '12', TIME('00:00:50'), '23', '23', TIME('00:00:50'), '23', '1', '1');
+VALUES (NULL, '34', '13', '34', '34', 50, '32', '12', 50, '23', '23', 50, '23', '1', '1');
 
 INSERT INTO `lancamento` (`lancamento_id`, `distanciadoalvo`, `angulolancamento`, `velocidadevento`, `altitudemaxima`, `tempopropulsao`, `picoaceleracao`, `aceleracaomedia`, `tempoapogeudescida`, `altitudeejecao`, `taxadescida`, `duracaovoo`, `distanciaentrequedaalvo`, `equipe_id`, `foguete_id`)
-VALUES (NULL, '34', '13', '34', '34', TIME('00:00:50'), '32', '12', TIME('00:00:50'), '23', '23', TIME('00:00:50'), '23', '2', '2');
+VALUES (NULL, '34', '13', '34', '34', 50, '32', '12', 50, '23', '23', 50, '23', '2', '2');
