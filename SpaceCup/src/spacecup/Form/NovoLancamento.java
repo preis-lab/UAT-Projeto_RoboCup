@@ -274,7 +274,7 @@ public class NovoLancamento extends javax.swing.JFrame {
 
         lblTurma.setText("lblTurma");
 
-        lblId.setText("lblId");
+        lblId.setText("0");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
