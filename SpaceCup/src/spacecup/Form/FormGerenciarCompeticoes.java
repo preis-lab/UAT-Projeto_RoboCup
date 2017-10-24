@@ -88,6 +88,12 @@ public class FormGerenciarCompeticoes extends javax.swing.JInternalFrame {
         ckAtivo = new javax.swing.JCheckBox();
         btnNovoTipo = new javax.swing.JButton();
 
+        addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                formFocusGained(evt);
+            }
+        });
+
         jTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -260,6 +266,7 @@ public class FormGerenciarCompeticoes extends javax.swing.JInternalFrame {
 
         c.setTipoCompeticao(new TipoCompeticaoDAO().getBynome((String) cbNomeCompeticao.getSelectedItem()));
         c.setEndereco(new EnderecoDAO().getByRua((String) cbEndereco.getSelectedItem()));
+        c.setAtiva(ckAtivo.isSelected());
         new CompeticaoDAO().adicionaCompeticao(c);
         JOptionPane.showMessageDialog(this, "Competição salva com sucesso");
         populaLista();
@@ -272,6 +279,10 @@ public class FormGerenciarCompeticoes extends javax.swing.JInternalFrame {
     private void btnNovoTipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNovoTipoActionPerformed
         new FormTipoCompeticao().setVisible(true);
     }//GEN-LAST:event_btnNovoTipoActionPerformed
+
+    private void formFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_formFocusGained
+
+    }//GEN-LAST:event_formFocusGained
 
     private void populaLista() {
         List<Competicao> competicoes = new CompeticaoDAO().getCompeticoes();
