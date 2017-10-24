@@ -346,27 +346,27 @@ public class MainForm extends javax.swing.JFrame {
 
     private void alunosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_alunosMouseClicked
         mudaBG(alunos, ativoColor);
-        addJanela(new AlunoForm());
+        addJanela(new FormGerenciarAlunos(usuario));
     }//GEN-LAST:event_alunosMouseClicked
 
     private void equipesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_equipesMouseClicked
         mudaBG(equipes, ativoColor);
-        addJanela(new EquipesForm());
+        addJanela(new FormGerenciarEquipes(usuario));
     }//GEN-LAST:event_equipesMouseClicked
 
     private void competicoesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_competicoesMouseClicked
         mudaBG(competicoes, ativoColor);
-        addJanela(new CompeticoesForm());
+        addJanela(new FormGerenciarCompeticoes(usuario));
     }//GEN-LAST:event_competicoesMouseClicked
 
     private void foguetesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_foguetesMouseClicked
         mudaBG(foguetes, ativoColor);
-        addJanela(new ForguetesForm());
+        addJanela(new FormGerenciarFoguetes());
     }//GEN-LAST:event_foguetesMouseClicked
 
     private void turmasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_turmasMouseClicked
         mudaBG(turmas, ativoColor);
-        addJanela(new TurmasForm());
+        addJanela(new FormGerenciarTurmas(usuario));
     }//GEN-LAST:event_turmasMouseClicked
 
     private void addJanela(JInternalFrame janela) {

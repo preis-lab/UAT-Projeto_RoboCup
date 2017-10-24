@@ -29,15 +29,11 @@ public class NovoLancamento extends javax.swing.JFrame {
 
         if (usuario.getNivelAcesso() == 0) {
             Aluno aluno = new UsuarioDAO().getAlunoById(usuario.getId());
-            if (aluno.getEquipe().getTurma().getCompeticao().isAtiva()) {
-                cbEquipe.setEnabled(false);
-                cbTurma.setEnabled(false);
-                cbEquipe.setSelectedItem(aluno.getEquipe().getNome());
-                cbEquipe.setSelectedItem(aluno.getEquipe().getTurma().getNome());
-            } else {
-                JOptionPane.showMessageDialog(this, "Você não está cadastrado em nenhuma competição ativa!");
-                this.dispose();
-            }
+            cbEquipe.setEnabled(false);
+            cbTurma.setEnabled(false);
+            cbEquipe.setSelectedItem(aluno.getEquipe().getNome());
+            cbEquipe.setSelectedItem(aluno.getEquipe().getTurma().getNome());
+
         }
 
     }
@@ -68,7 +64,7 @@ public class NovoLancamento extends javax.swing.JFrame {
         cbEquipe.setSelectedItem(l.getEquipe().getTurma().getNome());
 
         foguetes = new FogueteDAO().getFoguetes();
-        
+
         populaDados();
     }
 

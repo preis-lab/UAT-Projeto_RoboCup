@@ -58,12 +58,11 @@ public class TipoCompeticaoDAO {
     public void insere(TipoCompeticao tc) {
         try {
             con = new Conexao().getConnection();
-            sql = "INSERT INTO `tipo_competicao` VALUES (?,?)";
+            sql = "INSERT INTO `tipo_competicao` VALUES (NULL,?)";
 
             ps = con.prepareStatement(sql);
-
-            ps.setInt(1, tc.getId());
-            ps.setString(2, tc.getNome());
+            
+            ps.setString(1, tc.getNome());
 
             ps.execute();
 

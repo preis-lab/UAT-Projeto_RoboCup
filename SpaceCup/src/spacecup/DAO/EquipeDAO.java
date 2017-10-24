@@ -96,6 +96,8 @@ public class EquipeDAO {
     }
 
     public void alterar(Equipe equipe) {
+                    System.out.println(equipe.getTurma().getNome());
+
         try {
             con = new Conexao().getConnection();
             sql = "UPDATE `equipe` SET `nome`=?,`classificado`=?,`turma_id`=? WHERE `equipe_id`=?";
@@ -111,6 +113,7 @@ public class EquipeDAO {
             }
             ps.setInt(3, equipe.getTurma().getId());
             ps.setInt(4, equipe.getId());
+            
 
             ps.execute();
             con.close();

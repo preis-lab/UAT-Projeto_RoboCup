@@ -8,33 +8,42 @@ import spacecup.DAO.LancamentoDAO;
 import spacecup.DAO.TipoCompeticaoDAO;
 import spacecup.DAO.UsuarioDAO;
 import spacecup.Model.Aluno;
-import spacecup.Model.Competicao;
 import spacecup.Model.Lancamento;
 import spacecup.Model.Usuario;
 
 public class FormGerenciarLancamento extends javax.swing.JInternalFrame {
+
     private int id;
     private Usuario usuario;
 
-   
     public FormGerenciarLancamento() {
         initComponents();
         setComboBox();
     }
 
-    FormGerenciarLancamento(Usuario usuario) {        
+    FormGerenciarLancamento(Usuario usuario) {
         initComponents();
         setComboBox();
         this.usuario = usuario;
-        verificaCompeticaoAtiva();
+        isAdm();
     }
 
-    private void verificaCompeticaoAtiva(){
-        Aluno aluno = new UsuarioDAO().getAlunoById(usuario.getId());
+    private boolean isAdm() {
+        if (usuario.getNivelAcesso() > 0) {
+            btnNovo.setEnabled(true);
+            return true;
+        } else if (usuario.getNivelAcesso() == 0) {
+            Aluno aluno = new UsuarioDAO().getAlunoById(usuario.getId());
             if (!aluno.getEquipe().getTurma().getCompeticao().isAtiva()) {
                 btnNovo.setEnabled(false);
+                
+                btnEditar.setVisible(false);
+                btnEditar.setEnabled(false);
             }
+        }
+        return false;
     }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -176,7 +185,7 @@ public class FormGerenciarLancamento extends javax.swing.JInternalFrame {
         int index = jTable.getSelectedRow();
         TableModel model = jTable.getModel();
 
-        if (index != -1) {
+        if (index != -1 && isAdm()) {
             id = (int) model.getValueAt(index, 0);
             btnEditar.setEnabled(true);
         }
