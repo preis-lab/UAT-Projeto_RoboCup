@@ -30,12 +30,12 @@ public class FormGerenciarLancamento extends javax.swing.JInternalFrame {
 
     private boolean isAdm() {
         if (usuario.getNivelAcesso() > 0) {
-            btnNovo.setEnabled(true);
+            btnNovoLancamento.setEnabled(true);
             return true;
         } else if (usuario.getNivelAcesso() == 0) {
             Aluno aluno = new UsuarioDAO().getAlunoById(usuario.getId());
             if (!aluno.getEquipe().getTurma().getCompeticao().isAtiva()) {
-                btnNovo.setEnabled(false);
+                btnNovoLancamento.setEnabled(false);
                 
                 btnEditar.setVisible(false);
                 btnEditar.setEnabled(false);
@@ -57,13 +57,8 @@ public class FormGerenciarLancamento extends javax.swing.JInternalFrame {
         jTable = new javax.swing.JTable();
         jPanel1 = new javax.swing.JPanel();
         btnEditar = new javax.swing.JButton();
-        btnNovo = new javax.swing.JButton();
-
-        cbCompeticoes.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cbCompeticoesActionPerformed(evt);
-            }
-        });
+        btnDetalhes = new javax.swing.JButton();
+        btnNovoLancamento = new javax.swing.JButton();
 
         jLabel1.setText("Ano");
 
@@ -107,10 +102,17 @@ public class FormGerenciarLancamento extends javax.swing.JInternalFrame {
             }
         });
 
-        btnNovo.setText("Novo Lançamento");
-        btnNovo.addActionListener(new java.awt.event.ActionListener() {
+        btnDetalhes.setText("Detalhes");
+        btnDetalhes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnNovoActionPerformed(evt);
+                btnDetalhesActionPerformed(evt);
+            }
+        });
+
+        btnNovoLancamento.setText("Novo Lançamento");
+        btnNovoLancamento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNovoLancamentoActionPerformed(evt);
             }
         });
 
@@ -120,7 +122,9 @@ public class FormGerenciarLancamento extends javax.swing.JInternalFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btnNovo)
+                .addComponent(btnNovoLancamento)
+                .addGap(37, 37, 37)
+                .addComponent(btnDetalhes, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnEditar)
                 .addContainerGap())
@@ -130,8 +134,9 @@ public class FormGerenciarLancamento extends javax.swing.JInternalFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnNovo)
-                    .addComponent(btnEditar))
+                    .addComponent(btnDetalhes)
+                    .addComponent(btnEditar)
+                    .addComponent(btnNovoLancamento))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -191,17 +196,17 @@ public class FormGerenciarLancamento extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_jTableMouseClicked
 
-    private void btnNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNovoActionPerformed
-        new NovoLancamento(usuario).setVisible(true);
-    }//GEN-LAST:event_btnNovoActionPerformed
+    private void btnDetalhesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDetalhesActionPerformed
+        new detalheLancamento(id).setVisible(true);
+    }//GEN-LAST:event_btnDetalhesActionPerformed
 
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
-        new NovoLancamento(id, usuario).setVisible(true);
+        new detalheLancamento(id, usuario).setVisible(true);
     }//GEN-LAST:event_btnEditarActionPerformed
 
-    private void cbCompeticoesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbCompeticoesActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cbCompeticoesActionPerformed
+    private void btnNovoLancamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNovoLancamentoActionPerformed
+        new detalheLancamento(usuario).setVisible(true);
+    }//GEN-LAST:event_btnNovoLancamentoActionPerformed
 
     private void listar(List<Lancamento> lancamentos) {
         DefaultTableModel model = (DefaultTableModel) jTable.getModel();
@@ -238,9 +243,10 @@ public class FormGerenciarLancamento extends javax.swing.JInternalFrame {
         }
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnDetalhes;
     private javax.swing.JButton btnEditar;
     private javax.swing.JButton btnFiltrar;
-    private javax.swing.JButton btnNovo;
+    private javax.swing.JButton btnNovoLancamento;
     private javax.swing.JComboBox<String> cbAnoCompeticao;
     private javax.swing.JComboBox<String> cbCompeticoes;
     private javax.swing.JLabel jLabel1;

@@ -12,14 +12,14 @@ import spacecup.Model.Foguete;
 import spacecup.Model.Lancamento;
 import spacecup.Model.Usuario;
 
-public class NovoLancamento extends javax.swing.JFrame {
+public class detalheLancamento extends javax.swing.JFrame {
 
     Usuario usuario;
     List<String> listaEquipes;
     List<String> listaTurmas;
     List<Foguete> foguetes;
 
-    NovoLancamento(Usuario usuario) {
+    detalheLancamento(Usuario usuario) {
         initComponents();
         btnSalvar.setEnabled(true);
         btnAlterar.setEnabled(false);
@@ -37,8 +37,38 @@ public class NovoLancamento extends javax.swing.JFrame {
         }
 
     }
+    
+    detalheLancamento(int id) {
+        initComponents();
+        
+        Lancamento l = new LancamentoDAO().getLancamento(id);
+        
+        this.setEnabled(false);
+        
+        lblId.setText(String.valueOf(l.getId()));
+        txtDistanciaAlvo.setText(String.valueOf(l.getDistanciaDoAlvo()));
+        txtAnguloLancamento.setText(String.valueOf(l.getAnguloLancamento()));
+        txtVelocidadeVento.setText(String.valueOf(l.getVelocidadeVento()));
+        txtAltitudeMaxima.setText(String.valueOf(l.getAltitudeMaxima()));
+        txtAltitudeEjecao.setText(String.valueOf(l.getAltitudeEjecao()));
+        txtDistanciaQuedaAlvo.setText(String.valueOf(l.getAltitudeMaxima()));
+        txtTaxaDescida.setText(String.valueOf(l.getTaxaDescida()));
+        txtDuracaoVoo.setText(String.valueOf(l.getDuracaoVoo()));
+        txtTempoPropulsao.setText(String.valueOf(l.getTempoPropulsao()));
+        txtTempoApogeu.setText(String.valueOf(l.getTempoPropulsao()));
+        txtPicoAcelerecao.setText(String.valueOf(l.getPicoAceleracao()));
+        txtAceleracaoMedia.setText(String.valueOf(l.getAceleracaoMedia()));
+        btnSalvar.setEnabled(false);
+        btnAlterar.setEnabled(true);
+        cbEquipe.setSelectedItem(l.getEquipe().getNome());
+        cbEquipe.setSelectedItem(l.getEquipe().getTurma().getNome());
 
-    NovoLancamento(int id, Usuario usuario) {
+        foguetes = new FogueteDAO().getFoguetes();
+
+        populaDados();
+    }
+
+    detalheLancamento(int id, Usuario usuario) {
         this.usuario = usuario;
 
         initComponents();
@@ -296,9 +326,9 @@ public class NovoLancamento extends javax.swing.JFrame {
         txtAceleracaoMedia.setBorder(null);
         txtAceleracaoMedia.setCaretColor(new java.awt.Color(254, 254, 254));
 
-        cbFoguete.setBackground(new java.awt.Color(4, 47, 107));
+        cbFoguete.setBackground(new java.awt.Color(254, 254, 254));
         cbFoguete.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        cbFoguete.setForeground(new java.awt.Color(254, 254, 254));
+        cbFoguete.setForeground(new java.awt.Color(1, 1, 1));
 
         jLabel10.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(254, 254, 254));
@@ -311,18 +341,18 @@ public class NovoLancamento extends javax.swing.JFrame {
         lblId.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         lblId.setForeground(new java.awt.Color(254, 254, 254));
 
-        cbEquipe.setBackground(new java.awt.Color(4, 47, 107));
+        cbEquipe.setBackground(new java.awt.Color(254, 254, 254));
         cbEquipe.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        cbEquipe.setForeground(new java.awt.Color(254, 254, 254));
+        cbEquipe.setForeground(new java.awt.Color(1, 1, 1));
         cbEquipe.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbEquipeActionPerformed(evt);
             }
         });
 
-        cbTurma.setBackground(new java.awt.Color(4, 47, 107));
+        cbTurma.setBackground(new java.awt.Color(254, 254, 254));
         cbTurma.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        cbTurma.setForeground(new java.awt.Color(254, 254, 254));
+        cbTurma.setForeground(new java.awt.Color(1, 1, 1));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
