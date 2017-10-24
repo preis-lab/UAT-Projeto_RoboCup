@@ -12,6 +12,9 @@ public class Turma {
         this.competicao = competicao;
     }
 
+    public Turma() {
+    }
+
     public int getId() {
         return id;
     }

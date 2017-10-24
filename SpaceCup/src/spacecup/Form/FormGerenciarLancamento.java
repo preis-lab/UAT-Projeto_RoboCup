@@ -6,6 +6,8 @@ import javax.swing.table.TableModel;
 import spacecup.DAO.CompeticaoDAO;
 import spacecup.DAO.LancamentoDAO;
 import spacecup.DAO.TipoCompeticaoDAO;
+import spacecup.DAO.UsuarioDAO;
+import spacecup.Model.Aluno;
 import spacecup.Model.Competicao;
 import spacecup.Model.Lancamento;
 import spacecup.Model.Usuario;
@@ -20,12 +22,19 @@ public class FormGerenciarLancamento extends javax.swing.JInternalFrame {
         setComboBox();
     }
 
-    FormGerenciarLancamento(Usuario usuario) {
+    FormGerenciarLancamento(Usuario usuario) {        
         initComponents();
         setComboBox();
         this.usuario = usuario;
+        verificaCompeticaoAtiva();
     }
 
+    private void verificaCompeticaoAtiva(){
+        Aluno aluno = new UsuarioDAO().getAlunoById(usuario.getId());
+            if (!aluno.getEquipe().getTurma().getCompeticao().isAtiva()) {
+                btnNovo.setEnabled(false);
+            }
+    }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {

@@ -55,6 +55,9 @@ public class MainForm extends javax.swing.JFrame {
         foguetes = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
+        turmas = new javax.swing.JPanel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
         jdPanel = new javax.swing.JDesktopPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -215,6 +218,40 @@ public class MainForm extends javax.swing.JFrame {
         jLabel11.setForeground(new java.awt.Color(254, 254, 254));
         jLabel11.setText("Foguetes");
 
+        turmas.setBackground(new java.awt.Color(4, 47, 107));
+        turmas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                turmasMouseClicked(evt);
+            }
+        });
+
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/spacecup/icons/rocket.png"))); // NOI18N
+
+        jLabel13.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(254, 254, 254));
+        jLabel13.setText("Turmas");
+
+        javax.swing.GroupLayout turmasLayout = new javax.swing.GroupLayout(turmas);
+        turmas.setLayout(turmasLayout);
+        turmasLayout.setHorizontalGroup(
+            turmasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(turmasLayout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(jLabel12)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel13)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        turmasLayout.setVerticalGroup(
+            turmasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(turmasLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(turmasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(jLabel13)
+                    .addComponent(jLabel12))
+                .addContainerGap(16, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout foguetesLayout = new javax.swing.GroupLayout(foguetes);
         foguetes.setLayout(foguetesLayout);
         foguetesLayout.setHorizontalGroup(
@@ -225,6 +262,7 @@ public class MainForm extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel11)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(turmas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         foguetesLayout.setVerticalGroup(
             foguetesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -233,7 +271,9 @@ public class MainForm extends javax.swing.JFrame {
                 .addGroup(foguetesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(jLabel11)
                     .addComponent(jLabel10))
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(turmas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout sideBarLayout = new javax.swing.GroupLayout(sideBar);
@@ -275,7 +315,7 @@ public class MainForm extends javax.swing.JFrame {
                 .addComponent(competicoes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(foguetes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(77, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jdPanel.setBackground(new java.awt.Color(50, 230, 200));
@@ -324,6 +364,11 @@ public class MainForm extends javax.swing.JFrame {
         addJanela(new ForguetesForm());
     }//GEN-LAST:event_foguetesMouseClicked
 
+    private void turmasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_turmasMouseClicked
+        mudaBG(turmas, ativoColor);
+        addJanela(new TurmasForm());
+    }//GEN-LAST:event_turmasMouseClicked
+
     private void addJanela(JInternalFrame janela) {
         jdPanel.removeAll();
         Dimension size = jdPanel.getSize();
@@ -339,6 +384,7 @@ public class MainForm extends javax.swing.JFrame {
         equipes.setBackground(inativoColor);
         competicoes.setBackground(inativoColor);
         foguetes.setBackground(inativoColor);
+        turmas.setBackground(inativoColor);
     }
     
     private void mudaBG(JPanel painel, Color cor) {
@@ -355,6 +401,8 @@ public class MainForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -367,5 +415,6 @@ public class MainForm extends javax.swing.JFrame {
     private javax.swing.JPanel lancamentos;
     private javax.swing.JLabel logo;
     private javax.swing.JPanel sideBar;
+    private javax.swing.JPanel turmas;
     // End of variables declaration//GEN-END:variables
 }

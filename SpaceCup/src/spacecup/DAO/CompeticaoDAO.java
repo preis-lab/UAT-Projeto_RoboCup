@@ -164,4 +164,73 @@ public class CompeticaoDAO {
         }
         return c;
     }
+
+    public Competicao getByNome(String nome) {
+        Competicao c = null;
+
+        try {
+
+            con = new Conexao().getConnection();
+            sql = "SELECT * FROM `competicao` WHERE `tipo_competicao_id` = (SELECT tipo_competicao_id from tipo_competicao WHERE nome = ?)";
+
+            ps = con.prepareStatement(sql);
+            ps.setString(1, nome);
+            rs = ps.executeQuery();
+
+            if (rs.next()) {
+                boolean ativa;
+                if (rs.getInt("ativa") == 1) {
+                    ativa = true;
+                } else {
+                    ativa = false;
+                }
+
+                c = new Competicao();
+                c.setId(rs.getInt("competicao_id"));
+                c.setAtiva(ativa);
+                c.setData(rs.getDate("data"));
+                c.setEndereco(new EnderecoDAO().getById(rs.getInt("numero"), rs.getString("cep")));
+                c.setTipoCompeticao(new TipoCompeticaoDAO().getById(rs.getInt("tipo_competicao_id")));
+            }
+            con.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(CompeticaoDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return c;
+    }
+
+    public Competicao getByNomeYear(String nome, String ano) {
+        Competicao c = null;
+
+        try {
+
+            con = new Conexao().getConnection();
+            sql = "SELECT * FROM `competicao` WHERE `tipo_competicao_id` = (SELECT tipo_competicao_id from tipo_competicao WHERE nome = ?) and Year(data) = ?";
+
+            ps = con.prepareStatement(sql);
+            ps.setString(1, nome);
+            ps.setString(2, ano);
+            rs = ps.executeQuery();
+
+            if (rs.next()) {
+                boolean ativa;
+                if (rs.getInt("ativa") == 1) {
+                    ativa = true;
+                } else {
+                    ativa = false;
+                }
+
+                c = new Competicao();
+                c.setId(rs.getInt("competicao_id"));
+                c.setAtiva(ativa);
+                c.setData(rs.getDate("data"));
+                c.setEndereco(new EnderecoDAO().getById(rs.getInt("numero"), rs.getString("cep")));
+                c.setTipoCompeticao(new TipoCompeticaoDAO().getById(rs.getInt("tipo_competicao_id")));
+            }
+            con.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(CompeticaoDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return c;
+    }
 }
